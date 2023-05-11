@@ -1,64 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="Style.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap"
-      rel="stylesheet"
-    />
-    <title>Home Page</title>
-  </head>
-  <body>
-    <div class="header-container">
-      <header>
-        <div class="school-name">
-          <h1>E-School</h1>
-        </div>
 
-        <div class="location">
-          <img
-            src="gps-location-white-symbol-icon-transparent-png-11637079270ec5zfjqidf.png"
-            alt="Location"
-            class="location-logo"
-          />
-          <h3>Nabatieh-Governerate</h3>
-        </div>
+<head>
+  <link rel="stylesheet" href="Style.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet" />
+  <title>Home Page</title>
+</head>
 
-        <form>
-          <div class="signin-form">
-            <h2>Sign in</h2>
-            <input
-              type="text"
-              class="field"
-              placeholder="Username"
-              id="username"
-            />
-            <br />
-            <br />
-            <input
-              type="password"
-              class="field"
-              placeholder="Password"
-              id="password"
-            />
-            <br />
-            <br />
-            <input type="checkbox" id="checkbox" name="checkbox" />Keep me
-            logged in.
-            <button type="submit" class="btn">Sign in</button>
-            <br />
-            <br />
-            <a href="forgetPassword.html" class="forget"
-              >Forgot your password??</a
-            >
-          </div>
-        </form>
-      </header>
+<body>
+  <div class="header-container">
+    <header>
+      <div class="school-name">
+        <h1>E-School</h1>
+      </div>
+
+      <div class="location">
+        <img src="gps-location-white-symbol-icon-transparent-png-11637079270ec5zfjqidf.png" alt="Location"
+          class="location-logo" />
+        <h3>Nabatieh-Governorate</h3>
+      </div>
+
+      <form>
+        <div class="signin-form">
+          <h2>Sign in</h2>
+          <input type="text" class="field" placeholder="Username" id="username" />
+          <br />
+          <br />
+          <input type="password" class="field" placeholder="Password" id="password" />
+          <br />
+          <br />
+          <input type="checkbox" id="checkbox" name="checkbox" />
+          <label for="checkbox">Keep me logged in</label><!--for refers for the input id so that you can click the text to check the box-->
+          <button type="submit" class="btn">Sign in</button>
+          <br />
+          <br />
+          <a href="forgetPassword.html" class="forget">Forgot your password??</a>
+        </div>
+      </form>
+    </header>
+  </div>
+  <div class="middle">
+    <div class="about">
+      <img class="icon1" src="./About.jpg" alt="about">
+      <p>
+        Discover a world of boundless learning opportunities at eSchool, where education is made accessible and
+        convenient through our innovative online platform. Join our vibrant virtual community, connect with expert
+        instructors, and unlock your full potential from the comfort of your own home.
+      </p>
+
     </div>
-  </body>
+    <div class="about">
+      <img class="icon" src="./Ellipse 4.png" alt="about">
+      <p>
+        As the Principal of our esteemed e-learning school, I warmly welcome you to our virtual campus, where knowledge
+        knows no bounds. Together, let us embrace the transformative power of online education and unlock the doors to
+        endless opportunities for growth and success.
+      </p>
+
+    </div>
+    <div class="about">
+      <img class="icon" src="./Connections.jpg" alt="about">
+      <p>
+        Discover a world of boundless learning opportunities at eSchool, where education is made accessible and
+        convenient through our innovative online platform. Join our vibrant virtual community, connect with expert
+        instructors, and unlock your full potential from the comfort of your own home.
+      </p>
+
+    </div>
+
+
+  </div>
+  <footer>
+
+  </footer>
+</body>
+
 </html>
