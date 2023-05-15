@@ -11,9 +11,10 @@ h1{
   body{
     width: 100%;
     height: 1000px;
-    background-image: linear-gradient(rgb(158, 238, 238),white, rgb(129, 183, 228));
+    background-image: linear-gradient(rgb(2, 81, 81),white, rgb(1, 1, 112));
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
   }
   .changeimg{
     width: 500px;

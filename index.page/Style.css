@@ -2,13 +2,191 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;/* this to delete whitespaces on the sides*/
-  width: 100%;
+  width: auto;
   height: auto;
   overflow-x: hidden;/*this to takeout vertical scrollbar*/
 }
 
+/*** Button ***
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+  color: #FFFFFF;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  border-radius: 0px;
+}
+
+
+/*** Navbar ***
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  margin-right: 30px;
+  padding: 25px 0;
+  color: #FFFFFF;
+  font-size: 15px;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-light .navbar-nav .nav-link  {
+      margin-right: 0;
+      padding: 10px 0;
+  }
+
+  .navbar-light .navbar-nav {
+      border-top: 1px solid #EEEEEE;
+  }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+  height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+  top: -100px;
+  transition: .5s;
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+      display: block;
+      margin-top: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: .5s;
+  }
+
+  .navbar .dropdown-menu.fade-down {
+      top: 100%;
+      transform: rotateX(-75deg);
+      transform-origin: 0% 0%;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+      top: 100%;
+      transform: rotateX(0deg);
+      visibility: visible;
+      transition: .5s;
+      opacity: 1;
+  }
+}
+/*end of copy code*/
+
+nav{
+  top: 0;
+  position: fixed;
+  z-index: +1;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 100%;
+  background-color: #fb8b24;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+nav h1{
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate-reverse;
+}
+.nav-list{
+  display: flex;
+  flex-direction: row;
+ 
+
+}
+ul{
+list-style: none;
+}
+a{
+  text-decoration: none;
+  height: 50px;
+ 
+
+}
+li{
+  padding: 20px;
+}
+nav li:hover{
+ 
+  border-bottom: #36454f 3px solid;
+  
+  
+
+}
+
+
+.btn{
+  color:#36454f ;
+  cursor: pointer;
+  border: none;
+  width: 14%;
+  height: inherit;
+  margin-left: 30px;
+  background-color: #faf0e6;
+  font-size: larger;
+}
+.btn:hover{
+  background-color:#36454f ;
+  color: chocolate;
+  transition: .5s ease-in;
+}
 
 .header-container{
+  padding-top: 70px;
   width: 100%;
   height: 100vh;
   background-image: url('./pexels-max-fischer-5212700.jpg');
@@ -39,7 +217,7 @@ header{
   width: 30px;
   height: 30px;
   margin-right: 5px;
-  margin-top: 10px;
+  margin-top: 35px;
   border-radius: 70%;
 }
 
@@ -49,19 +227,6 @@ h1{
   margin-left: 50px;
   color: white;
 }
-
-.signin-form{
-  margin-left: 900px;
-  margin-top: -100px;
-  width: 300px;
-  height: 500px;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding-top: 100px;
-  padding-left: 100px;
-  padding-right: 100px;
-  box-shadow: 5px 5px 5px black;
-}
-
 h2{
   font-size: 50px;
   text-align: center;
@@ -89,13 +254,7 @@ margin-left: 10px;
   color: blue;
 }
 
-.btn{
-  border-radius: 10px;
-  width: 100px;
-  height: 35px;
-  margin-left: 30px;
-  box-shadow: 5px 5px 7px black;
-}
+
 
 .middle{
   display: flex;
@@ -115,7 +274,7 @@ margin-left: 10px;
   border-radius: 50%;
 }
 
-p{
+.textwithborder {
   font-size: large;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-color: black;
@@ -130,5 +289,194 @@ p{
 }
 .about{
   margin: 10px 40px;
+  transition: transform .7s
 }
 
+.about:hover{
+  transform: scale(1.2);
+  transition: 0.5s ease-in-out;
+ 
+}
+.textwithborder:hover{
+  background-color: #fb8b24;
+}
+
+.teachers img{
+  height: 30%;
+  width: 34%;
+  border: 5px solid white;
+  background-color: #dddd;
+  
+}
+.teachers img:hover{
+  animation: zoomIn 2s ease-in-out ;
+  
+  visibility: visible;
+}
+@keyframes zoomIn{
+  0%{
+    transform: scale(1, 1);
+
+  }
+  50%{
+    transform: scale(1.1, 1.1);
+  }
+  100%{
+    transform: scale(1, 1);
+  }
+
+}
+ img:hover{
+  
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+  
+
+.text-overlay1 {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  transform: translate(-22%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 30%;
+  width: 20%;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.text-overlay2{
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  transform: translate(-10%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 30%;
+  width: 20%;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.text-overlay3{
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  transform: translate(-20%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 30%;
+  width: 20%;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+h3  {
+  color: white;
+  font-size: 32px;
+  font-family: Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ 
+  
+}
+
+
+.middle{
+  padding-top: 15vh;
+}
+
+
+.containerbottom {
+  position: relative;
+  height: 400px; /* Set a fixed height for the container */
+  border: 1px solid #000; /* Just for visualization */
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom of the container */
+  background-color: #000;
+  color: white;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+.text {
+  margin: 0;
+  border: none;
+  color: gray;
+  font-size: large;
+}
+  
+a {
+  color: gray;
+ text-decoration: none;
+ padding: 0 15px;
+}
+
+.text a:hover{
+  color: white;
+  text-decoration: underline;
+  
+}
+
+
+
+.logo-bottom{
+  padding-bottom: 200px;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  color: white;
+}
+
+.logo-bottom img{
+  width: 50px;
+  height: auto;
+  margin-bottom: -21px;
+  margin-left: -15px;
+  animation-name: example, skew;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate-reverse;
+
+
+
+}
+@keyframes example {
+  0%   { left:0px; top:0px;}
+  25%  { margin-left:200px; top:0px;}
+  
+}
+@keyframes skew {
+  
+  50% {transform: rotate(180 deg);}
+}
+.parent {
+  width: 400px; 
+  height: 300px;
+}
+
+.child {
+  width: 100%;
+  height: 100%;
+  background-color: black; /* fallback color */
+  background-image: url("./teacher1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.parent:hover .child,
+.parent:focus .child {
+  transform: scale(1.2);
+}
