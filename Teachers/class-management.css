@@ -1,0 +1,161 @@
+body{
+  /* background-image: url('../Student/pexels-max-fischer-5212700.jpg'); */
+  background-size: cover;
+  background-color: #fb8b24;
+  /* background-color: antiquewhite; */
+}
+
+.container-full{
+  background-color: white;
+  margin-top: -40px;
+  
+}
+
+@keyframes example {
+  0%   { left:0px; top:0px;}
+  25%  { margin-left:200px; top:0px;}
+  
+}
+
+.prof-nav{
+  width: 50px;
+  height: 50px;
+  margin-left: 400px;
+  margin-top: 5px;
+  }
+  
+  .prof-nav1{
+    float: right;
+    padding-right: 20px;
+    margin-right: 5px;
+  }
+  
+  .prof-nav a{
+    padding: 14px 16px;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  a.nav{
+    width:70px;
+    height: 30px;
+    text-align: center;
+    margin-left: 10px;
+  
+  }
+  
+  a.nav:active{
+    background-color:#f2f2f2 ;
+    color: black;
+  }
+  .nav-container{
+    background-color: #fb8b24;
+    width: 100%;
+    height: 60px;
+    color: white;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    position: fixed; 
+    top: 0; 
+    /* border-bottom: 3px solid black; */
+  }
+  
+  .nav{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    font-size: 17px;
+    /* margin-left: 11%; */
+  }
+  
+  .nav:hover{
+    color:black ;
+    border-bottom: 2px solid black;
+  }
+  
+.classes-div{
+display: flex;
+flex-direction: column;
+}
+
+.titlename{
+  font-size: 40px;
+  color:black;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 30px;
+  margin-top: 100px;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  width: 500px;
+  height: 100px;
+}
+
+.class-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  inline-size: 3;
+}
+
+.classes-div{
+  width: 351px;
+  height: 340px;
+  background-color: #f1f1f1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: 70px;
+  margin-bottom: 30px;
+
+}
+
+.class-name{
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: balck;
+  margin-left: 120px;
+  margin-top: 30px;
+}
+
+.gradeX{
+  background-color: #fb8b24;
+  width: 350px;
+  height: 100px;
+  margin-top: 80px;
+  border: radius bottom 5px ;
+  border: 2px solid white;
+}
+
+.class-icon{
+  width:100px;
+  height: 100px;
+  margin-left: 120px;
+  padding-top: 10px;
+}
+
+/* .back-btn{
+  width: 30px;
+  height: 30px;
+  border: none;
+} */
+
+.for-edit{
+  margin-left: 130px;
+  margin-top: 30px;
+  width: 80px;
+  height: 40px;
+  font-size: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
