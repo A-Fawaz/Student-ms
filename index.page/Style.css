@@ -1,3 +1,7 @@
+:root{
+  --primarycolor: #fb8b24;
+  --btnhover1: #36454f;
+}
 body{
   margin: 0;
   padding: 0;
@@ -129,7 +133,7 @@ nav{
   flex-direction: row;
   height: 10vh;
   width: 100%;
-  background-color: #fb8b24;
+  background-color: var(--primarycolor);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: large;
   justify-content: space-around;
@@ -162,7 +166,7 @@ li{
 }
 nav li:hover{
  
-  border-bottom: #36454f 3px solid;
+  border-bottom: var(--btnhover1) 3px solid;
   
   
 
