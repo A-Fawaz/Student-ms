@@ -27,7 +27,7 @@ h3 {
 }
 
 .btn {
-    background: #f05462;
+    background: #fb8b24;
     color: white;
     padding: 5px 10px;
     text-align: center;
@@ -60,7 +60,7 @@ td {
 
 .side-menu {
     position: fixed;
-    background: #f05462;
+    background: #fb8b24;
     width: 20vw;
     min-height: 100vh;
     display: flex;
