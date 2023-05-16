@@ -326,10 +326,6 @@ margin-left: 10px;
   }
 
 }
- img:hover{
-  
-}
-
 .container {
   position: relative;
   display: flex;
@@ -446,6 +442,7 @@ a {
   height: auto;
   margin-bottom: -21px;
   margin-left: -15px;
+  animation: rotation 8s infinite linear ;
   animation-name: example, skew;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -462,21 +459,32 @@ a {
 @keyframes skew {
   
   50% {transform: rotate(180 deg);}
-}
-.parent {
-  width: 400px; 
-  height: 300px;
-}
 
-.child {
-  width: 100%;
-  height: 100%;
-  background-color: black; /* fallback color */
-  background-image: url("./teacher1.jpg");
-  background-position: center;
-  background-size: cover;
 }
-.parent:hover .child,
-.parent:focus .child {
-  transform: scale(1.2);
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+  
+
+@media only screen and (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  ul{
+    flex-wrap: wrap;}
+  .middle{
+    flex-wrap: wrap;
+
+  }
+  .teachers img {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
 }
