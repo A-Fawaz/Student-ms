@@ -1,3 +1,23 @@
+body{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.navdash{
+  top: 0;
+  position: fixed;
+  z-index: +1;
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  width: 300px;
+  background-color: #fb8b24;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: start;
+  align-items: space-around;
+  cursor: pointer;
+  margin-right: 1550px;
+}
 
 nav{
   top: 0;
@@ -14,6 +34,33 @@ nav{
   align-items: center;
   cursor: pointer;
 }
+
+.nav2{
+  top: 0;
+  position: fixed;
+  z-index: +1;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 1550px;
+  margin-left: 300px;
+  background-color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.eschool1{
+  font-size: 40px!important;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 150px;
+  margin-bottom: 50px !important;
+  margin-top: 50px;
+  color:#fb8b24;
+  
+}
+
 
 h3{
  font-family: Verdana, Geneva, Tahoma, sans-serif; 
@@ -34,27 +81,37 @@ h2{
 
 .forget{
  margin-left: 50px;
- margin-top: 100px !important;
- background-color: white !important;
- color: #070707 !important;
- padding-top: 10px;
+ 
+ padding-top: 20px;
 }
 .forget:hover{
-  color: #fb8b24 !important;
+  color: #fb8b24;
 }
 .forgetch {
   margin-left: 60px;
-  background-color: white !important;
-  color: #0a0a0a !important;
  }
  .forgetch:hover{
-  color: #fb8b24 !important;
+  color: #fb8b24;
 }
 
 .nav-list{
   display: flex;
   flex-direction: row;
 
+}
+.nav-list1{
+  display: flex;
+  flex-direction: column;
+
+}
+.nav-list2{
+  display: flex;
+  flex-direction: row;
+
+}
+.bar{
+  background-color: white;
+  color: #fb8b24;
 }
 ul{
 list-style: none;
@@ -95,6 +152,17 @@ h1{
     animation-iteration-count: 1;
     animation-direction: alternate-reverse;
   }
+  .eschool{
+    font-size: 40px!important;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+   margin-left: 150px;
+    margin-bottom: 50px !important;
+    margin-top: 50px;
+    color: white;
+    
+  }
+  
+
   .header-container{
     background-position: relative;
   }
