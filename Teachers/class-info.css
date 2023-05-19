@@ -1,0 +1,33 @@
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;
+}
+body{
+  /* background-image: url('../Student/pexels-max-fischer-5212700.jpg'); */
+  background-size: cover;
+  /* background-color: #fb8b24; */
+  /* background-color: antiquewhite; */
+}
+
+.container1{
+  /* background-color: white; */
+  margin-top: -40px;
+  height: 2000px;
+  
+}
+
+.btn-group-vertical{
+  margin-top: 100px;
+  margin-left: -100px;
+  margin-right: 100px;
+  width: 100px;
+  
+}
+
+.table{
+  /* margin-top: 200px;
+  margin-left: 200px;  */
+}
+
