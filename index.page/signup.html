@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="signup.css" rel="stylesheet" />
+    <title>Sign Up</title>
+  </head>
+
+  <body>
+    <nav>
+      <h1>E-School</h1>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a id="space" href="index.html#about-section">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="div">
+      <div class="img1">
+        <img src="../images/mobilesignup.gif" alt="Sign in" class="changeimg" />
+      </div>
+      <div class="div2">
+        <form>
+          <div class="signin-form">
+            <h2> Sign in</h2>
+            <input
+              type="text"
+              class="field"
+              placeholder="Username"
+              id="username"
+            />
+            <br />
+            <br />
+            <input
+              type="password"
+              class="field"
+              placeholder="Password"
+              id="password"
+            />
+            <br />
+            <br />
+            <input
+              type="checkbox"
+              id="checkbox"
+              name="checkbox"
+              class="checkbox"
+            />
+        
+            <label class="checkbox1" for="checkbox">Keep me logged in</label>
+            <!--for refers for the input id so that you can click the text to check the box-->
+            <button type="submit" class="btn">Sign in</button>
+            <br />
+            <br />
+            <a href="../index.page/forgetPassword.html" class="forget"
+              >Forgotten your password?</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
