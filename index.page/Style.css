@@ -29,7 +29,7 @@ nav{
   cursor: pointer;
 }
 nav h1{
-  margin-left: 0;
+  margin-left: 110px;
   animation-name: example;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -117,8 +117,6 @@ header{
   margin-left: 13vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 .location-logo{
   width: 30px;
   height: 30px;
@@ -163,7 +161,7 @@ margin-left: 10px;
 
 
 .middle{
-  color: var(--white);
+  color: var(--black);
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -205,7 +203,7 @@ margin-left: 10px;
  
 }
 .textwithborder:hover{
-  background-color: #fb8b24;
+  background-color: var(--white);
 }
 
 .teachers img{
@@ -380,6 +378,18 @@ li a:hover{
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.link {
+  color: gray;
+ text-decoration: none;
+ padding-bottom: 0 15px;
+}
+.link:hover{
+  color: var(--white);
+}
+
+.copyrights{
+
 }
 @keyframes example {
   0%   { left:0px; top:0px;}
