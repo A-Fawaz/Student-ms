@@ -1,3 +1,9 @@
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;
+}
 body{
   /* background-image: url('../Student/pexels-max-fischer-5212700.jpg'); */
   background-size: cover;
@@ -5,9 +11,10 @@ body{
   /* background-color: antiquewhite; */
 }
 
-.container-full{
+.container1{
   background-color: white;
   margin-top: -40px;
+  height: 2000px;
   
 }
 
@@ -17,12 +24,7 @@ body{
   
 }
 
-.prof-nav{
-  width: 50px;
-  height: 50px;
-  margin-left: 400px;
-  margin-top: 5px;
-  }
+
   
   .prof-nav1{
     float: right;
@@ -35,10 +37,11 @@ body{
     float: left;
     margin-right: 20px;
     text-align: center;
+    font-size: 20px;
   }
   
   a.nav{
-    width:70px;
+    width:100px;
     height: 30px;
     text-align: center;
     margin-left: 10px;
@@ -49,7 +52,7 @@ body{
     background-color:#f2f2f2 ;
     color: black;
   }
-  .nav-container{
+  .navCont1{
     background-color: #fb8b24;
     width: 100%;
     height: 60px;
@@ -76,11 +79,6 @@ body{
     color:black ;
     border-bottom: 2px solid black;
   }
-  
-.classes-div{
-display: flex;
-flex-direction: column;
-}
 
 .titlename{
   font-size: 40px;
@@ -98,64 +96,63 @@ flex-direction: column;
 
 .class-container{
   display: grid;
-  grid-template-columns: auto auto auto;
-  inline-size: 3;
+  grid-template-columns: auto auto auto auto;
+  inline-size: 4;
 }
 
-.classes-div{
-  width: 351px;
-  height: 340px;
-  background-color: #f1f1f1;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-left: 70px;
-  margin-bottom: 30px;
+.card{
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 200px;
+  background-color: var(--white);
+  border: 2px solid black ;
+  margin-left: 85px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  
+}
+
+.card-img{
+  width:200px;
+  height: 150px;
 
 }
 
-.class-name{
+.info-container{
+  height: 100px;
+  background-color: var(--orange);
+}
+
+.grade-name{
   font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: balck;
-  margin-left: 120px;
-  margin-top: 30px;
+  font-weight:bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 60px;
+  margin-top: 3px;
+  color: var(--white);
 }
 
-.gradeX{
-  background-color: #fb8b24;
-  width: 350px;
-  height: 100px;
-  margin-top: 80px;
-  border: radius bottom 5px ;
-  border: 2px solid white;
-}
-
-.class-icon{
-  width:100px;
-  height: 100px;
-  margin-left: 120px;
-  padding-top: 10px;
-}
-
-/* .back-btn{
-  width: 30px;
-  height: 30px;
-  border: none;
-} */
-
-.for-edit{
-  margin-left: 130px;
-  margin-top: 30px;
-  width: 80px;
-  height: 40px;
+.student-number{
   font-size: 10px;
+  color: #7a7878;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 60px;
+  margin-top: 5px;
+}
+
+.card-btn{
+  width: 90px;
+  font-size: 10px;
+  margin-left: 50px;
+  margin-top: 10px;
+  height: 40px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  background-color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
-
+.card-btn:hover{
+  color: var(--white);
+  background-color: var(--btnhovergray);
+}
