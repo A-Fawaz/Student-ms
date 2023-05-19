@@ -1,6 +1,4 @@
-body{
-  overflow-y: hidden;
-}
+
 nav{
   top: 0;
   position: fixed;
@@ -18,7 +16,9 @@ nav{
 }
 
 h3{
-  margin-left: 50px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif; 
+ margin-bottom: 10px;
+  width: 300px;
 }
 
 h2{
@@ -34,12 +34,22 @@ h2{
 
 .forget{
  margin-left: 50px;
- margin-top: 30px;
+ margin-top: 100px !important;
+ background-color: white !important;
+ color: #070707 !important;
+ padding-top: 10px;
 }
 .forget:hover{
-  color: #fb8b24;
+  color: #fb8b24 !important;
 }
-
+.forgetch {
+  margin-left: 60px;
+  background-color: white !important;
+  color: #0a0a0a !important;
+ }
+ .forgetch:hover{
+  color: #fb8b24 !important;
+}
 
 .nav-list{
   display: flex;
@@ -50,9 +60,11 @@ ul{
 list-style: none;
 }
 a{
-  color: #36454f;
+  color: #fdfeff;
+  background-color: #fb8b24;
   text-decoration: none;
-  height: 50px;
+  height: inherit;
+  width: inherit;
 }
 li{
   padding: 20px;
@@ -72,21 +84,7 @@ nav li:hover{
   padding-bottom: 10px;
 }
 
-.btn{
-  color:#36454f ;
-  cursor: pointer;
-  border: none;
-  width: 14%;
-  height: inherit;
-  margin-left: 30px;
-  background-color: #faf0e6;
-  font-size: larger;
-}
-.btn:hover{
-  background-color:#36454f ;
-  color: chocolate;
-  transition: .5s ease-in;
-}
+
 h1{
     font-size: 50px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -119,13 +117,26 @@ h1{
   }
   .div2{
     margin-left: 200px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 400px;
     height: 450px;
     background-color: rgba(255, 255, 255, 0.6);
-    padding-top: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 50px;
+    box-shadow: 5px 5px 5px #fb8b24;
+    border-top: 1px solid #fb8b24;
+    border-left: 1px solid #fb8b24;
+  }
+  .div3{
+    margin-left: 200px;
+    margin-top: 50px;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 50px;
     box-shadow: 5px 5px 5px #fb8b24;
     border-top: 1px solid #fb8b24;
     border-left: 1px solid #fb8b24;
@@ -142,16 +153,20 @@ h1{
   border-radius: 10px;
   border: none;
   box-shadow: 5px 5px 7px black;
-  margin-left: 50px;
+  margin-top: 10px;
+  
+  margin-left: 30px;
 }
-.btn{border-radius: 10px;
+.btn{
+  border-radius: 10px;
   background-color: #fb8b24;
   color: white;
-  width: 100px;
+  font-size: 20px;
+  width: 150px;
   height: 35px;
   margin-left: 30px;
   box-shadow: 5px 5px 7px black;}
-
+  
   .btn:hover{
     background-color: white;
     color: #fb8b24;
@@ -169,23 +184,63 @@ h1{
     box-shadow: 5px 5px 5px black;
   }
 
+.btnch{
+  width: 300px;
+ 
+  background-color: #fb8b24;
+  color: white;
+  margin-top: 20px;
+  height: 40px;
+  margin-left: 40px;
+  box-shadow: 5px 5px 7px black;
+
+}
+h4{
+  width: 400px;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
 
   .fp{
-    text-align: center;
+   
     /* margin-left: 200px; */
     margin-top: 10px; 
     /* margin-bottom: -400px; */
-    width: 300px;
+    width: 400px;
     height: 300px;
     background-color: rgba(255, 255, 255, 0.6);
-    padding-top: 90px;
-    padding-left: 50px;
-    padding-right: 50px;
+  
+   
+    padding-right: 10px;
     /* box-shadow: 5px 5px 5px black; */
+  }
+  .fp1{
+   
+    margin-top: 60px; 
+    width: 300px;
+    height: 200px;
+    background-color: rgba(252, 249, 249, 0.6);
+   
+    width: inherit;
+    height: inherit;
+   
+  }
+  .field1{
+    width: 300px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 5px 5px 7px black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 10px;
   }
 
   .btns{
     display: flex;
     flex-direction: row;
-    margin-left:70px;
+    margin-left:40px;
+    
+    padding-right: 20px;
   }
