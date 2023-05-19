@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agendas.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="div1">
+            <nav>
+                <h1>E-School</h1>
+                <ul class="nav-list">
+                    <li><a href="../index.page/index.html">Home</a></li>
+                    <li><a id="space" href="../index.page/index.html#about-section">About</a></li>
+                    <li><a href="../admin-page/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div2"><img src="../images/agenda-pic.gif" alt="agenda" >
+        </div>
+        <div class="div3">
+            <h2>Add Homework</h2>
+            <section class="class-section">
+
+                <select id="class-select" name="classes">
+                    <option hidden>Choose a Class</option>
+                    <option value="class1">Class 1</option>
+                    <option value="class2">Class 2</option>
+                    <option value="class3">Class 3</option>
+                    <option value="class4">Class 4</option>
+                    <option value="class5">Class 5</option>
+                    <option value="class6">Class 6</option>
+                    <option value="class7">Class 7</option>
+                    <option value="class8">Class 8</option>
+                    <option value="class9">Class 9</option>
+
+                </select>
+            </section>
+           <form>
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="subject" placeholder="subject name" required><br>
+          
+              <label for="description">Description:</label>
+              <textarea id="description" name="description" placeholder="Add Tasks" required></textarea>
+          
+              <button type="submit">Add Homework</button>
+            </form>
+        </div>
+        </div>
+       
+    
+</body>
+</html>
