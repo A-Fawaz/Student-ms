@@ -5,30 +5,79 @@
 <head>
     <meta charset="utf-8">
     <title>Teacher Registration</title>
-    <link rel="stylesheet" href="teacherreg.css">
-    <link href="signup.css" rel="stylesheet" />
+    <link rel="stylesheet" href="teacherreg.css"/>
+    <!-- <link href="signup.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("eschool1").style.marginLeft = "10px";
+
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("eschool1").style.marginLeft = "-200px";
+    }
+</script>
 </head>
 
 <body>
-    <nav class="navdash">
-        <h4 class="eschool">E-School</h4>
-        <ul class="nav-list1">
-            <li><a href="Admin.html">Home</a></li>
-            <li><a id="space" href="list.html">Teacher List</a></li>
-            <li><a href="Studentregistration.html">Student Managment</a></li>
-            <li><a href="changepassword.html">Change Password</a></li>
-            <li><a href="adminprofile.html">My Profile</a></li>
-           
-        </ul>
-    </nav>
+    <aside>
+        <div id="mySidebar" class="sidebar">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="#"> Dashboard</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/grammar.png" alt="">
+                <a href="#">Teachers</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graduated-student.png" alt="">
+                <a href="#">Students</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/learning.png" alt="">
+                <a href="#"> Courses</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/profile.png" alt="">
+                <a href="#"> Profile</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/gear.png" alt="">
+                <a href="#"> Settings</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/door-knob.png" alt="">
+                <a href="#"> Log Out</a>
+
+            </div>
+            <p class="copyrights">© 2023 The President and Fellows of E School</p>
+        </div>
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776; </button>
+
+        </div>
+    </aside>
     <nav class="nav2">
-        <h1 class="eschool1">E-School</h1>
+        <h1 class="eschool1" id="eschool1">E-School</h1>
         <ul class="nav-list2">
-            <li><a class="bar"href="Admin.html">Home</a></li>
-           
-            <li><a class="bar"href="adminprofile.html">My Profile</a></li>
-            <li><a class="bar" href="index.html">Log OUT</a></li>
+         
+        
         </ul>
     </nav>
     <div class="container">
@@ -162,7 +211,7 @@
 
                         </select>
                     </div>
-                    <div class="field btns">
+                    <div class="field   ">
                         <button class="prev-2 prev">Previous</button>
                         <button class="next-2 next">Next</button>
                     </div>
