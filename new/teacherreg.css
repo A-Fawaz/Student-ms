@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;
+}
+*{
+ 
+
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  
+  
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("bg.png"), -webkit-linear-gradient(bottom, #a09a8f, #f5f2f3);
+  overflow: hidden;
+}
+nav{
+  top: 0;
+  position: fixed;
+  z-index: +1;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 100%;
+  background-color: #fb8b24;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.nav2{
+  top: 0;
+  position: fixed;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 100%;
+  background-color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.eschool1{
+  font-size: 40px!important;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: -200px;
+ transition: 0.5s;
+  color:#fb8b24;
+
+}
+ul{
+  list-style: none;
+  }
+  li{
+    padding: 20px;
+  }
+  li:hover {
+    background-color: white;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    width: 25vh;
+    padding: 10px;
+  }
+  nav li:hover{
+    border-bottom: #36454f 3px solid;
+  }
+
+  .bar{
+    background-color: white;
+    color: #fb8b24;
+    color: #fdfeff;
+    background-color: #fb8b24;
+    text-decoration: none;
+    height: inherit;
+    width: inherit;
+  }
+
+
+
+h3{
+ font-family: Verdana, Geneva, Tahoma, sans-serif; 
+ margin-bottom: 10px;
+  width: 300px;
+}
+
+h2{
+  text-align: center;
+  font-size: 50px;
+}
+.nav-list{
+  display: flex;
+  flex-direction: row;
+
+}
+.nav-list1{
+  display: flex;
+  flex-direction: column;
+
+}
+.nav-list2{
+  display: flex;
+  flex-direction: row;
+
+}
+/*start of sidebar css */
+/* The sidebar menu */
+.sidebar {
+  overflow: hidden;
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: var(--orange); /* */
+   /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  
+}
+
+/* The sidebar links */
+.sidebar a {
+  z-index: 999;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--black);
+  /* display: block; */
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  position: absolute;
+  top: 15vh;
+  left: 10vh;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+/*end of sidebarcss*/
+::selection{
+  color: #fff;
+  background: #fb8b24;
+}
+.container{
+  
+  width: 650px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+  margin-bottom: 180px;
+  margin-top: 15vh;
+  
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow-x: hidden;
+overflow-y: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.5s ease-in-out;
+  margin-right: 50px;
+}
+.form-outer form .page .title{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 600px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #fb8b24;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -5px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+  
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+  padding-right: 10px;
+  
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+  
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: #fb8b24;
+  background: #fb8b24;
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: #fb8b24;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: #fb8b24;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 45%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+.copyrights{
+  z-index: 999;
+  text-align: center;
+  padding-left: 10px;
+  padding-top: 140px;
+  font-size: smaller;
+ 
+}
+.logotitle a {
+  z-index: 999;
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  z-index: 999;
+  width: 40px;
+} 

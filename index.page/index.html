@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="Style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +12,7 @@
       rel="stylesheet"
       />
     <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script> 
+    <link rel="stylesheet" href="index.js">
     <title>Home Page</title>
   </head>
 
@@ -22,7 +23,7 @@
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a id="space" href="index.html#about-section">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html#contactsection">Contact</a></li>
       </ul>
 <<<<<<< Updated upstream
       <button class="btn"><a href="signup.html">Join Now! </a><span style="font-size:x-large;"> &#8594; </span>	</button>
@@ -40,11 +41,12 @@
         <img src="../logos/gps-location-white-symbol-icon-transparent-png-11637079270ec5zfjqidf.png" alt="Location" class="location-logo" />
         <h3>Nabatieh-Governorate</h3>
       </div>
+     
     </header>
   </div>
   <div class="middle" id="about-section">
     <div class="about">
-      <img class="icon1" src="../logos/About.jpg" alt="about">
+      <img class="icon" src="../logos/About.jpg" alt="about">
       <p class="textwithborder">
         Discover a world of boundless learning opportunities at eSchool, where education is made accessible and
         convenient through our innovative online platform. Join our vibrant virtual community, connect with expert
@@ -76,7 +78,7 @@
 
   </div>
   <div class="teachers">
-    <div class="container" onclick="">
+    <div class="container">
       
       <img src="../images/teacher1.jpg" alt="teacher1-img" class="t1">
       <div class="text-overlay1">
@@ -102,21 +104,41 @@
     </div>
   </div>
 
-  <footer>
-    <div class="containerbottom">
+  <footer class="containerbottom" id="contactsection">
+    
 
-      <p class="text">© 2023 The President and Fellows of E Shcool</p>
-      <p  class="logo-bottom"><img src="../logos/output-onlinepngtools (1).png" alt="">E-School </p>
+<div  class="logo-bottom"><img src="../logos/output-onlinepngtools (1).png" alt="">E-School </div>
 
-      
+      <div class="twoblocks">
 
-      <p class="text"> <a href="">Facebook</a>
+        <!-- <div class="githubblock">
+          <p>
+            Collaborators github accounts
+          </p> 
+          <a href="https://github.com/A-Fawaz">A-Fawaz</a>
+          <a href="https://github.com/DanahAlAbdallah">D-Al abdalla</a>
+          <a href="https://github.com/Fatimatarhini">F-Tarhini</a>
+          <a href="https://github.com/alizreik999">A-Zreik</a>
+        </div> -->
+        <div class="contactblock">
+          <p>Get in touch</p> 
+          <p>call (617) 495-1000</p>  
+          <p>Email Esacodinglab@gmail.com</p>
+          <a class="link" href="./contact.html">Website Feedback Form</a>
+        </div>
+      </div>
+    <div class="text"> 
+      <p class="copyrights">© 2023 The President and Fellows of E School</p>
+      <a href="">Facebook</a>
         <a href="">Twitter</a>
         <a href="">Instagram</a>
         <a href="">Youtube</a>
-      </p>
-    </div>
+        
+      </div>
+      
+    
   </footer>
+ 
 </body>
 
 </html>

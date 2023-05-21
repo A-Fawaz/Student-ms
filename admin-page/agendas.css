@@ -1,0 +1,187 @@
+:root{
+    --orange: #fb8b24;
+    --btnhovergray: #36454f;
+    --white: white;
+    --black: black;}
+
+    * {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .parent{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(5,1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 0px;
+      }
+      .div1{
+        grid-area: 1/1/2/6;
+      }
+      .div2{
+        grid-area: 2/1/6/3;
+      }
+      .div3{
+        grid-area: 2/3/6/6;
+      }
+      :root{
+        --orange: #fb8b24;
+        --btnhovergray: #36454f;
+        --white: white;
+        --black: black;}
+    
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+          }
+          nav{
+            top: 0;
+            position: fixed;
+            z-index: +1;
+            display: flex;
+            flex-direction: row;
+            height: 10vh;
+            width: 100%;
+            background-color: var(--orange);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+          }
+          .nav-list{
+            display: flex;
+            flex-direction: row;
+          
+          }
+     
+          h3{
+            margin-left: 50px;
+          }
+          
+          h2{
+            text-align: center;
+            font-size: 50px;
+          }
+          
+          @keyframes example {
+            0%   { left:0px; top:0px;}
+            25%  { margin-left:200px; top:0px;}
+            
+          }
+          ul{
+          list-style: none;
+          }
+          a{
+            color: #36454f;
+            text-decoration: none;
+            height: 50px;
+          }
+          li{
+            padding: 20px;
+          }
+          nav li:hover{
+           
+            border-bottom: var(--btnhovergray) 3px solid;
+            
+            
+          
+          }
+        
+        h1{
+            font-size: 50px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin-left: 500px;
+            color: white;
+            animation-name: example;
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+            animation-direction: alternate-reverse;
+          }
+          
+          form {
+            margin: 20px auto;
+            padding: 100px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            width:50%;
+          }
+          .div3{
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            background-color: var(--btnhovergray);
+            padding: 20px;
+            margin: 40px auto;
+            gap: 20px;
+            border-radius: 10px;
+            color: var(--white);
+    align-items: center;
+          }
+          h2 {
+            text-align: center;
+            margin-top: 10px;
+          }
+          label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--white);
+            font-size: 16px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: var(--btnhovergray);
+          }
+          
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 20px;
+      border: 2px none black;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    button {
+      display: block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: var(--btnhovergray);
+    }
+    select {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--white);
+        color: var(--black);
+        width: 200px;
+      }
+       
+      option {
+        background-color: var(--orange);
+        color: var(--white);
+        padding: 8px;
+      }
+      
+      option:hover {
+        background-color: var(--white);
+      }
+      
+      option:checked {
+        background-color: var(--btnhovergray);
+      }
+    
