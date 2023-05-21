@@ -4,168 +4,54 @@
   --white: white;
   --black: black;
 }
+*{margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: var(--orange); 
-  background-size: cover;
-  overflow-y:hidden;
+  background-color: white;
+  background-color: var(--white); 
+  background-size: cover; 
+}
+.row-info-cont{
+  display: flex;
+  flex-direction: row;
+}
+.information-cont{
+  display: flex;
+  flex-direction: column;
+  margin-left:-200px;
+  border-left: 1px solid black;
 }
 
-/*nav start*/
-.prof-nav{
-  width: 50px;
-  height: 50px;
-  margin-left: 400px;
-  margin-top: 5px;
-  }
-  
-  .prof-nav1{
-    float: right;
-    align-items: center;
-    padding-right: 30px;
-    margin-right: 20px;
-  }
-  
-  .prof-nav a{
-    padding: 14px 16px;
-    float: left;
-    margin-right: 20px;
-    text-align: center;
-  }
-  
-  a.nav{
-    /* width:100px; */
-    height: 30px;
-    text-align: center;
-    margin-left: 10px;
-  
-  }
-  
-  a.nav:active{
-    background-color: #f2f2f2 ;
-    color: black;
-  }
-  .nav-container{
-    background-color: var(--orange);
-    width: 100%;
-    height: 60px;
-    color: white;
-    align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position: fixed; 
-    top: 0; 
-    
-  }
-  
-  .nav{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 14px;
-    text-decoration: none;
-    font-size: 17px;
-    /* margin-left: 11%; */
-  }
-  
-  .nav:hover{
-    color: black;
-    border-bottom: 2px solid black;
-  }
+.container-head{
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-  /*nav end*/
+.full-cont{
+  display: flex;
+  flex-direction: row;
+}
+
+.info-table{
+  height: 35vh;
+  width:fit-content;
   
+}
 
-  /*Title start*/
-  .titlename{
-    font-size: 40px;
-    color:black;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 30px;
-    margin-top: 70px; 
-    margin-bottom: -140px;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    width: 500px;
-    height: 100px;
-  }
+.info-table1{
+  width:fit-content;
+  height: 35hv;
+}
 
-  @keyframes example {
-    0%   { left:0px; top:0px;}
-    25%  { margin-left:200px; top:0px;}
-    
-  }
+.img{
+  margin-left: 100px;
+  margin-top: 100px;
+}
 
-  /*title end*/
-
-  
-  .full-container{
-    display: flex;
-    flex-direction: row;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    margin-top: 300px;
-    margin-left: 30px;
-  }
-  
-  .prof-container{
-    width:500px;
-    height: auto;
-    border-radius: 5px;
-    margin-left: 800px;
-    margin-bottom: 700px;
-    color:black ;
-    border-style: solid;
-  /* border-color: rgb(25, 154, 193); */
-  }
-  
-  .prof-container1{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    height: 500px;
-    /* opacity: 0.8; */
-    
-  
-  }
-  
-  .prof-details{
-    margin: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-  }
-  
- 
-
-  .detail-box{
-    margin-top: 70px;
-    width: 300px;
-    background-color:#c2bfbe;
-    height: 50px;
-    /* text-align: center; */
-    border-radius: 5px;
-    align-items: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-    padding-top: 20px;
-    padding-left: 50px;
-    margin-left: -10px;
-    box-shadow: 3px 3px 3px 3px rgb(59, 57, 57);
-    color: rgb(0, 0, 0);
-    
-  }
-
-
-  .image-design{
-
-    width: 500px;
-    height: 550px;
-    margin-left: 50px;
-    margin-top: 100px;
-    /* margin-bottom: 500px; */
-  }
 
   .details-cont{
   margin-left: 30px;
@@ -176,62 +62,14 @@ body{
   margin-top: -568px;
 }
 
-.page-back{
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  height: 1000px;
-  
-}
-
-.student-name{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: var(--white);
-  font-size: 20px;
-}
-
-.student-prof-img{
-  height: 150px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.contOfcont{
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  width: 700px;
-  border-radius: 10PX;
-  background-color: lightgray;
-  opacity: 0.9;
-  margin-left: 200px;
-  align-items: center;
-  margin-top: 130px;
-  border:1px solid var(--orange) ;
-}
 
 .info-container{
   background-color:var(--white); 
   width: 600px;
-  height: 250px;
-   margin-top: 20px;
-  /* margin-left: 300px; */
+  margin-top: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  /* border: 2px solid black; */
-  
-
-}
-
-.container-head{
-  display: flex;
-  flex-direction: row;
-  font-size: 27px;
-  padding-left: 10px;
-  padding-top: 10px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .info-container1{
@@ -253,32 +91,102 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 50%;
 }
 
-.table-design{
-border: 2px solid black;
-padding: 20px;
-margin-top: 20px;
-width: 500px;
-margin-left: 50px;
-}
-
-.table-design td{
-  width: 50px;
-}
-
-.table-design tr{
-  height: 20px;
-}
-
-.attribute{
-  font-size: 20px;
-  padding-right: 25px;
-  padding-top: 25px;
-}
-
-.value{
- padding-top: 25px;
- font-size: 20px;
- font-weight: 400;
-}
-
+  /*start of sidebar css */
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: var(--orange); /* */
+   /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
   
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--black);
+  /* display: block; */
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.logotitle {
+  display: flex;
+  flex-direction: row;
+padding-bottom: 10%;
+padding-left: 10%;
+  
+}
+
+.logotitle a {
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  width: 40px;
+}
+
+  .copyrights{
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 140px;
+    font-size: smaller;
+
+}
+
+@media screen and (max-width: 800px) {
+  .full-cont{
+    flex-direction: column;
+  }
+
+  .body{
+    overflow:scroll;
+  }
+}
