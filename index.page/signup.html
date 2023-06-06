@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="signup.css" rel="stylesheet" />
-    <title>Sign Up</title>
+    <title>Sign in</title>
   </head>
 
   <body>
@@ -25,21 +25,22 @@
       <div class="div2">
         <form>
           <div class="signin-form">
-            <h2> Sign in</h2>
-            <input
-              type="text"
-              class="field"
-              placeholder="Username"
-              id="username"
-            />
+            <h2>Sign in</h2>
+            <input type="text" class="field" placeholder="Username" id="u" />
+            <br />
+            <p class="alert" id="p1alert"></p>
+
             <br />
             <br />
             <input
               type="password"
               class="field"
               placeholder="Password"
-              id="password"
+              id="p"
             />
+            <br />
+            <p class="alert" id="p2alert"></p>
+
             <br />
             <br />
             <input
@@ -48,18 +49,19 @@
               name="checkbox"
               class="checkbox"
             />
-        
+
             <label class="checkbox1" for="checkbox">Keep me logged in</label>
             <!--for refers for the input id so that you can click the text to check the box-->
-            <button type="submit" class="btn">Sign in</button>
+            <button type="submit" class="btn" id="submit">Sign in</button>
             <br />
             <br />
             <a href="../index.page/forgetPassword.html" class="forget"
-              >Forgotten your password?</a
+              >Forgot password?</a
             >
           </div>
         </form>
       </div>
     </div>
+    <script src="signin.js" type="text/javascript"></script>
   </body>
 </html>
