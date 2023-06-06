@@ -8,7 +8,8 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     box-sizing: border-box;
 }
 
@@ -18,7 +19,72 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--black);
 }
-
+/*start of sidebar css */
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: var(--orange); /* */
+     /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--black);
+    /* display: block; */
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--orange);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+/*end of sidebarcss*/
 h1 {
     font-size: 35px;
     margin: 5%;
@@ -47,6 +113,12 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+.searchicon{
+    z-index: +1;
+    position: absolute;
+    top: 2.5vh;
+    left: 75vh;
+}
 
 .searchbar input {
     width: 480px;
@@ -70,6 +142,7 @@ h1 {
     cursor: pointer;
     -webkit-box-shadow: 0 0 1px #36454f;
     box-shadow: 0 0 1px #36454f;
+    border-radius: 5px;
 }
 
 .btn a {
@@ -81,7 +154,7 @@ h1 {
     background-color: var(--btnhovergray);
 }
 
-.sidebar {
+ /*.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -90,9 +163,9 @@ h1 {
     width: 30vh;
     box-shadow: 0px 0px 5px #36454f;
     z-index: 1;
-}
+} */
 
-.sidetext {
+/* .sidetext {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -104,21 +177,22 @@ h1 {
     margin: 20% 5%;
 
 
-}
-
-.logotitle {
+} */
+  .logotitle {
     display: flex;
-    height: 50px;
-    column-gap: 10px;
-
-
-}
+    flex-direction: row;
+  padding-bottom: 10%;
+  padding-left: 10%;
+    
+} */
 
 .logotitle a {
     text-decoration: none;
     color: var(--black);
 }
-
+.logo{
+    width: 40px;
+} 
 li:hover {
     background-color: white;
     letter-spacing: 2px;
@@ -128,19 +202,24 @@ li:hover {
 }
 
 .container {
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 3vh;
-    margin-left: 38vh;
-    margin-top: 18vh;
+    
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    row-gap: 3vh;
+   
 }
 
 .container1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-left: 0vh ;
     width: 90%;
     background-color: var(--white);
 
@@ -148,54 +227,141 @@ li:hover {
 }
 
 .container1 .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     margin: 2%;
-    box-shadow: 5px 5px 10px #36454f;
+    box-shadow: 0px 0px 15px 1px #36454f;
     height: 20vh;
-    width: 25%;
-    padding: 1%;
+    width: 18%;
+    padding: 2%;
+    border-radius: 5px;
 }
 
 
 .container2 {
     display: flex;
     flex-direction: row;
+    padding-top: 10px;
+    width: 100%;
+    height: 80%;
+    margin-left: 0vh;
+    padding-bottom: 100px;
+    padding-right: 100px;
+    
+    
+    
 }
 .table-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 5%;
+   
   }
 .dash1 {
     display: table;
-
-    margin: 1vh auto;
-    width: 64%;
+    margin-left: 18vh;
+    margin-right: 15vh;
+    width: 50%;
     height: auto;
-    box-shadow: 5px 5px 10px #36454f;
+    box-shadow: 0px 0px 15px 1px #36454f;
     padding:1vh;
+    border-radius: 5px;
 }
 
 .dash2 {
     display: table;
-    margin: 2vh auto;
-    width: 23%;
-    height: auto;
-    box-shadow: 5px 5px 10px #36454f;
+    padding: 1vh;
+    width: 30%;
+    height: 50vh;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 1px #36454f;
 }
 
 .dash2 th td {
     display: flex;
     flex-direction: row;
-    row-gap: 10vh;
     padding: 2%;
 }
-.header{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.copyrights{
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 140px;
+    font-size: smaller;
+
 }
-.header-item{
-    flex: 1;
+@media only screen and (max-width: 600px)  {
+    .navbar{
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    left: 10vh;
+    height: 10vh;
+    width: 100%;
+    background-color: var(--white);
+    background-repeat: no-repeat;
+    padding-right: 10%;
+    box-shadow: 0px 0px 5px 0px #36454f; 
+    }
+    .openbtn {
+        position: fixed;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: var(--orange);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+      }
+    .container1 .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        margin: 2%;
+        box-shadow: 0px 0px 15px 1px #36454f;
+        height: 15vh;
+        width: 100vh;
+        padding: 2%;
+        border-radius: 5px;
+        
+    }
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        width: 100%;
+        height: 80%;
+        margin-left: 0vh;
+        padding-bottom: 100px;
+        padding-right: 100px;
+        
+        
+        
+    }
+   *{
+    overflow-y: auto;
+   }
+   .dash2{
+    margin-left: 17%;
+    margin-top: 20%;
+   }
+   .dash1 {
+    display: table;
+    margin-left: 0vh;
+    margin-right: vh;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 15px 1px #36454f;
+    padding:1vh;
+    border-radius: 5px;
+}
+.item{
+    height: 100px
+    width:70px;
+}
 }

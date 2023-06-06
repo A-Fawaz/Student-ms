@@ -7,6 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("container").style.marginLeft = "18vh"
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("container").style.marginLeft = "0px"
+        }
+    </script>
 </head>
 
 <body>
@@ -14,52 +30,96 @@
         <div class="searchbar">
             <input style="font-size: larger;" type="search" name="search" value="" id="search"
                 placeholder="search for courses...">
-            <img style="width:50px; height: auto;" src="../images/search.png" alt="img">
+            <img class="searchicon" style="width:40px; height: auto;" src="../images/search.png" alt="img">
         </div>
-
-        <button class="btn"><a href=""><strong>Add New </strong> </a></button>
+        
+            <button class="btn"><a href=""><strong>Add New </strong> </a></button>
         <div class="navicons">
             <img style="width:40px; padding-right:10px;" src="../images/turn-notifications-on-button.png" alt="">
             <img style="width: 40px;" src="../images/man.png" alt="">
         </div>
     </nav>
-    <aside>
-        <div class="sidebar">
+
+    <!-- <div class="sidebar">
             <h1>E-School</h1>
             <ul class="sidetext">
                 <li class="logotitle">
-                    <img src="../logos/graph.png" alt="">
+                    <img class="logo" src="../logos/graph.png" alt="">
                     <a href="">Dashboard</a>
                 </li>
                 <li class="logotitle">
-                    <img src="../logos/graduated.png" alt="">
+                    <img class="logo" src="../logos/grammar.png" alt="">
+                    <a href="">Teachers</a>
+                </li>
+                <li class="logotitle">
+                    <img class="logo" src="../logos/graduated-student.png" alt="">
                     <a href="">Students</a>
                 </li>
                 <li class="logotitle">
-                    <img src="../logos/graduated.png" alt="">
-                    <a href="">Students</a>
+                    <img class="logo" src="../logos/learning.png" alt="">
+                    <a href="">Courses</a>
                 </li>
                 <li class="logotitle">
-                    <img src="../logos/graduated.png" alt="">
-                    <a href="">Students</a>
+                    <img class="logo" src="../logos/profile.png" alt="">
+                    <a href="">Profile</a>
                 </li>
                 <li class="logotitle">
-                    <img src="../logos/graduated.png" alt="">
-                    <a href="">Students</a>
+                    <img class="logo" src="../logos/gear.png" alt="">
+                    <a href="">Settings</a>
                 </li>
                 <li class="logotitle">
-                    <img src="../logos/graduated.png" alt="">
-                    <a href="">Students</a>
-                </li>
-                <li class="logotitle">
-                    <img src="../logos/graduated.png" alt="">
-                    <a href="">Students</a>
+                    <img class="logo" src="../logos/door-knob.png" alt="">
+                    <a href="">Log Out</a>
                 </li>
 
             </ul>
+        </div> -->
+    <aside>
+        <div id="mySidebar" class="sidebar">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="#"> Dashboard</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/grammar.png" alt="">
+                <a href="#">Teachers</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graduated-student.png" alt="">
+                <a href="#">Students</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/learning.png" alt="">
+                <a href="#"> Courses</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/profile.png" alt="">
+                <a href="#"> Profile</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/gear.png" alt="">
+                <a href="#"> Settings</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/door-knob.png" alt="">
+                <a href="#"> Log Out</a>
+
+            </div>
+            <p class="copyrights">© 2023 The President and Fellows of E School</p>
+        </div>
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776; </button>
+
         </div>
     </aside>
-    <div class="container">
+    <div class="container" id="container">
 
         <div class="container1">
             <div class="item" id="item1">
@@ -75,7 +135,7 @@
                 <p>Schools</p>
             </div>
             <div class="item" id="item4">
-                <h2>35000000 LBP</h2>
+                <h2>35000$</h2>
                 <p>Income</p>
             </div>
 
@@ -83,19 +143,19 @@
         <div class="container2">
             <table class="dash1">
                 <tr>
-                  <th>
-                    <div class="table-header">
-                        <h2>Recent payments</h2>
-                      <button class="btn">View All</button>
-                      
-                    </div>
-                  </th>
+                    <th>
+                        <div class="table-header">
+                            <h2>Recent payments</h2>
+                            <button class="btn">View All</button>
+
+                        </div>
+                    </th>
                 </tr>
                 <tr>
-                  <th>Name</th>
-                  <th>School</th>
-                  <th>Amount</th>
-                  <th>Option</th>
+                    <th>Name</th>
+                    <th>School</th>
+                    <th>Amount</th>
+                    <th>Option</th>
                 </tr>
                 <tr>
                     <td>john doe</td>
@@ -142,21 +202,21 @@
             </table>
             <table class="dash2">
                 <tr class="header">
-                  <th class="header-item">
-                    <h2>New Students</h2>
-                  </th>
-                  <th  class="header-item">
-                    <button class="btn">View All</button>
-                  </th>
+                    <th class="header-item">
+                        <h2>New Students</h2>
+                    </th>
+                    <th class="header-item">
+                        <button class="btn">View All</button>
+                    </th>
                 </tr>
                 <tr>
-                  <th>Name</th>
-                  <th>Id</th>
-                  <th>Options</th>
+                    <th>Name</th>
+                    <th>Id</th>
+                    <th>Options</th>
                 </tr>
-            
+
                 <tr>
-                    <td>dana alabdalla</td>
+                    <td>danah alabdalla</td>
                     <td>911</td>
                     <td>View</td>
                 <tr>
