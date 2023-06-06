@@ -3,201 +3,166 @@
     --btnhovergray: #36454f;
     --white: white;
     --black: black;}
+   
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      nav{
-        top: 0;
-        position: fixed;
-        z-index: +1;
-        display: flex;
-        flex-direction: row;
-        height: 10vh;
-        width: 100%;
-        background-color: var(--orange);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: large;
-        justify-content: space-around;
-        align-items: center;
-        cursor: pointer;
-      }
-      .nav-list{
-        display: flex;
-        flex-direction: row;
+    .sidebar {
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Stay on top */
+      top: 0;
+      left: 0;
+      background-color: var(--orange); /* */
+       /* Disable horizontal scroll */
+      padding-top: 60px; /* Place content 60px from the top */
+      transition: 0.5s; 
+      overflow: hidden;/* 0.5 second transition effect to slide in the sidebar */
       
-      }
- 
-      h3{
-        margin-left: 50px;
-      }
-      
-      h2{
-        text-align: center;
-        font-size: 50px;
-      }
-      
-      @keyframes example {
-        0%   { left:0px; top:0px;}
-        25%  { margin-left:200px; top:0px;}
-        
-      }
-      ul{
-      list-style: none;
-      }
-      a{
-        color: #36454f;
-        text-decoration: none;
-        height: 50px;
-      }
-      li{
-        padding: 20px;
-      }
-      nav li:hover{
-       
-        border-bottom: var(--btnhovergray) 3px solid;
-        
-        
-      
-      }
+    }
     
-    h1{
-        font-size: 50px;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        margin-left: 500px;
-        color: white;
-        animation-name: example;
-        animation-duration: 3s;
-        animation-iteration-count: 1;
-        animation-direction: alternate-reverse;
+    /* The sidebar links */
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: var(--black);
+      /* display: block; */
+      transition: 0.3s;
+    }
+    
+    /* When you mouse over the navigation links, change their color */
+    .sidebar a:hover {
+      color: var(--white);
+    }
+    
+    /* Position and style the close button (top right corner) */
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    /* The button used to open the sidebar */
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: var(--orange);
+      color: var(--white);
+      padding: 10px 15px;
+      border: none;
+    }
+    
+    .openbtn:hover {
+      background-color: #444;
+    }
+    
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-left .5s; /* If you want a transition effect */
+      padding: 20px;
+    }
+    
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+      h1{
+        font-size: 20px!important;
+        height: 10px;
       }
-     
+    }
+    .logotitle {
+      display: flex;
+      flex-direction: row;
+    padding-bottom: 10%;
+    padding-left: 10%;
+      
+  } 
+  
+  .logotitle a {
+      text-decoration: none;
+      color: var(--black);
+  }
+  .logo{
+      width: 40px;}
+      .copyrights{
+          text-align: center;
+          padding-left: 10px;
+          padding-top: 140px;
+          font-size: smaller;
+      
+      }
       
    
       main {
         padding: 20px;
       }
-      .search,
+      .search-section,
       .class-section,
       .student-section {
         margin-bottom: 20px;
       }
       
   
-      .fill-container{
-        display: flex;
-        flex-direction: column;
-        padding-top: 70px;
-    
-      }
-      .container{
-        display: flex;
-        flex-direction: row;
-        padding: 10px;
-      }
-      /* .search-field{
-      position: relative;
-        width: 220px;
-      } */
-      .search{
-        
-        padding: 10px;
-        font-size: 16px;
-        display:block;
-        width: 220px;
-        margin-left: 300px;
-        border-radius: 10px;
-        background-color: var(--btnhovergray);
-        color: var(--white);
-      }
-      #class-select {
-        width: 200px;
-        padding: 10px;
-        font-size: 16px;
-        
-
-      }
-
+      
 
   
-      #subject-select{
-        width: 200px;
-        padding: 10px;
-margin-left: 40px;        font-size: 16px;
-    }
- 
-      .table-container{
-        padding-top: 30px;
-        width: 100%;
-        display: table;
-      }
-      table{
-        border: 1px solid var(--black);
-        border-collapse: collapse;
-        width: 80%;
-        margin-left: 100px;
-      }
-      td{
-        border: 1px solid var(--orange);
-        border-collapse: collapse;
-        height: 50px;
-        width: 10%;
-        text-align: center;
-        /* vertical-align: bottom; */
-        padding: 10px;
-        background-color: var(--white);
-        color:var(--black)
-
-
-
-
-      }
-      .action{
-    display: flex;
-    justify-content: space-between;
-
-
-      }.text{
-        width: 80px;
-        height: 40px;
-
-      }
-      th{
-        border: 1px solid var(--black);
-
-        background-color: var(--orange);
-        color: var(--white);
-        border-collapse: collapse;
-        height: 50px;
-        width: 10%;
-        text-align: center;
-        /* vertical-align: bottom; */
-        padding: 10px;
-      }
-      select {
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        background-color: var(--btnhovergray);
-        color: var(--white);
-        width: 200px;
-      }
       
-      option {
-        background-color: var(--orange);
-        color: var(--white);
-        padding: 8px;
-      }
-      
-      option:hover {
+      #img1,#img2{
         background-color: var(--white);
       }
+      .my-orange-bg{background-color: var(--white);}
+      /* background: rgb(251,139,36);
+      background: linear-gradient(90deg, rgba(251,139,36,1) 35%, rgba(0,212,255,1) 100%);        padding: 10px;} */
+      .rounded{
+          border-radius: 40px !important;
+      }
       
-      option:checked {
-        background-color: var(--btnhovergray);
+      #Grades{
+          border-radius: 30px 0 20px 0;
       }
     
-      
+      #dateToday {
+          border-radius: 0 30px 0 30px !important;}
+          h1 {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--orange);
+              font-size: 32px !important;
+              background-color: var(--white);
+              text-shadow: 2px 2px 3px var(--black);
+              box-shadow: 3px 5px 5px var(--black);
+              border: 2px solid var(--black);
+              height: 60px;}
+
+              label {
+                  margin-bottom: 10px;
+              color: var(--orange);
+          font-weight: bold;
+          font-size: 20px!important;
+          text-shadow: 1px 1px 2px var(--black);
+      }
+          label:hover{
+              transform: scale(1.1);
+      transition: all 0.5s ease  ;
+          }
+
+
+                  .table-white {
+                      color: var(--btnhovergray); 
+                    }
+                    .table-bordered td, .table-bordered th {
+                    }
+                      .table td, .table th {
+                          padding: .75rem;
+                          vertical-align: top;
+                      }
+                      th{ text-shadow: 1px 1px 2px var(--black);
+                          color: var(--orange);
+                        }
+#container{
+  width: 75%;
+ }
