@@ -105,9 +105,17 @@ h1 {
     color: var(--white);
 
 }
-.col{
+ .col{
     padding: 1rem;
-    background-color: #33b5e5;
+    background-color: #fb8b24;
     border: 2px solid #fff;
     color: #fff;
+} 
+
+button:active{
+  background-color: #fb8b24;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fb8b24 !important;
 }
