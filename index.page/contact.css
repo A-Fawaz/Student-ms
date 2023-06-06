@@ -51,6 +51,7 @@ body{
        display: inline-block;
        margin-top: 0px;
        color: #fff;
+       cursor: pointer;
       }
       .btn-light{
         background: #f4f4f4;
@@ -63,14 +64,14 @@ body{
       i{
         color: rgb(187, 43, 43) ;
        }
-       .box{
-         width: 33.3%;
-         float: left;
-         padding-top: 20px;
-         text-align: center;
-         height: 300px;
-       }
-  
+          .box{
+            width: 33.3%;
+            float: left;
+            padding-top: 20px;
+            text-align: center;
+            height: 300px;
+          }
+      
   
   .container {
     overflow: auto;
@@ -291,4 +292,12 @@ body{
       transform: rotate(359deg);
     }
   }
-  
+
+ p{
+  display: inline;
+ }
+
+ .alert{
+  font-size: 15px;
+  color: red;
+ }
