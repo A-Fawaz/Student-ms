@@ -3,6 +3,12 @@
     --btnhovergray: #36454f;
     --white: white;
     --black: black;}
+    * {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
     nav{
         top: 0;
         position: fixed;
@@ -83,9 +89,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
+        margin-bottom: 40px;
         width: 50%;
-        height: 75vh;
+        height: 70vh;
         margin-right: 120px;
         background-color: rgba(255, 255, 255, 0.6);
         padding-top: 10px;
@@ -93,16 +100,18 @@
         border-top: 1px solid var(--orange);
         border-left: 1px solid var(--orange);
     }
+  
       
       .row1 {
         display: flex;
         flex-direction: row;
         background-color: var(--white);
-        width: 80vh;
+        width: 100%;
         height: 25vh;
+        margin-bottom: 10px;
         justify-content: space-around;
-        align-items: center;
-        /* padding-top: 20px; */
+        align-items: start;
+        padding-top: 10px;
         text-align: center;
 
 
@@ -113,13 +122,12 @@
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        padding-top: 20px;
+        margin-bottom: 10px;
 
         background-color: var(--white);
-        width: 80vh;
+        width: 100%;
         height: 25vh;
         justify-content: space-around;
-        padding-bottom: 30px;
         text-align: center;
 
 
@@ -136,7 +144,7 @@
 
         border-radius: 10px;
         background-color: var(--white);
-        box-shadow: 5px 5px 5px var(--orange);
+        box-shadow: 1px 1px 3px var(--orange);
     border-top: 1px solid var(--orange);
     border-left: 1px solid var(--orange);
       }
@@ -145,6 +153,7 @@
         font-size: 16px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: var(--btnhovergray);
+        margin-top: 10px;
     }
     @media only screen and (max-width: 600px) {
         nav {
@@ -166,7 +175,7 @@
       
       
       .image1{
-        width: 300px;
+        width: 30%;
         height: 300px;
       }
       
