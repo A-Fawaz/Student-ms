@@ -7,7 +7,6 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      overflow: hidden;
     }
     nav{
         top: 0;
@@ -37,6 +36,9 @@
       h2{
         text-align: center;
         font-size: 50px;
+      }
+      body{
+        overflow: hidden;
       }
       
       @keyframes example {
@@ -96,9 +98,7 @@
         margin-right: 120px;
         background-color: rgba(255, 255, 255, 0.6);
         padding-top: 10px;
-        box-shadow: 5px 5px 5px var(--orange);
-        border-top: 1px solid var(--orange);
-        border-left: 1px solid var(--orange);
+        box-shadow: 0px 0px 15px 1px #36454f;
     }
   
       
@@ -137,6 +137,10 @@
         width:15vh ;
         height: 15vh;
       }
+      .images:hover{
+        scale: 110%;
+
+      }
       .btn1{
         width: 20vh;
         height:20vh;
@@ -155,19 +159,6 @@
         color: var(--btnhovergray);
         margin-top: 10px;
     }
-    @media only screen and (max-width: 600px) {
-        nav {
-          display: flex;
-         flex-wrap: wrap;
-      
-        }
-      
-        ul{
-          flex-wrap: wrap;}
-          .middle{
-            flex-wrap: wrap;
-        
-          }}
     .btn:hover{
          
      }
@@ -178,5 +169,58 @@
         width: 30%;
         height: 300px;
       }
-      
+   
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+  #firstimg{
+   display: none;
+  }
+
+  .nav-list {
+    margin-top: 20px;
+  }
+
+  h1 {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  body{
+    overflow-y: scroll;
+  }
+
+  .container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 100px;
+    height: fit-content;
+align-items: center; 
+margin-right: 80px;
+padding-top: 20px;
+margin-top: 30px;
+}
+
+  .row1,
+  .row2 {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .images {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .btn1 {
+    width: 12vh;
+    height: 12vh;
+  }
+}
       
