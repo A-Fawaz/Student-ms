@@ -23,7 +23,7 @@ body {
 /* The sidebar menu */
 .sidebar {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    width: 250px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -57,6 +57,7 @@ body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    visibility: hidden;
   }
   
   /* The button used to open the sidebar */
@@ -363,4 +364,14 @@ li:hover {
 .item{
     height: 100px
     width:70px;
-}}
+}
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0px;
+    
+  }
+  .closebtn{
+    visibility: visible !important;
+  }
+
+}
