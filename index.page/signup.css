@@ -1,3 +1,10 @@
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -185,8 +192,8 @@ h1{
   }
   
   .btn:hover{
-    background-color: white;
-    color: #fb8b24;
+    background-color:var(--btnhovergray);
+    /* color: #fb8b24; */
   }
   .div1{
     text-align: center;

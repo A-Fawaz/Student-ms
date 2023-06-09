@@ -14,7 +14,6 @@ body{
   background-color: white;
   background-color: var(--white); 
   background-size: cover;
-  /* overflow-y:hidden; */
 }
 .row-info-cont{
   display: flex;
@@ -95,7 +94,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 250px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
@@ -188,7 +187,8 @@ padding-left: 10%;
 @media only screen and (max-width:600px){
   .row-info-cont{
     display: flex;
-    flex-direction: column;  }
+    flex-direction: column; 
+  overflow-x: hidden; }
 
   .copyrights{
     padding-top: 10px;
