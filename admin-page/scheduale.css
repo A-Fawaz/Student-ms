@@ -1,0 +1,219 @@
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;}
+  *{margin: 0;
+  padding: 0;
+overflow: hidden;
+box-sizing: border-box;}
+
+
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: var(--orange); /* */
+   /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--black);
+  /* display: block; */
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: var(--white);
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+.logotitle {
+  display: flex;
+  flex-direction: row;
+padding-bottom: 10%;
+padding-left: 10%;
+  
+} 
+
+.logotitle a {
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  width: 40px;}
+  .copyrights{
+      text-align: center;
+      padding-left: 10px;
+      padding-top: 140px;
+      font-size: smaller;
+  
+  }
+  #img1,#img2{
+    background-color: var(--white);
+  }
+  :root{
+    --orange: #fb8b24;
+    --btnhovergray: #36454f;
+    --white: white;
+    --black: black;}
+
+    body{
+        margin-top:20px;
+    }
+    .bg-light-gray {
+        background-color: #f7f7f7;
+    }
+    .table-bordered thead td, .table-bordered thead th {
+        border-bottom-width: 2px;
+    }
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #dee2e6;
+    }
+    
+    
+    .bg-sky.box-shadow {
+        box-shadow: 0px 5px 0px 0px #00a2a7
+    }
+    
+    .bg-orange.box-shadow {
+        box-shadow: 0px 5px 0px 0px #af4305
+    }
+    
+    .bg-green.box-shadow {
+        box-shadow: 0px 5px 0px 0px #4ca520
+    }
+    
+    .bg-yellow.box-shadow {
+        box-shadow: 0px 5px 0px 0px #dcbf02
+    }
+    
+    .bg-pink.box-shadow {
+        box-shadow: 0px 5px 0px 0px #e82d8b
+    }
+    
+    .bg-purple.box-shadow {
+        box-shadow: 0px 5px 0px 0px #8343e8
+    }
+    
+    .bg-lightred.box-shadow {
+        box-shadow: 0px 5px 0px 0px #d84213
+    }
+    
+    
+    .bg-sky {
+        background-color: #02c2c7
+    }
+    
+    .bg-orange {
+        background-color: #e95601
+    }
+    
+    .bg-green {
+        background-color: #5bbd2a
+    }
+    
+    .bg-yellow {
+        background-color: #f0d001
+    }
+    
+    .bg-pink {
+        background-color: #ff48a4
+    }
+    
+    .bg-purple {
+        background-color: #9d60ff
+    }
+    
+    .bg-lightred {
+        background-color: #ff5722
+    }
+    
+    .padding-15px-lr {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .padding-5px-tb {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .margin-10px-bottom {
+        margin-bottom: 10px;
+    }
+    .border-radius-5 {
+        border-radius: 5px;
+    }
+    
+    .margin-10px-top {
+        margin-top: 10px;
+    }
+    .font-size14 {
+        font-size: 14px;
+    }
+    
+    .text-light-gray {
+        color: #d6d5d5;
+    }
+    .font-size13 {
+        font-size: 13px;
+    }
+    
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #dee2e6;
+    }
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+    #container{
+margin-left: 30vh;    }
+   
