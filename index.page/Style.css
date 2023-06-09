@@ -283,7 +283,7 @@ h3  {
   padding-top: 15vh;
 }
 .containerbottom {
-  height: 400px; /* Set a fixed height for the container */
+  height: 25%; /* Set a fixed height for the container */
   border: 1px solid #000; /* Just for visualization */
   background-color: #000;
   color: var(--white);
