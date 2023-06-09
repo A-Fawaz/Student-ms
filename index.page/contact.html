@@ -12,7 +12,7 @@
   <meta name="keywords" content="hotel lebanon, allo squad, HAS,Hotel Allo-Squad">
 
 
-  <title>Website Feedback Form</title>
+  <title>Contact Us</title>
 
 
 </head>
@@ -35,25 +35,29 @@
   <section id="contact">
     <div class="container">
       <h1 class="l-heading"><span class="primary-tex"> Contact </span> Us </h1>
-      <p>please fill out the form below to contact us!</p>
+      <p>Feel free to ask about anything!</p>
       <br>
       <div>
         <label for="name">Name</label>
         <input type="name" name="name" id="name">
+        <p class="alert" id="alert1"></p>
       </div>
       <div>
         <label for="Last-name">Last name</label>
         <input type="name" name="name" id="Last-name">
+        <p class="alert" id="alert2"></p>
       </div>
       <div>
-        <label for="Email">Email</label>
+        <label for="Email">Email</label>  
         <input type="Email" name="Email" id="Email">
+        <p class="alert" id="alert3"></p>
       </div>
       <div>
         <label for="Message">Message</label>
         <textarea name="Message" id="Message" cols="30" rows="10"></textarea>
+        <p class="alert" id="alert4"></p>
       </div>
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn" id="submit">Submit</button>
     </div>
   </section>
 
@@ -98,6 +102,42 @@
         
       </footer>
 
+  <script>
+    let submit = document.getElementById('submit');
+    submit.addEventListener("click",()=>{
+let fname = document.getElementById('name').value;
+let lname = document.getElementById('Last-name').value;
+let email = document.getElementById('Email').value;
+let message = document.getElementById('Message').value;
+
+let alert1 = document.getElementById("alert1");
+let alert2 = document.getElementById("alert2");
+let alert3 = document.getElementById("alert3");
+let alert4 = document.getElementById("alert4");
+
+if(fname.trim()===""){
+  alert1.innerHTML="Please fill the name field.";
+}
+
+else if(lname.trim()===""){
+  alert2.innerHTML="Please fill the lastname field.";
+  alert1.innerHTML="";
+}
+
+else if(email.trim()===""){
+alert3.innerHTML="Please fill the email field.";
+alert2.innerHTML="";
+}
+
+else if(message.trim()===""){
+  alert4.innerHTML="Please keep a message.";
+  alert3.innerHTML="";
+}
+else{
+  alert("Thanks for contacting us!");
+}
+    });
+  </script>
 </body>
 
 </html>

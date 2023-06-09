@@ -4,30 +4,179 @@
   --white: white;
   --black: black;
 }
+*{margin: 0;
+  padding: 0;
+box-sizing: border-box;}
+
 body{
-  /* background-image: url('../Student/pexels-max-fischer-5212700.jpg'); */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-size: cover;
-  /* background-color: #fb8b24; */
-  /* background-color: antiquewhite; */
+}
+.co{
+  display: flex;
+  flex-direction: column;
 }
 
-.container1{
-  /* background-color: white; */
-  margin-top: -40px;
-  height: 2000px;
-  
+.grade{
+  font-size: 40px;
+  font-weight: 800;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 50%;
+  margin-top: -70px;
 }
 
-.btn-group-vertical{
-  margin-top: 100px;
-  margin-left: -100px;
-  margin-right: 100px;
-  width: 100px;
-  
+.head{
+  background-color: var(--orange);
+  color: var(--white);
 }
+
+.container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 200px;
+}
+
 
 .table{
-  /* margin-top: 200px;
-  margin-left: 200px;  */
+  /* margin-top: 10vh; */
+  margin-left: 50px;
+  width: 1000px; 
+  align-items: center;
+  text-align: center;
 }
 
+.fb{
+  text-decoration: none;
+  color: white;
+}
+
+.fb:hover{
+  color:black;
+}
+  /*start of sidebar css */
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: var(--orange); /* */
+   /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--black);
+  /* display: block; */
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.logotitle {
+  display: flex;
+  flex-direction: row;
+padding-bottom: 10%;
+padding-left: 10%;
+  
+}
+
+.logotitle a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 20px;
+}
+.logo{
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  
+}
+
+  .copyrights{
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 140px;
+    font-size: smaller;
+
+}
+
+.btn{
+  background-color: #7f888e;
+  border: none;
+  color: white;
+  width: 120px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .table{
+    width: 100px;
+    margin:0px;
+    padding: 0px;
+    font-size: 12px;
+  }
+
+  .table td{
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .table tr{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .co{
+    margin-left: -140px;
+  }
+}
