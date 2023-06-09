@@ -1,12 +1,10 @@
-var modal = document.querySelector(".modal");
-   var btn = document.querySelector(".openModal");
-   var span = document.querySelector(".close");
+var modal = document.querySelector(".modal fade");
+   var btn = document.querySelector(".trigger-btn");
+  
    btn.addEventListener("click", () => {
       modal.style.display = "block";
    });
-   span.addEventListener("click", () => {
-      hideModal();
-   });
+   
    function hideModal() {
       modal.style.display = "none";
    }
@@ -21,7 +19,7 @@ var modal = document.querySelector(".modal");
 
     if (hidden) {
        element.removeAttribute("hidden");
-       button.innerText = "Hide tr";
+       
     } else {
        element.setAttribute("hidden", "hidden");
       
