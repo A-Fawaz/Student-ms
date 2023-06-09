@@ -8,7 +8,7 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;/* this to delete whitespaces on the sides*/
-  width: auto;
+  width: 100%;
   height: auto;
   overflow-x: hidden;/*this to takeout vertical scrollbar*/
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -29,7 +29,7 @@ nav{
   cursor: pointer;
 }
 nav h1{
-  margin-left: 0;
+  margin-left: 110px;
   animation-name: example;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -56,15 +56,12 @@ li{
   color: var(--black);
  
 }
-
 .nav-list li::after{
   display:block;
   content: '';
   border-bottom: var(--btnhovergray) 3px solid;
   transform: scaleX(0);  
   transition: transform 300ms ease-in-out;
- 
-
 }
 
 .nav-list li:hover::after{
@@ -93,18 +90,17 @@ li{
   color: var(--orange);
   transition: .5s ease-in;
 }
-
 .header-container{
   padding-top: 70px;
   width: 100%;
   height: 100vh;
-  background-image: url('../images/pexels-max-fischer-5212700.jpg');
+  background: url('../images/pexels-max-fischer-5212700.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
-
 }
 header{
+  box-sizing: border-box;
   background-size: cover;
   width: 100%;
   height: 200px;
@@ -117,8 +113,6 @@ header{
   margin-left: 13vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 .location-logo{
   width: 30px;
   height: 30px;
@@ -126,7 +120,6 @@ header{
   margin-top: 35px;
   border-radius: 70%;
 }
-
 h1{
   font-size: 50px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -137,10 +130,7 @@ h2{
   font-size: 50px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-
 }
-
 .field{
   width: 300px;
   height: 50px;
@@ -149,37 +139,31 @@ h2{
   border: none;
   box-shadow: 5px 5px 7px var(--black);
 }
-
 .forget{
 color: black;
 font-size: 15px;
 margin-left: 10px;
 }
-
 .forget:hover{
   color: blue;
 }
-
-
-
 .middle{
+  color: var(--black);
   display: flex;
   flex-direction: row;
   text-align: center;
-  background-color: var(--white);
+  background-color: rgba(54, 69, 79, 0.2);
   padding: 30px;
 }
 .icon1{
   width: 100px;
   border-radius: 50%;
 }
-
 .icon{
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-
 .textwithborder {
   font-size: large;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -197,26 +181,27 @@ margin-left: 10px;
   margin: 10px 40px;
   transition: transform .7s
 }
-
 .about:hover{
   transform: scale(1.2);
   transition: 0.5s ease-in-out;
  
 }
 .textwithborder:hover{
-  background-color: #fb8b24;
+  background-color: var(--white);
+}
+.teachers{
+  display: block;
 }
 
-.teachers img{
-  height: 30%;
-  width: 34%;
-  border: 5px solid white;
-  background-color: #dddd;
-  
+.teachers .theimgs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 33.33333%;
+  border: solid 2px orange;
 }
 .teachers img:hover{
   animation: zoomIn 2s ease-in-out ;
-  
   visibility: visible;
 }
 @keyframes zoomIn{
@@ -232,13 +217,17 @@ margin-left: 10px;
   }
 
 }
+html{
+
+ overflow-x: hidden;
+
+}
 .container {
   position: relative;
   display: flex;
   flex-direction: row;
+  background: ;
 }
-  
-
 .text-overlay1 {
   position: absolute;
   top: 80%;
@@ -254,7 +243,6 @@ margin-left: 10px;
   font-weight: bold;
   border-radius: 5px;
 }
-
 .text-overlay2{
   position: absolute;
   top: 80%;
@@ -285,33 +273,22 @@ margin-left: 10px;
   font-weight: bold;
   border-radius: 5px;
 }
-
 h3  {
   color: var(--white);
   font-size: 32px;
   font-family: Arial, sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
- 
-  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
-
-
 .middle{
   padding-top: 15vh;
 }
-
-
 .containerbottom {
-  
- 
-  height: 400px; /* Set a fixed height for the container */
+  height: 25%; /* Set a fixed height for the container */
   border: 1px solid #000; /* Just for visualization */
-  
   background-color: #000;
   color: var(--white);
   padding-bottom: 30px;
 }
-
 .text {
   display: flex;
   flex-direction: row;
@@ -322,7 +299,6 @@ h3  {
   color: gray;
   font-size: large;
 }
-  
 .text a {
   color: gray;
  text-decoration: none;
@@ -334,11 +310,9 @@ li a{
 li a:hover{
   color: var(--btnhovergray);
 }
-
 .text a:hover{
   color: var(--white);
-  text-decoration: underline;
-  
+  text-decoration: underline; 
 }
 .logo-bottom{
   display: flex;
@@ -349,7 +323,6 @@ li a:hover{
   font-size: 50px;
   color: var(--white);
 }
-
 .logo-bottom img{
   width: 50px;
   height: auto;
@@ -380,6 +353,17 @@ li a:hover{
   flex-direction: row;
   align-items: center;
 }
+.link {
+  color: gray;
+ text-decoration: none;
+ padding-bottom: 0 15px;
+}
+.link:hover{
+  color: var(--white);
+}
+.copyrights{
+margin-top: 5vh;
+}
 @keyframes example {
   0%   { left:0px; top:0px;}
   25%  { margin-left:200px; top:0px;}
@@ -398,24 +382,113 @@ li a:hover{
     transform: rotate(359deg);
   }
 }
-
+.slideshow-container{
+display: none;
+}
 @media only screen and (max-width: 600px) {
+  .header-container{
+    padding-top: 70px;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/pexels-max-fischer-5212700.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+ 
+  .btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--black) ;
+    cursor: pointer;
+    border: none;
+    width: 14%;
+    height: inherit;
+    margin-left: 30px;
+    background-color: #faf0e6;
+    font-size: larger;
+  }
+  .location{
+    display:flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: 0vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  body{
+    width: 100%;
+  }
   nav {
     display: flex;
    flex-wrap: wrap;
+   height: 15vh;
 
   }
 
   ul{
-    flex-wrap: wrap;}
-  .middle{
     flex-wrap: wrap;
+    margin-right: 50px;
+   
+  }
+  .nav-list li{
+    padding-top: 50px;
+    margin-left: -10px;
+
 
   }
-  .teachers img {
+  .nav-list{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .middle{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .teachers .theimgs {
+   display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
+    width: 33%;
+    border: solid 2px orange;
+  }
+  .teachers{
+    display: none;
+  }
+  .slideshow-container{
+    display: block;
+  }
+  .text-overlay1, .text-overlay2, .text-overlay3{
+    width: 25%;
+  }
+  .on-pic{
+   font-size: 10px;
+  }
+  .nav-list{
+    margin-top: 0;
+    padding-top: 0px;
+    margin-left: 10px;
+  }
+  h1{
+   position: absolute;
+   top: 10px;
+   left: -30px;
+    margin-top: -10px;
+    margin-bottom:-55px;
+    margin-right: px;
+    font-size: 40px;
+  }
+  .text{
+    
+    margin-bottom: 10vh;
+  }
+  footer{
+    overflow-y: hidden;
   }
 }

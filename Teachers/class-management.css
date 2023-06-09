@@ -1,161 +1,190 @@
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;
+}
+
+ *{margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
+
 body{
-  /* background-image: url('../Student/pexels-max-fischer-5212700.jpg'); */
-  background-size: cover;
-  background-color: #fb8b24;
-  /* background-color: antiquewhite; */
+  /* background-size: cover; */
+  padding: auto;
+  margin: auto;
+  background-color: var(--white);
+  overflow-x: hidden;
 }
 
-.container-full{
+ /* .containerF{
   background-color: white;
-  margin-top: -40px;
-  
-}
-
-@keyframes example {
-  0%   { left:0px; top:0px;}
-  25%  { margin-left:200px; top:0px;}
-  
-}
-
-.prof-nav{
-  width: 50px;
-  height: 50px;
-  margin-left: 400px;
-  margin-top: 5px;
-  }
-  
-  .prof-nav1{
-    float: right;
-    padding-right: 20px;
-    margin-right: 5px;
-  }
-  
-  .prof-nav a{
-    padding: 14px 16px;
-    float: left;
-    margin-right: 20px;
-    text-align: center;
-  }
-  
-  a.nav{
-    width:70px;
-    height: 30px;
-    text-align: center;
-    margin-left: 10px;
-  
-  }
-  
-  a.nav:active{
-    background-color:#f2f2f2 ;
-    color: black;
-  }
-  .nav-container{
-    background-color: #fb8b24;
-    width: 100%;
-    height: 60px;
-    color: white;
-    align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    position: fixed; 
-    top: 0; 
-    /* border-bottom: 3px solid black; */
-  }
-  
-  .nav{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 14px;
-    text-decoration: none;
-    font-size: 17px;
-    /* margin-left: 11%; */
-  }
-  
-  .nav:hover{
-    color:black ;
-    border-bottom: 2px solid black;
-  }
-  
-.classes-div{
-display: flex;
-flex-direction: column;
-}
-
-.titlename{
-  font-size: 40px;
-  color:black;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin-left: 30px;
-  margin-top: 100px;
-  animation-name: example;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-  width: 500px;
-  height: 100px;
-}
-
-.class-container{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  inline-size: 3;
-}
-
-.classes-div{
-  width: 351px;
-  height: 340px;
-  background-color: #f1f1f1;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-left: 70px;
-  margin-bottom: 30px;
-
-}
-
-.class-name{
-  font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: balck;
-  margin-left: 120px;
-  margin-top: 30px;
-}
-
-.gradeX{
-  background-color: #fb8b24;
-  width: 350px;
-  height: 100px;
-  margin-top: 80px;
-  border: radius bottom 5px ;
-  border: 2px solid white;
-}
-
-.class-icon{
-  width:100px;
-  height: 100px;
-  margin-left: 120px;
-  padding-top: 10px;
-}
-
-/* .back-btn{
-  width: 30px;
-  height: 30px;
-  border: none;
+  margin-top:5vh;
+  margin-left: 15vh;
 } */
+  
+  .for-cont{
+     /* margin-left:11vh; */  
+  }
 
-.for-edit{
-  margin-left: 130px;
-  margin-top: 30px;
-  width: 80px;
-  height: 40px;
+.card{
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 200px;
+  background-color: var(--white);
+  border: 2px solid black ;
+  margin-left: 170px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  z-index: 0;
+  
+}
+
+
+
+
+.card-img{
+  width:200px;
+  height: 150px;
+
+}
+
+.info-container{
+  height: 100px;
+  background-color: var(--orange);
+}
+
+.grade-name{
+  font-size: 20px;
+  font-weight:bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 60px;
+  margin-top: 3px;
+  color: var(--white);
+}
+
+.student-number{
   font-size: 10px;
+  color: #7a7878;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 60px;
+  margin-top: 5px;
+}
+
+.card-btn{
+  width: 90px;
+  font-size: 10px;
+  margin-left: 50px;
+  margin-top: 10px;
+  height: 30px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  background-color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.card-btn:hover{
+  color: var(--white);
+  background-color: var(--btnhovergray);
+}
 
+ /*start of sidebar css */
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: var(--orange); /* */
+   /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  overflow: hidden;
+  
+}
 
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--black);
+  /* display: block; */
+  transition: 0.3s;
+}
 
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.logotitle {
+  display: flex;
+  flex-direction: row;
+padding-bottom: 10%;
+padding-left: 10%;
+  
+}
+
+.logotitle a {
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  width: 40px;
+}
+
+  .copyrights{
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 140px;
+    font-size: smaller;
+
+}
+
+@media only screen and(max-width:600px){
+  .card-img{
+    margin-left: 50px;
+  }
+
+  
+}

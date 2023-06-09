@@ -1,187 +1,258 @@
 :root{
-    --orange: #fb8b24;
-    --btnhovergray: #36454f;
-    --white: white;
-    --black: black;}
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;}
 
-    * {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+
+.my-orange-bg{
+  background-color: var(--white);
+  text-shadow: 1px 1px 5px var(--black);
+  box-shadow: 0px 0px 15px 1px #36454f;
+}
+.rounded{
+  border-radius: 40px !important;
+}
+
+#studentagenda{
+  border-radius: 30px 0 20px 0;
+}
+#dateToday {
+  border-radius: 0 30px 0 30px !important;}
+  #submit:hover{
+      transform: scale(1.1);
+      transition: all 0.5s ease  ;
+  }
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  font-size: 32px !important;
+  background-color: var(--white);
+  text-shadow: 2px 2px 3px var(--black);
+  box-shadow: 3px 5px 5px var(--black);
+  border: 2px solid var(--black);
+  height: 60px;}
+  /* #row1{
+      display: flex;
+      align-items: center;
+  justify-content: center;
+  } */
+
+  /* #taskcol{
+      align-items: center;
+      justify-content: center;
+  } */
+  body{
+  }
+  #tasks{
+      height: 150px;
+      width: 80%;
+      border-radius: 10px;
+  }
+  label {
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 3px var(--black);
+      color: var(--orange);
+      background-color: var(--white);
+font-size: 24px;
+
+  font-size: 24px;}
+      #agendaimg{
+          height: 30vh;
+          width: 100%;
       }
-      .parent{
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
-        grid-template-rows: repeat(5,1fr);
-        grid-column-gap: 2px;
-        grid-row-gap: 0px;
-      }
-      .div1{
-        grid-area: 1/1/2/6;
-      }
-      .div2{
-        grid-area: 2/1/6/3;
-      }
-      .div3{
-        grid-area: 2/3/6/6;
-      }
-      :root{
-        --orange: #fb8b24;
-        --btnhovergray: #36454f;
-        --white: white;
-        --black: black;}
-    
-        * {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-          }
-          nav{
-            top: 0;
-            position: fixed;
-            z-index: +1;
-            display: flex;
-            flex-direction: row;
-            height: 10vh;
-            width: 100%;
-            background-color: var(--orange);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: large;
-            justify-content: space-around;
-            align-items: center;
-            cursor: pointer;
-          }
-          .nav-list{
-            display: flex;
-            flex-direction: row;
-          
-          }
-     
-          h3{
-            margin-left: 50px;
-          }
-          
-          h2{
-            text-align: center;
-            font-size: 50px;
-          }
-          
-          @keyframes example {
-            0%   { left:0px; top:0px;}
-            25%  { margin-left:200px; top:0px;}
-            
-          }
-          ul{
-          list-style: none;
-          }
-          a{
-            color: #36454f;
-            text-decoration: none;
-            height: 50px;
-          }
-          li{
-            padding: 20px;
-          }
-          nav li:hover{
-           
-            border-bottom: var(--btnhovergray) 3px solid;
-            
-            
-          
-          }
+      .custom-file-input {
+          opacity: 0;
+          position: absolute;
+          pointer-events: none;
+        }
         
-        h1{
-            font-size: 50px;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            margin-left: 500px;
-            color: white;
-            animation-name: example;
-            animation-duration: 3s;
-            animation-iteration-count: 1;
-            animation-direction: alternate-reverse;
-          }
+        .custom-file-label {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          cursor: pointer;
+        }
+        
+        .custom-file-input::-webkit-file-upload-button {
+          visibility: hidden;
+        }
+        
+        .custom-file-input::before {
+          content: 'Browse';
+          display: inline-block;
+          background: #007bff;
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        .custom-file-input:hover::before {
+          background: #0069d9;
+        }
+        
+        .custom-file-input:active::before {
+          background: #0056b3;
+        }
+
+        .sidebar {
+          height: 100%; /* 100% Full-height */
+          width: 0; /* 0 width - change this with JavaScript */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Stay on top */
+          top: 0;
+          left: 0;
+          background-color: var(--orange); /* */
+           /* Disable horizontal scroll */
+          padding-top: 60px; /* Place content 60px from the top */
+          transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+          overflow: hidden;
           
-          form {
-            margin: 20px auto;
-            padding: 100px;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            width:50%;
-          }
-          .div3{
-            display: flex;
-            flex-direction: column;
-            width: 70%;
-            background-color: var(--btnhovergray);
-            padding: 20px;
-            margin: 40px auto;
-            gap: 20px;
-            border-radius: 10px;
-            color: var(--white);
-    align-items: center;
-          }
-          h2 {
-            text-align: center;
-            margin-top: 10px;
-          }
-          label {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--white);
-            font-size: 16px;
-            width: 100px;
-            border-radius: 5px;
-            background-color: var(--btnhovergray);
-          }
-          
-    input[type="text"],
-    textarea {
-      width: 100%;
-      padding: 20px;
-      border: 2px none black;
-      border-radius: 5px;
-      resize: vertical;
-    }
-
-    textarea {
-      height: 100px;
-    }
-
-    button {
-      display: block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: var(--orange);
-      color: var(--white);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: var(--btnhovergray);
-    }
-    select {
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        background-color: var(--white);
-        color: var(--black);
-        width: 200px;
-      }
+        }
+        
+        /* The sidebar links */
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: var(--black);
+          /* display: block; */
+          transition: 0.3s;
+        }
+        
+        /* When you mouse over the navigation links, change their color */
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        /* The button used to open the sidebar */
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: var(--orange);
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: #444;
+        }
+        
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          transition: margin-left .5s; /* If you want a transition effect */
+          padding: 20px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
        
-      option {
-        background-color: var(--orange);
-        color: var(--white);
-        padding: 8px;
-      }
+        #img1,#img2{
+          background-color: var(--white);
+        }
+        .logotitle {
+          display: flex;
+          flex-direction: row;
+        padding-bottom: 10px;
+        padding-left: 10px;
+          
+      } 
       
-      option:hover {
-        background-color: var(--white);
+      .logotitle a {
+          text-decoration: none;
+          color: var(--black);
       }
-      
-      option:checked {
-        background-color: var(--btnhovergray);
-      }
+      .logo{
+          width: 30px;}
+          #img1,#img2{
+            background-color: var(--white);
+          }
+          .copyrights{
+              text-align: center;
+              padding-left: 10px;
+              padding-top: 140px;
+              font-size: smaller;
+          
+          }
+          #agendaimg:hover{
+            scale: 120%;
+          }
+#container:hover{
+
+
+}
+#okkbtn
+{
+  width: 50%;
+  height: 35px;
+  background-color: var(--orange);
+  border: none;
+  cursor: pointer;
+  color: white;
+  -webkit-box-shadow: 0 0 1px #36454f;
+  box-shadow: 0 0 1px #36454f;
+  border-radius: 5px;
+}
+#submitbtn
+{
+  width: 50%;
+  height: 35px;
+  background-color: var(--orange);
+  border: none;
+  cursor: pointer;
+  color: white;
+  -webkit-box-shadow: 0 0 1px #36454f;
+  box-shadow: 0 0 1px #36454f;
+  border-radius: 5px;
+}
+    #okkbtn:hover{
     
+      background-color: var(--btnhovergray);
+
+    }
+    #submitbtn:hover{
+    
+      background-color: var(--btnhovergray);
+
+    }
+
+    .modal {
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    @media screen and (max-height: 600px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+      #agendaimg{
+        display: none !important;
+      }
+    }

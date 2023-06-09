@@ -1,12 +1,18 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7em;
-  }
+:root{
+  --orange: #fb8b24;
+  --btnhovergray: #36454f;
+  --white: white;
+  --black: black;
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/* this to delete whitespaces on the sides*/
+  width: auto;
+  height: auto;
+  overflow-x: hidden;/*this to takeout vertical scrollbar*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
   p{
     font-size: 18px;
   }
@@ -26,6 +32,7 @@
   }
   .l-heading{
     font-size: xx-large;
+    padding-top: 50px;
   }
   .bg-dark{
   background: #333;
@@ -35,9 +42,6 @@
     background: #f7c0aa;
     color: #333;
     }
-    .primary-text{
-        color: #f7c0aa;
-      }
       .btn{
         background: rgb(22, 20, 20);
         padding: 13px 20px;
@@ -45,120 +49,255 @@
         border: none;
        font-size: 18px;
        display: inline-block;
-       margin-top: 20px;
+       margin-top: 0px;
        color: #fff;
+       cursor: pointer;
       }
       .btn-light{
         background: #f4f4f4;
         color: #333;
       }
       .btn:hover{
-        background: #f7c08a;
+        background: #fb8b24;
         color: #333;
       }
       i{
         color: rgb(187, 43, 43) ;
        }
-       .box{
-         width: 33.3%;
-         float: left;
-         padding-top: 20px;
-         text-align: center;
-         height: 300px;
-       }
-  
+          .box{
+            width: 33.3%;
+            float: left;
+            padding-top: 20px;
+            text-align: center;
+            height: 300px;
+          }
+      
   
   .container {
     overflow: auto;
     max-width: 1100px;
+    height: auto;
     margin: auto;
     padding: 0 20px;
+    padding-bottom: 200px;
   
   
   }
-  #nav-bar{
-    font-size: larger;
-    background-color: #fb8b24;
-    color: #fff;
-    overflow: auto;
+  nav{
+    position: fixed;
+    top: 0;
+    z-index: +1;
+    display: flex;
+    flex-direction: row;
     height: 10vh;
-  
-  
+    width: 100%;
+    background-color: var(--orange);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
   }
-  #nav-bar ul{
-    float: right;
-    list-style: none;
-  
-  
-  
-  }
-  #nav-bar li{
-    float: left;
-  
-  
-  
-  }
-  #nav-bar li a{
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    display: block;
-  
-  }
-  #nav-bar .logo{
+  nav h1{
     font-size: 50px;
-   text-decoration: none;
-    color: #fff;
+    color: var(--white)x;
+    margin-left: 110px;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: alternate-reverse;
+  }
+  .nav-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  ul{
+  list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  li{
+    padding: 20px ;
+    color: var(--black);
+    
+  }
+  .nav-list li{
+    color: var(--black);
+   
+  }
+  
+  .nav-list li::after{
+    display:block;
+    content: '';
+    border-bottom: var(--btnhovergray) 3px solid;
+    transform: scaleX(0);  
+    transition: transform 300ms ease-in-out;
+   
   
   }
-  h1, h2, h3{
-    padding-bottom: 20px;
+  
+  .nav-list li:hover::after{
+    transform: scale(1);
+   
   }
-  #nav-bar h1{
-    float: left;
-    padding-top: 20px;
+  .btn{
+    color: var(--black) ;
+    cursor: pointer;
+    border: none;
+    width: 14%;
+    height: inherit;
+    margin-left: 30px;
+    background-color: #faf0e6;
+    font-size: larger;
   }
-  #nav-bar li a:hover, #nav-bar li a.current{
-    height: 10vh;
-    background: #444;
-    color: #f7c0aa;
+  .btn a{
+    color: black;
   }
-    
-
+  .btn a:hover{
+    color: var(--orange);
+  
+  }
+  .btn:hover{
+    background-color:#36454f ;
+    color: var(--orange);
+    transition: .5s ease-in;
+  }
+  
+  #contact{
+    height: 800px;
+  }
 
 
 #contact #name ,#Last-name, #Email , #Message {
     margin-bottom: 1.2rem;
     display: block;
+    padding: 10px 400px;
   
   
   }
-  #contact h1{
-    margin-top: 20px;
+  .containerbottom {
+  
+ 
+    height: 470px; /* Set a fixed height for the container */
+    border: 1px solid #000; /* Just for visualization */
+    color: white;
+    background-color: #000;
+    color: var(--white);
+    padding-bottom: 30px;
+    width: ;
   }
-  #contact input, 
-  #contact textarea{
+  
+  .text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 40px;
+    border: none;
+    color: gray;
+    font-size: large;
+    padding-top: 0px;
+  }
+    
+  .text a {
+    color: gray;
+   text-decoration: none;
+   padding: 0 15px;
+  }
+  li a{
+    color: var(--black);
+  }
+  li a:hover{
+    color: var(--btnhovergray);
+  }
+  
+  .text a:hover{
+    color: var(--white);
+    text-decoration: underline;
+    
+  }
+  .logo-bottom{
+    display: flex;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 50px;
+    color: white;
+    padding-bottom: 50px;
+    
+  }
+  
+  .logo-bottom img{
+    width: 50px;
+    height: auto;
+    animation: rotation 8s infinite linear ;
+    animation-name: example, skew;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: alternate-reverse;
+  }
+  .twoblocks {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactblock{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  
   
   }
-  #contact textarea{
-    height: 200px;
+  .githubblock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-  #contact input:focus, 
-  #contact textarea:focus {
-    outline: none;
-    border-color: #f7c08a;
+  .links {
+    color: gray;
+   text-decoration: none;
+   padding-bottom: 0 15px;
+  }
+  .links:hover{
+    color: white;
+  }
   
+  .copyrights{
+  margin-top: 5vh;
+  }
+  @keyframes example {
+    0%   { left:0px; top:0px;}
+    25%  { margin-left:200px; top:0px;}
+    
+  }
+  @keyframes skew {
+    
+    50% {transform: rotate(180 deg);}
   
   }
-  #contact .btn{
-    margin-bottom: 20px;
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
-  #contact
-  
-  footer p{
-    text-align: center;
-    padding: 20px 0;
-  }
+
+ p{
+  display: inline;
+ }
+
+ .alert{
+  font-size: 15px;
+  color: red;
+ }
