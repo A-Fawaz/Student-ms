@@ -83,7 +83,6 @@ li{
 }
 .btn a:hover{
   color: var(--orange);
-
 }
 .btn:hover{
   background-color:#36454f ;
@@ -191,6 +190,7 @@ margin-left: 10px;
 }
 .teachers{
   display: block;
+  
 }
 
 .teachers .theimgs {
@@ -198,7 +198,7 @@ margin-left: 10px;
   flex-direction: column;
   height: 100%;
   width: 33.33333%;
-  border: solid 2px orange;
+  border: solid 2px var(--orange);
 }
 .teachers img:hover{
   animation: zoomIn 2s ease-in-out ;
@@ -218,7 +218,7 @@ margin-left: 10px;
 
 }
 html{
-
+  scroll-behavior: smooth;
  overflow-x: hidden;
 
 }
@@ -226,7 +226,7 @@ html{
   position: relative;
   display: flex;
   flex-direction: row;
-  background: ;
+
 }
 .text-overlay1 {
   position: absolute;

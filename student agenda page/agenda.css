@@ -18,6 +18,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--black);
 }
+html{
+  margin-left: 300px;
+}
 .logotitle {
     display: flex;
     flex-direction: row;
@@ -53,7 +56,7 @@ body {
   .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 15px;
     color: var(--black);
     /* display: block; */
     transition: 0.3s;
@@ -84,6 +87,7 @@ body {
     color: white;
     padding: 10px 15px;
     border: none;
+    display: none;
      
   }
   
@@ -195,7 +199,10 @@ input:checked + .slider:before {
   bottom: 21%;
 }
 @media only screen and (max-width: 600px) {
-
+ html{
+  margin-left: 0;
+  margin-top: 70px;
+ }
   .switch {
   position: relative;
   display: inline-block;
@@ -204,6 +211,14 @@ input:checked + .slider:before {
   left: 45%;
   top: 5%;
 }
+
+.accordion{
+  /* --bs-accordion-body-padding-x: 1.25rem !important; */
+  width: 400px !important;
+}
+.accordion-item {
+  width: 400px !important;
+}
 .done{
   position: absolute;
   left: 85%;
@@ -211,11 +226,16 @@ input:checked + .slider:before {
 }
 .sidebar {
   padding-top: 15px;
-  width: 0; /* 0 width - change this with JavaScript */}
+  width: 0px; /* 0 width - change this with JavaScript */}
 
 .closebtn{
   visibility: visible !important; 
 } 
+.openbtn{
+  position: absolute;
+  top: 0;
+  display: block;
+}
 }
 @media only screen and (min-device-width: 768px) 
 and (max-device-width: 1024px) 
