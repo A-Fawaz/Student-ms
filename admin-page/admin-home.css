@@ -98,7 +98,8 @@
         margin-bottom: 40px;
         background-color: rgba(255, 255, 255, 0.6);
         padding-top: 10px;
-        box-shadow: 0px 0px 15px 1px #36454f;
+        box-shadow: 0px 0px 7px 1px #36454f;
+        border-radius: 8px;
     }
     .images:hover{
       scale: 110%;
