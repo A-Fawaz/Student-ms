@@ -52,7 +52,7 @@ if(!isset($_SESSION['adminname'])){
             </div>
             <div class="row2">
 
-                <div> <button type="button " class="btn1" onclick="window.location.href='../course-dashboard/dashboard.html';"> <img class="images" src="../logos/dashboard.png" alt="courses">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../course-dashboard/dashboard.php';"> <img class="images" src="../logos/dashboard.png" alt="courses">
                     </button>
                     <p>Dashboard</p>
                 </div>
@@ -60,7 +60,7 @@ if(!isset($_SESSION['adminname'])){
                     </button>
                     <p>Change Password</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduale.html';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduale.php';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
                     </button>
                     <p>Scheduale</p>
                 </div>

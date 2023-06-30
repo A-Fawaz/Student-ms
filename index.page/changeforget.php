@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include_once('../config.php');
 
@@ -99,6 +100,8 @@ if(isset($_GET['secret']))
   if($adminRows > 0 || $teacherRows > 0 || $studentsRows > 0)
   {
 ?>
+=======
+>>>>>>> main
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,14 +110,24 @@ if(isset($_GET['secret']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="changeforget.css" rel="stylesheet" />
+<<<<<<< HEAD
     <title>Reset Password</title>
+=======
+    <title>Change Password</title>
+>>>>>>> main
 </head>
 
 <body>
     <nav>
         <h1>E-School</h1>
         <ul class="nav-list">
+<<<<<<< HEAD
         <li><a href="../index.page/logout.php">Log Out</a></li>
+=======
+            <li><a href="index.html">Home</a></li>
+            <li><a id="space" href="index.html#about-section">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+>>>>>>> main
         </ul>
     </nav>
 
@@ -126,6 +139,7 @@ if(isset($_GET['secret']))
 
             <div class="signin-form">
                 <div class="fp">
+<<<<<<< HEAD
                     <h3>Change Password</h3>
                     <form action="" method="post"> 
                         <h6>Make sure your password contains a combination of letters, numbers, and characters.</h6>
@@ -144,10 +158,28 @@ if(isset($_GET['secret']))
                         <br>
                         <button type="submit" name="submit" class="btnch">Save Changes</button>
                     </form>
+=======
+                    <h3> Change Password </h3>
+                    <h6>Make sure your password contains combination of letters, numbers and characters.</h6>
+                    
+                    <br />
+                    <input type="password" class="field" placeholder="New Password" id="npassword" />
+                    <br />
+                    <p class="alert" id="alert1"></p>
+                    <br />
+                    <input type="password" class="field" placeholder="Confirm Password" id="cpassword" />
+                    <br />
+                    <p id="alert" class="alert"></p>
+                    <br>
+                    <p id="alert2" class="alert"></p>
+                    <br>
+                    <button type="submit" class="btnch" id="btnch">Save Changes </button>
+>>>>>>> main
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <script>
         let savechanges= document.getElementById('btnch');
@@ -188,3 +220,47 @@ if(isset($_GET['secret']))
   }
 }
 ?>
+=======
+    </div>
+    </div>
+
+    <script>
+        
+
+let savechanges= document.getElementById('btnch');
+savechanges.addEventListener('click',()=>{
+    let newpass = document.getElementById('npassword').value;
+        let cpass = document.getElementById('cpassword').value;
+
+        let alert=document.getElementById('alert');
+        let alert1=document.getElementById('alert1');
+        let alert2=document.getElementById('alert2');
+
+        alert.value="";
+        alert1.value="";
+
+if(newpass.trim()===""){
+    // let alert1=document.getElementById('alert1');
+    alert1.innerHTML="Please enter password.";
+}
+
+   else if(cpass.trim()===""){
+    // let alert1=document.getElementById('alert1');
+    alert1.innerHTML="";
+        // let alert=document.getElementById('alert');
+    alert.innerHTML="Please confirm password.";
+    }
+    else if(newpass.trim() === cpass.trim()){
+        location.href="../index.page/signup.html";
+    }
+    else{
+alert.innerHTML="";
+        // let alert=document.getElementById('alert');
+        alert2.innerHTML="Passwords incompatible ";
+    }
+});
+    </script>
+</body>
+
+</html>
+>>>>>>> main

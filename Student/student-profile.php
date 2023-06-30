@@ -69,7 +69,7 @@ $result = mysqli_query($conn, $select);
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="#"> Courses</a>
+            <a href="../student agenda page/agenda.php"> Courses</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/profile.png" alt="" />

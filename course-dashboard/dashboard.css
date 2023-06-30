@@ -1,3 +1,4 @@
+
 :root {
     --orange: #fb8b24;
     --btnhovergray: #36454f;
@@ -18,12 +19,13 @@ body {
     padding: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--black);
+    
 }
 /*start of sidebar css */
 /* The sidebar menu */
 .sidebar {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    width: 250px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -37,9 +39,10 @@ body {
   
   /* The sidebar links */
   .sidebar a {
+    margin-top: 5px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 15px;
     color: var(--black);
     /* display: block; */
     transition: 0.3s;
@@ -57,6 +60,7 @@ body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    visibility: hidden;
   }
   
   /* The button used to open the sidebar */
@@ -77,6 +81,7 @@ body {
   #main {
     transition: margin-left .5s; /* If you want a transition effect */
     padding: 20px;
+    margin-left: 250px;
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -211,6 +216,7 @@ li:hover {
     justify-content: center;
     margin-top: 5vh;
     row-gap: 3vh;
+    margin-left: 125px;
    
 }
 
@@ -222,8 +228,6 @@ li:hover {
     margin-left: 0vh ;
     width: 90%;
     background-color: var(--white);
-
-
 }
 
 .container1 .item {
@@ -236,7 +240,7 @@ li:hover {
     height: 20vh;
     width: 18%;
     padding: 2%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 
@@ -260,7 +264,7 @@ li:hover {
     justify-content: space-between;
    
   }
-.dash1 {
+/* .dash1 {
     display: table;
     margin-left: 18vh;
     margin-right: 15vh;
@@ -269,21 +273,23 @@ li:hover {
     box-shadow: 0px 0px 15px 1px #36454f;
     padding:1vh;
     border-radius: 5px;
-}
+} */
 
 .dash2 {
     display: table;
     padding: 1vh;
-    width: 30%;
+    width: 50%;
     height: 50vh;
-    border-radius: 5px;
+    margin-left: 27%;
+    border-radius: 10px;
     box-shadow: 0px 0px 15px 1px #36454f;
+  
 }
 
 .dash2 th td {
     display: flex;
     flex-direction: row;
-    padding: 2%;
+   
 }
 .copyrights{
     text-align: center;
@@ -309,13 +315,17 @@ li:hover {
     box-shadow: 0px 0px 5px 0px #36454f; 
     }
     .openbtn {
-        position: fixed;
+        position: absolute;
+        left: 30px;
         font-size: 20px;
         cursor: pointer;
         background-color: var(--orange);
         color: white;
         padding: 10px 15px;
         border: none;
+      }
+      .container{
+        margin-left: 0px;
       }
     .container1 .item {
         display: flex;
@@ -327,7 +337,7 @@ li:hover {
         height: 15vh;
         width: 100vh;
         padding: 2%;
-        border-radius: 5px;
+        border-radius: 10px;
         
     }
     .container2 {
@@ -347,7 +357,7 @@ li:hover {
     overflow-y: auto;
    }
    .dash2{
-    margin-left: 17%;
+    margin-left: 14%;
     margin-top: 20%;
    }
    .dash1 {
@@ -358,9 +368,19 @@ li:hover {
     height: auto;
     box-shadow: 0px 0px 15px 1px #36454f;
     padding:1vh;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .item{
     height: 100px
     width:70px;
-}}
+}
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0px;
+    
+  }
+  .closebtn{
+    visibility: visible !important;
+  }
+
+}

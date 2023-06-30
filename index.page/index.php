@@ -9,8 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet" />
-  <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script>
-  <link rel="stylesheet" href="index.js">
+  <!-- <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <!-- <link rel="stylesheet" href="index.js"> -->
   <title>Home Page</title>
   <style>
     
@@ -101,7 +103,7 @@
     <button class="btn"><a href="../index.page/signup.php"> Join Now! </a><span style="font-size:x-large;"> </span>
     </button>
   </nav>
-  <div class="header-container">
+  <div class="header-container" id="header">
     <header>
       <div class="school-name">
 
@@ -151,7 +153,7 @@
   <div class="teachers" >
     <div class="container">
       <div class="theimgs"> <!--trying new class to fix the media queries-->
-        <img src="../images/teacher1.jpg" alt="teacher1-img" class="t1">
+        <img src="../images/teacher1-min.jpg" alt="teacher1-img" class="t1">
 
       </div>
       <div class="text-overlay1">
@@ -160,7 +162,7 @@
           </h2>
       </div>
       <div class="theimgs">
-        <img src="../images/teacher2.jpg" alt="teacher2-img" class="t2">
+        <img src="../images/teacher2-min.jpg" alt="teacher2-img" class="t2">
 
       </div>
       <div class="text-overlay2">
@@ -201,14 +203,8 @@
     </div>
     
     </div>
-    <br>
     
-    <div style="text-align:center">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-    </div>
-
+    
   <footer class="containerbottom" id="contactsection">
 
 
@@ -240,7 +236,7 @@
     </div>
     <div class="text">
       <div class="copyrights">
-        <p>© 2023 The President and Fellows of E School</p>
+        © 2023 The President and Fellows of E School
 
       </div>
       <div class="links">
