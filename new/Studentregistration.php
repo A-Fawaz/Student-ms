@@ -106,10 +106,13 @@ if (isset($_POST['submit'])) {
         <div id="mySidebar" class="sidebar">
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../course dashboard/dashboard.html"> Dashboard</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/graduated-student.png" alt="">

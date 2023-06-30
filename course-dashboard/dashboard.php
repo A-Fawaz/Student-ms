@@ -1,5 +1,5 @@
 <?php
-include '../connect.php';
+include '../config.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -83,7 +83,7 @@ session_start();
 
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../index.page/index.php"> Home page</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
@@ -105,7 +105,7 @@ session_start();
             </div>
             <div class="logotitle">
                 <img style="margin-left:2px;" class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.php"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
             <p class="copyrights">© 2023 The President and Fellows of E School</p>
