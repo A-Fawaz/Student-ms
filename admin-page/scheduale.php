@@ -12,70 +12,68 @@
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            //document.getElementById("main").style.marginLeft = "250px";
             document.getElementById("container").style.marginLeft = "40vh";
         }
 
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
+           // document.getElementById("main").style.marginLeft = "0";
             document.getElementById("container").style.marginLeft = "20vh";
         }
     </script>
 </head>
 
 <body>
-
-    <aside>
+<div class="full-cont">
+<aside>
         <div id="mySidebar" class="sidebar">
-
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-            <div class="logotitle">
-                <img class="logo" src="../logos/graph.png" alt="">
-                <a href="#"> Dashboard</a>
-            </div>
-            <div class="logotitle">
-                <img class="logo" src="../logos/grammar.png" alt="">
-                <a href="#">Teachers</a>
-            </div>
-            <div class="logotitle">
-                <img class="logo" src="../logos/graduated-student.png" alt="">
-                <a href="#">Students</a>
-
-            </div>
-            <div class="logotitle">
-                <img class="logo" src="../logos/learning.png" alt="">
-                <a href="#"> Courses</a>
-            </div>
-            <div class="logotitle">
-                <img class="logo" src="../logos/profile.png" alt="">
-                <a href="#"> Profile</a>
-
-            </div>
-            <div class="logotitle">
-                <img class="logo" src="../logos/gear.png" alt="">
-                <a href="#"> Settings</a>
-
-            </div>
-            <div class="logotitle">
-                <img class="logo" src="../logos/door-knob.png" alt="">
-                <a href="#"> Log Out</a>
-
-            </div>
-            <p class="copyrights">© 2023 The President and Fellows of E School</p>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
+          <div class="logotitle">
+            <img class="logo" src="../logos/graph.png" alt="" />
+            <a href="../admin-page/teacher-home.php">Home page</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../Teachers/teacher-profile.php"> My Profile</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/grammar.png" alt="" />
+            <a href="../admin-page/agendas.php">Agenda</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/graduated-student.png" alt="" />
+            <a href="../Teachers/class-management.php">Students</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/learning.png" alt="" />
+            <a href="../admin-page/scheduale.php"> Schedule</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../admin-page/grades.php"> Grades</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/gear.png" alt="" />
+            <a href="../index.page/changepasswordteacher.php"> Change Password</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/door-knob.png" alt="" />
+            <a href="../index.page/logout.php"> Log Out</a>
+          </div>
+          <p class="copyrights">© 2023 The President of E School</p>
         </div>
+
         <div id="main">
-            <button class="openbtn" onclick="openNav()">&#9776; </button>
-
+          <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
-    </aside>
+      </aside>
 
     <div class="container" id="container">
-        <div class="timetable-img text-center">
-            <img src="img/content/timetable.png" alt="">
-        </div>
-        <div class="table-responsive">
+        
+        <div class="table-responsive" id="table">
             <table class="table table-bordered text-center">
                 <thead>
                     <tr class="bg-light-gray">
@@ -272,6 +270,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 </body>
 

@@ -57,31 +57,27 @@ $result = mysqli_query($conn, $select);
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >&times;</a
           >
-
-      
           <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Agenda</a>
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../Student/student-profile.php"> My Profile</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/learning.png" alt="" />
+            <a href="../student agenda page/agenda.php"> Agenda</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/graduated-student.png" alt="" />
             <a href="#">Grades</a>
           </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="../student agenda page/agenda.php"> Courses</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="#"> Profile</a>
-          </div>
+          
+         
           <div class="logotitle">
             <img class="logo" src="../logos/gear.png" alt="" />
             <a href="../index.page/changepassword.php">Change Password </a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="#"> Log Out</a>
+            <a href="../index.page/logout.php"> Log Out</a>
           </div>
           <p class="copyrights">© 2023 The President and Fellows of E School</p>
         </div>

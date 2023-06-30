@@ -40,18 +40,18 @@ if(!isset($_SESSION['teachername'])){
                     </button>
                     <p>Profile</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../Teachers/class-management.html';"> <img class="images" src="../logos/school.png" alt="classes">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../Teachers/class-management.php';"> <img class="images" src="../logos/school.png" alt="classes">
                     </button>
                     <p>Class Managment</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/agendas.html';"> <img class="images" src="../logos/notebook.png" alt="agenda">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/agendas.php';"> <img class="images" src="../logos/notebook.png" alt="agenda">
                     </button>
                     <p>Agenda</p>
                 </div>
             </div>
             <div class="row2">
 
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/grades.html';"> <img class="images" src="../logos/marking.png" alt="grades">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/grades.php';"> <img class="images" src="../logos/marking.png" alt="grades">
                     </button>
                     <p>Grades</p>
                 </div>
@@ -59,7 +59,7 @@ if(!isset($_SESSION['teachername'])){
                     </button>
                     <p>Change Password</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduale.html';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduale.php';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
                     </button>
                     <p>Scheduale</p>
                 </div>

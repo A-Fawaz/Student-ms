@@ -168,7 +168,7 @@ if(!$conn) {
           </tr>
           <tr>
             <td>Full-Name :</td>
-            <td><?php echo $username1.' '.$fullname;?></td>
+            <td><?php echo $username.' '.$fullname;?></td>
           </tr>
 
           <tr>

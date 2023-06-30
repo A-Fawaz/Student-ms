@@ -37,13 +37,13 @@ $result = mysqli_query($conn, $select);
     <script>
       function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        //document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("container").style.marginLeft = "18vh";
       }
 
       function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
+       // document.getElementById("main").style.marginLeft = "0";
         document.getElementById("container").style.marginLeft = "0px";
       }
     </script>
@@ -56,22 +56,29 @@ $result = mysqli_query($conn, $select);
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >&times;</a
           >
-
           <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Agenda</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="../Teachers/class-management.html">Students</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="#"> Courses</a>
+            <img class="logo" src="../logos/graph.png" alt="" />
+            <a href="../admin-page/teacher-home.php">Home page</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="../Teachers/teacher-profile.html"> Profile</a>
+            <a href="../Teachers/teacher-profile.php"> My Profile</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/grammar.png" alt="" />
+            <a href="../admin-page/agendas.php">Agenda</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/graduated-student.png" alt="" />
+            <a href="../Teachers/class-management.php">Students</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/learning.png" alt="" />
+            <a href="../admin-page/scheduale.php"> Schedule</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../admin-page/grades.php"> Grades</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/gear.png" alt="" />
@@ -79,9 +86,9 @@ $result = mysqli_query($conn, $select);
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="#"> Log Out</a>
+            <a href="../index.page/logout.php"> Log Out</a>
           </div>
-          <p class="copyrights">© 2023 The President and Fellows of E School</p>
+          <p class="copyrights">© 2023 The President of E School</p>
         </div>
 
         <div id="main">
