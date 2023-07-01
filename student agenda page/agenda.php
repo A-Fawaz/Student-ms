@@ -33,7 +33,7 @@
 
     <div class="logotitle">
       <img class="logo" src="../logos/graph.png" alt="">
-      <a href="../Stuent/student-profile.php"> My Profile</a>
+      <a href="../Student/student-profile.php"> My Profile</a>
     </div>
     <div class="logotitle">
       <img class="logo" src="../logos/graduated-student.png" alt="">
