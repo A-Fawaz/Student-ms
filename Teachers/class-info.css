@@ -17,6 +17,14 @@ body{
   flex-direction: column;
 }
 
+.searchbar{
+  width: 500px;
+  margin-left: 250px;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border-style: solid;
+}
 .grade{
   font-size: 40px;
   font-weight: 800;
@@ -33,7 +41,8 @@ body{
 .container{
   display: flex;
   flex-direction: row;
-  margin-left: 200px;
+  margin-left: 250px;
+  margin-top: 50px;
 }
 
 
@@ -53,32 +62,93 @@ body{
 .fb:hover{
   color:black;
 }
+span{
+color:var(--btnhovergray);
+text-transform: uppercase;
+margin-left: 50px;
+width: 200px;
+margin-bottom: 20px;
+font-size: 24px;
+text-decoration: underline;
+font-weight: bold;
+}
+  
+.nav2{
+  top: 0;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 1200px;
+  margin-left: 300px;
+  background-color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.eschool1{
+  font-size: 40px!important;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 0px;
+ transition: 0.5s;
+  color:var(--orange);
+
+}
   /*start of sidebar css */
 /* The sidebar menu */
 .sidebar {
+  overflow: hidden;
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 250px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  overflow: hidden;
   background-color: var(--orange); /* */
    /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
   
+
 }
 
 /* The sidebar links */
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  z-index: 999;
+ 
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: var(--black);
   /* display: block; */
   transition: 0.3s;
+  
 }
+.logotitle{
+  margin-bottom: 40px;
+}
+
+.copyrights{
+  z-index: 999;
+  text-align: center;
+  padding-left: 5px;
+  padding-top: 50px;
+
+ 
+}
+.logotitle a {
+  z-index: 999;
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  z-index: 999;
+  width: 30px;
+ margin-right: 20px;
+} 
 
 /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
@@ -87,21 +157,30 @@ body{
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
+  z-index: 999;
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
 }
+.closebtn{
+  visibility: hidden;
+}
 
 /* The button used to open the sidebar */
 .openbtn {
+  position: absolute;
+  top: 1vh;
+  left: 10vh;
   font-size: 20px;
   cursor: pointer;
   background-color: var(--orange);
   color: white;
   padding: 10px 15px;
   border: none;
+    
+  
 }
 
 .openbtn:hover {
@@ -119,34 +198,63 @@ body{
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-
-.logotitle {
-  display: flex;
-  flex-direction: row;
-padding-bottom: 10%;
-padding-left: 10%;
-  
-}
-
-.logotitle a {
-  text-decoration: none;
-  color: var(--black);
-  font-size: 20px;
-}
-.logo{
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-  
-}
-
-  .copyrights{
+.headaside{
+    color: white;
+    width: 200px;
+    margin-left: 20px;
+    height: 60px;
+    font-size: 40px;
     text-align: center;
-    padding-left: 10px;
-    padding-top: 140px;
-    font-size: smaller;
-
 }
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fb8b24;
+    height: 100%;
+    width: 280px;
+    box-shadow: 0px 0px 5px #36454f;
+    z-index: 1;
+  }
+  
+  .sidetext {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+   
+  
+  
+  
+  }
+  
+  .logotitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    height: 20px;
+   
+  }
+  
+  .logotitle a {
+    text-decoration: none;
+    color: var(--black);
+  }
+  
+  li:hover {
+   
+  
+    color: #faf7f5;
+    letter-spacing: 2px;
+  
+  
+  
+  }
+
 
 .btn{
   background-color: #7f888e;
@@ -156,18 +264,42 @@ padding-left: 10%;
   font-size: 12px;
   font-weight: 600;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 50px;
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 600px) {
+  body{overflow: hidden;}
   .table{
-    width: 100px;
-    margin:0px;
+    width:50px;
+    margin-left:-70px;
     padding: 0px;
     font-size: 12px;
+    margin-top: 30px;
+  }
+
+  .btn{
+    width: 100px;
+    font-size: 10px;
+    height: 20px;
+    padding: 0;
+  }
+
+  .searchbar{
+    margin-left: 50px;
+    width: 200px;
+  }
+
+  .sidebar{
+    width: 0px;
+  }
+
+  .closebtn{
+    visibility: visible;
   }
 
   .table td{
-    padding: 0px;
+    padding: 5px;
     margin: 0px;
   }
 

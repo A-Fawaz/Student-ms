@@ -38,113 +38,154 @@
   </head>
 
   <body>
+<?php
+
+$conn = mysqli_connect("localhost", "root", "", "school-management");
+
+if (!$conn) {
+    die('unable to connect to the database' . mysqli_error());
+} else {
+
+    $feedbackAlert="";
+    $firstname="";
+    $lastname="";
+    $classid="";
+    $class="";
+    $feedback="";
+    $sid="";
+
+    if(isset($_GET['Sid'])) {
+        session_start();
+        $sid = $_GET['Sid'];
+        $_SESSION['sid']=$_GET['Sid'];
+        $sql="SELECT firstname, lastname, classid FROM `student` WHERE id= '$sid' ";
+
+        $result = mysqli_query($conn, $sql);
+
+        if (!$result) {
+            $error = mysqli_error($conn);
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $firstname = $row['firstname'];
+                $lastname = $row['lastname'];
+                $classid = $row['classid'];
+                $_SESSION['classid']=$row['classid'];
+            }
+            $sql = "SELECT name FROM class WHERE id='$classid'";
+            $result = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $class=$row['name'];
+            }
+
+        }
+    }
+
+
+
+}
+
+if(isset($_POST['submit'])) {
+  session_start();
+  $teachername = $_SESSION['teachername'];
+  $teacherid = "";
+  $sql = "SELECT id from `teacher` WHERE username ='$teachername'";
+  $result= mysqli_query($conn, $sql);
+  if(! $result) {
+      echo "Error". mysqli_error($conn);
+  } else {
+      $row=mysqli_fetch_assoc($result);
+      $teacherid = $row['id'];
+  }
+  $_SESSION['teacherid']=$teacherid;
+  $firstname= $_POST['firstname'];
+  $lastname= $_POST['lastname'];
+  $feedback= $_POST['feedback'];
+  $id= $_SESSION['sid'];
+  $cid=$_SESSION['classid'];
+  $sql = "INSERT INTO `feedback` (`teacherid`, `studentid`, `classid`, `feedback`) VALUES ('$teacherid', '$id', '$cid', '$feedback')";
+  $result=mysqli_query($conn, $sql);
+  if(! $result) {
+      echo  mysqli_error($conn) ;
+  } else {
+      header("Location:class-info.php?cid=$cid");
+  }
+  $feedback="";
+}
+?>
+
     <div class="myrow">
-      <aside>
+    <aside>
         <div id="mySidebar" class="sidebar">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >&times;</a
-          >
-
+            >&times;</a>
           <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Agenda</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="../Teachers/class-management.html">Students</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="#"> Courses</a>
+            <img class="logo" src="../logos/graph.png" alt="" />
+            <a href="../admin-page/teacher-home.php">Home page</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="../Teachers/teacher-profile.html"> Profile</a>
+            <a href="../Teachers/teacher-profile.php"> My Profile</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/grammar.png" alt="" />
+            <a href="../admin-page/agendas.php">Agenda</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/graduated-student.png" alt="" />
+            <a href="../Teachers/class-management.php">Students</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/learning.png" alt="" />
+            <a href="../admin-page/scheduale.php"> Schedule</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../admin-page/grades.php"> Grades</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/gear.png" alt="" />
-            <a href="../index.page/changepassword.html"> Change Password</a>
+            <a href="../index.page/changepasswordteacher.php"> Change Password</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="#"> Log Out</a>
+            <a href="../index.page/logout.php"> Log Out</a>
           </div>
-          <p class="copyrights">© 2023 The President and Fellows of E School</p>
+          <p class="copyrights">© 2023 The President of E School</p>
         </div>
 
         <div id="main">
           <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
       </aside>
-
-      <!-- <div class="for-border">
-      <div class="container">
-        <p
-          style="
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-              'Lucida Sans', Arial, sans-serifs;
-            font-size: 30px;
-            margin-top: 30px;
-            font-weight: 600;
-          "
-        >
-          Students Feedback:
-        </p>
-
-        <div class="info1-row">
-          <div>
-            <h6>First Name</h6>
-            <input type="text" class="text-input" placeholder="First name" />
-          </div>
-          <div>
-            <h6>Last Name</h6>
-            <input type="text" class="text-input" placeholder="Last name" />
-          </div>
-        </div>
-
-        <div class="info1-row">
-          <div>
-            <h6>Class</h6>
-            <input type="text" class="text-input" placeholder="Class" />
-          </div>
-          <div>
-            <h6>Course</h6>
-            <input type="text" class="text-input" placeholder="Course" />
-          </div>
-        </div>
-
-        <div class="info2-row">
-          <textarea class="textArea" placeholder="Feedback"></textarea>
-        </div>
-
-        <button onclick="window.print();return false;" class="print-btn">
-          Print page..
-        </button>
-      </div>
-    </div> -->
       <div class="mycol">
         <div class="feedback">Feedback</div>
         <div class="infomargin">
+          <form action="Feedback.php" method="post">
           First Name
-          <input type="text" id="fname" class="textbox" />
+          <br>
+          <input type="text" id="fname" class="textbox" name="firstname" value="<?php echo $firstname;?>" readonly/>
+          
         </div>
 
         <div class="infomargin">
           Last Name
-          <input type="text" id="lname" class="textbox" />
+          <input type="text" id="lname" class="textbox" name="lastname" value="<?php echo $lastname;?>" readonly/>
+          
         </div>
 
         <div class="infomargin">
           Class
-          <input type="text" id="C" class="textbox" />
+          <input type="text" id="lname" class="textbox" name="class" value="<?php echo $class;?>" readonly/>
         </div>
 
         <div class="infomargin">
           Feedback
-          <textarea class="textarea"></textarea>
+          <input type="text" class="textarea" name="feedback" value="<?php echo $feedback;?>">
+          <div style="color:red;font-size:15px;"><?php echo $feedbackAlert; ?></div>
         </div>
 
-        <button class="print-btn">Submit</button>
+        <input type="submit" class="print-btn" name="submit">
+        </form>
       </div>
     </div>
   </body>

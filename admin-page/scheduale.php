@@ -69,8 +69,12 @@
         <div id="main">
           <button class="openbtn" onclick="openNav()">&#9776;</button>
         </div>
+       
       </aside>
-
+      <nav class="nav2">
+        <h1 class="eschool1" id="eschool1">E-School</h1>
+        
+    </nav>
     <div class="container" id="container">
         
         <div class="table-responsive" id="table">

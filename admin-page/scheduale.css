@@ -292,5 +292,33 @@ box-sizing: border-box;}
         border-top: 1px solid #dee2e6;
     }
     #container{
-margin-left: 300px;    }
+      margin-top: 100px;
+margin-left: 100px;    }
+
+ 
+.nav2{
+  top: 0;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 1200px;
+  margin-left: 300px;
+  background-color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.eschool1{
+  font-size: 40px!important;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+ margin-left: 0px;
+ transition: 0.5s;
+  color:var(--orange);
+
+}
   
