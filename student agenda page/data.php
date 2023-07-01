@@ -14,13 +14,14 @@ try {
         FROM student
         WHERE username = '$id' ";
     $result1 = mysqli_query($conn, $sql1);
-   
+    $classid ="";
     while ($row = mysqli_fetch_assoc($result1)) {
         $classid = $row['classid'];
         
     }
 
     }
+    
         $sql2 =  "SELECT teacher.firstname ,teacher.lastname ,
     course.name , agenda.task, agenda.date, agenda.id, agenda.deadline 
     FROM teacher 
