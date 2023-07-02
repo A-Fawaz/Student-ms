@@ -9,14 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet" />
-  <!-- <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 
   <!-- <link rel="stylesheet" href="index.js"> -->
   <title>Home Page</title>
+
   <style>
     
-
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -96,9 +95,9 @@
 
     <h1>E-School</h1>
     <ul class="nav-list">
-      <li><a href="index.html#header">Home</a></li>
-      <li><a id="space" href="index.html#about-section">About</a></li>
-      <li><a href="index.html#contactsection">Contact</a></li>
+      <li><a href="index.php#header">Home</a></li>
+      <li><a id="space" href="index.php#about-section">About</a></li>
+      <li><a href="index.php#contactsection">Contact</a></li>
     </ul>
     <button class="btn"><a href="../index.page/signup.php"> Join Now! </a><span style="font-size:x-large;"> </span>
     </button>
@@ -251,6 +250,8 @@
 
 
   </footer>
+  <script>src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script>
+
   <script>
 
     let slideIndex = 0;

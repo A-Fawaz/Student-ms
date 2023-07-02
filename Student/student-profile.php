@@ -73,7 +73,7 @@ if(!$conn){
       
           <div class="logotitle">
             <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Agenda</a>
+            <a href="../student agenda page/agenda.php">Agenda</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/graduated-student.png" alt="" />

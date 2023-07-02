@@ -26,6 +26,8 @@
   <?php
   include '../connect.php';
   include 'data.php';
+
+  
   ?>
   <div id="mySidebar" class="sidebar">
 

@@ -25,7 +25,7 @@ try {
     course.name , agenda.task, agenda.date, agenda.id, agenda.deadline 
     FROM teacher 
     JOIN agenda ON agenda.teacherid = teacher.id
-    JOIN student  ON student.classid = agenda.classid
+    -- JOIN student  ON student.classid = agenda.classid
     JOIN course ON course.id = agenda.courseid
     WHERE agenda.classid = '$classid' ";
 // echo $sql2;
