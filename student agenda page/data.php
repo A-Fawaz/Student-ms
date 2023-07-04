@@ -21,7 +21,7 @@ try {
     }
 
     }
-        $sql2 =  "SELECT teacher.firstname ,teacher.lastname ,agenda.filelink,
+        $sql2 =  "SELECT teacher.firstname ,teacher.lastname ,
     course.name , agenda.task, agenda.date, agenda.id, agenda.deadline 
     FROM teacher 
     JOIN agenda ON agenda.teacherid = teacher.id
@@ -42,7 +42,7 @@ while ($row = mysqli_fetch_assoc($result2)) {
     $teacherfirstname = $row['firstname'];
     $teacherlastname = $row['lastname'];
     $date = $row['date'];
-    $filelink = $row['filelink'];
+    // $filelink = $row['filelink'];
     // $fileID = $_GET['fileID'];
     
     // Format the deadline
@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($result2)) {
         'firstname' => $teacherfirstname,
         'lastname' => $teacherlastname,
         'date' => $date,
-       'filelink' => $filelink
+    //    'filelink' => $filelink
         // 's.firstname' => $studentfirstname,
         // 's.lastname' => $studentlastname
     );
@@ -95,19 +95,20 @@ foreach ($dataMap as $deadline => $tasks) {
             </svg>'. $task['name'] .'</h5>
             <p class="card-text">'. $task['task'] .'</p>
             <div class="card-footer">'. $task['firstname'] . ' ' . $task['lastname'] .' <br> Posted on '. $task['date'] .' <br> <br>
-            <a href="data.php?fileID=123">Download File</a>
+            
 
             <div class="btn-group me-2" role="group" aria-label="First group">
 
 
             </div>
-            <div>
-                <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-                </label>
-                <p class="done">Done</p>
-            </div>
+           <div class="switch-container">
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p class="done">Done</p>
+</div>
+
             </div>
         </div>
         ';
