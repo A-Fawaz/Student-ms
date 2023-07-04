@@ -3,7 +3,8 @@
 include '../config.php';
 
 session_start();
-if(!isset($_SESSION['adminname'])){
+if(!isset($_SESSION['adminname']))
+{
     header('location:../index.page/signup.php');
   }
 

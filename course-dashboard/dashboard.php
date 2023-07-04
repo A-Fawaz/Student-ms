@@ -39,7 +39,7 @@ if(!isset($_SESSION['adminname'])){
         </div>
 
         
-        <a href="../new/studentregistration.php"><button class="btn1"><strong>Add New Student </strong></button></a>
+        <a href="../new/Studentregistration.php"><button class="btn"><strong>Add New </strong></button></a>
         <div class="navicons">
             <!-- <img style="width:40px; padding-right:10px;" src="../images/turn-notifications-on-button.png" alt=""> -->
             <img class="adminoldguy" style="width: 40px;" src="../images/man.png" alt="">
