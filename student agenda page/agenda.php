@@ -26,6 +26,9 @@
   <?php
   include '../config.php';
   include 'data.php';
+  if(!isset($_SESSION['studentname'])){
+    header('location:../index.page/signup.php');
+  };
   ?>
   <div id="mySidebar" class="sidebar">
 

@@ -1,6 +1,9 @@
 <?php
 include '../config.php';
 session_start();
+if(!isset($_SESSION['adminname'])){
+    header('location:../index.page/signup.php');
+  };
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,8 +41,8 @@ session_start();
         
         <a href="../new/Studentregistration.php"><button class="btn"><strong>Add New </strong></button></a>
         <div class="navicons">
-            <img style="width:40px; padding-right:10px;" src="../images/turn-notifications-on-button.png" alt="">
-            <img style="width: 40px;" src="../images/man.png" alt="">
+            <!-- <img style="width:40px; padding-right:10px;" src="../images/turn-notifications-on-button.png" alt=""> -->
+            <img class="adminoldguy" style="width: 40px;" src="../images/man.png" alt="">
         </div>
     </nav>
     <!-- <div class="sidebar">

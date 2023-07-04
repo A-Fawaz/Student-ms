@@ -21,13 +21,14 @@ try {
     }
 
     }
-        $sql2 =  "SELECT teacher.firstname ,teacher.lastname ,
+        $sql2 =  "SELECT teacher.firstname ,teacher.lastname ,agenda.filelink,
     course.name , agenda.task, agenda.date, agenda.id, agenda.deadline 
     FROM teacher 
     JOIN agenda ON agenda.teacherid = teacher.id
     -- JOIN student  ON student.classid = agenda.classid
     JOIN course ON course.id = agenda.courseid
-    WHERE agenda.classid = '$classid' ";
+    WHERE agenda.classid = '$classid' 
+    ORDER BY agenda.deadline ASC";
 // echo $sql2;
 $result2 = mysqli_query($conn, $sql2);
 
@@ -41,6 +42,8 @@ while ($row = mysqli_fetch_assoc($result2)) {
     $teacherfirstname = $row['firstname'];
     $teacherlastname = $row['lastname'];
     $date = $row['date'];
+    $filelink = $row['filelink'];
+    // $fileID = $_GET['fileID'];
     
     // Format the deadline
     $formattedDeadline = date('l, F jS', strtotime($deadline));
@@ -58,6 +61,7 @@ while ($row = mysqli_fetch_assoc($result2)) {
         'firstname' => $teacherfirstname,
         'lastname' => $teacherlastname,
         'date' => $date,
+       'filelink' => $filelink
         // 's.firstname' => $studentfirstname,
         // 's.lastname' => $studentlastname
     );
@@ -91,6 +95,8 @@ foreach ($dataMap as $deadline => $tasks) {
             </svg>'. $task['name'] .'</h5>
             <p class="card-text">'. $task['task'] .'</p>
             <div class="card-footer">'. $task['firstname'] . ' ' . $task['lastname'] .' <br> Posted on '. $task['date'] .' <br> <br>
+            <a href="data.php?fileID=123">Download File</a>
+
             <div class="btn-group me-2" role="group" aria-label="First group">
 
 
