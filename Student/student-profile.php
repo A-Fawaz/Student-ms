@@ -67,7 +67,7 @@ $result = mysqli_query($conn, $select);
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="#">Grades</a>
+            <a href="../Student/certificate.php">Grades</a>
           </div>
           
          
@@ -79,7 +79,7 @@ $result = mysqli_query($conn, $select);
             <img class="logo" src="../logos/door-knob.png" alt="" />
             <a href="../index.page/logout.php"> Log Out</a>
           </div>
-          <p class="copyrights">© 2023 The President and Fellows of E School</p>
+          <p class="copyrights">© 2023 The President  of E School</p>
         </div>
 
         <div id="main">

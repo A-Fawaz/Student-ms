@@ -37,7 +37,7 @@
     </div>
     <div class="logotitle">
       <img class="logo" src="../logos/graduated-student.png" alt="">
-      <a href="../">Grades</a>
+      <a href="../Student/certificate.php">Grades</a>
 
     </div>
     <div class="logotitle">
@@ -54,7 +54,7 @@
       <a href="../index.page/logout.php"> Log Out</a>
 
     </div>
-    <p class="copyrights">© 2023 The President and Fellows of E School</p>
+    <p class="copyrights">© 2023 The President of E School</p>
   </div>
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; </button>

@@ -25,14 +25,7 @@ if (!$conn) {
     $studid = $_GET['Sid'];
     session_start();
     $_SESSION['studid']=$studid;
-    $sname="";
-    $slname="";
-    $sql2="SELECT firstname, lastname FROM student WHERE id = '$studid'";
-    $result2= mysqli_query($conn, $sql2);
-    while($row2=mysqli_fetch_assoc($result2)){
-    $sname=$row2['firstname'];
-    $slname=$row2['lastname'];
-  }
+    
 }
 ?>
   <div class="row">
@@ -83,7 +76,7 @@ if (!$conn) {
 <h1 class="eschool1" id="eschool1">E-School</h1>
 
 </nav>
-<p class="name"><?php echo $sname;?> <?php echo $slname;?></p>
+
 <div class="full-cont" id="full-cont">
   
 </div>

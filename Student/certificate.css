@@ -7,6 +7,10 @@
 *{margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+}
+body{
+  overflow: hidden;
 }
 
 /*start of sidebar css */
@@ -30,10 +34,11 @@
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: var(--black);
   /* display: block; */
   transition: 0.3s;
+  margin-top: 5px;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -113,11 +118,12 @@ padding-left: 10%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: -50px;
 }
 
 .container-report{
   width: 50%;
-  height: 93vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -142,6 +148,10 @@ flex-direction: column;
 font-weight: 600;
 }
 
+.tab{
+  margin-left: 70px;
+}
+
 .t{
   width: 5%;
 }
@@ -159,7 +169,7 @@ font-weight: 600;
 
 .name-class{
   margin-left: 5vh;
-  margin-top: 5vh;
+  margin-top: 1vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -167,19 +177,21 @@ font-weight: 600;
   display: flex;
   flex-direction: row;
   font-weight: 600;
+  font-weight: 200;
+  text-transform: capitalize;
   
 }
 
+
+
 .name{
-  /* margin-bottom: 30px; */
   margin-right: 50vh;
-  /* margin-left: 10vh; */
   
 }
 
 .table{
-  margin-left: 5vh;
-  margin-bottom: 10vh;
+  margin-bottom: -30px;
+  margin-left: 50px;
 }
 
 thead{
@@ -188,15 +200,12 @@ thead{
 
 .foot{
   width: 40%;
-  /* background-color:var(--orange); */
   height:15vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   margin-top: 5vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* border: 1px solid black; */
   box-shadow: 2px 2px 3px #36454f;
   margin-left:8vh;
 }
@@ -254,11 +263,18 @@ thead{
   box-shadow: 2px 2px 3px #36454f;
   margin-left: 5vh;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 1vh;
   justify-content: center;
   display: flex;
   flex-direction: column;
   font-size: 15px;
+}
+.value{
+  color: red;
+}
+
+.value1{
+  color: green;
 }
 
 .l{
@@ -270,7 +286,7 @@ thead{
 
 @media only screen and (max-width:600px){
   body{
-    overflow: hidden;
+    overflow-x: hidden;
   }
   .container-report{
     width: 90%;
@@ -281,26 +297,41 @@ thead{
     font-size: 10px;
   }
 
+  .l{
+    margin-left: 100px;
+  }
+
   .name{
     margin-right: 20vh;
+    font-weight: 100;
+  }
+.container-full{
+margin-left: 20px;
+margin-top: 30px;}
+  .class{
+    font-weight: 100;
   }
   .table{
     width:fit-content !important;
     /* margin-left: 15px; */
-    margin-left: -5px;
+    margin-left: 0px;
     overflow: hidden;
   }
 
   .f{
     font-size: 10px;
-    width: 50vh;
-    margin-left: 0px;
+    width: 30vh;
   }
 
   .f1{
     font-size: 10px;
-    width: 50vh;
-    margin-left: 0px;
+    width: 30vh;
+    margin-top: 20px;
+  }
+
+
+  .echo{
+    margin-right: 100px;
   }
 
   .print{

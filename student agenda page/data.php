@@ -2,6 +2,9 @@
 session_start();
 include '../config.php';
 try {
+   
+
+
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     if(isset($_SESSION['studentname'])){
@@ -22,7 +25,7 @@ try {
     course.name , agenda.task, agenda.date, agenda.id, agenda.deadline 
     FROM teacher 
     JOIN agenda ON agenda.teacherid = teacher.id
-    JOIN student  ON student.classid = agenda.classid
+    -- JOIN student  ON student.classid = agenda.classid
     JOIN course ON course.id = agenda.courseid
     WHERE agenda.classid = '$classid' ";
 // echo $sql2;
@@ -61,20 +64,22 @@ while ($row = mysqli_fetch_assoc($result2)) {
 }
     
 // Generate HTML output
+$accordionIndex = 1; // Initialize the accordion index
+
 foreach ($dataMap as $deadline => $tasks) {
+    $accordionId = 'accordion' . $accordionIndex; // Generate a unique ID for each accordion
+
     echo '
-    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion accordion-flush " id="' . $accordionId . '">
         <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <h2 class="accordion-header" id="' . $accordionId . '-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#' . $accordionId . '-collapseOne" aria-expanded="false" aria-controls="' . $accordionId . '-collapseOne">
                     ' . $deadline . '
                 </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div id="' . $accordionId . '-collapseOne" class="accordion-collapse collapse" aria-labelledby="' . $accordionId . '-headingOne" data-bs-parent="#' . $accordionId . '">
                 <div class="accordion-body">
-                    
-                        
-    ';
+                    ';
 
     foreach ($tasks as $task) {
         echo '
@@ -99,17 +104,18 @@ foreach ($dataMap as $deadline => $tasks) {
             </div>
             </div>
         </div>
-';
+        ';
     }
 
     echo '
-                        
-                    
                 </div>
             </div>
         </div>
     </div>';
+
+    $accordionIndex++; // Increment the accordion index
 }
+
 }
 
     //  echo json_encode($data); 
