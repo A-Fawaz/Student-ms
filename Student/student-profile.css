@@ -248,12 +248,15 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   
   
   }
-
   @media only screen and (max-width:600px){
     .row-info-cont{
       display: flex;
       flex-direction: column; 
       overflow-x: hidden;
+  }
+
+  .openbtn{
+    margin-left: -80px;
   }
   .info-container{
     margin-left: 50px;
@@ -264,11 +267,15 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     .closebtn{
       visibility: visible;
     }
-   
+   .info-table{
+    margin-top: 70px;
+    margin-left: -40px
+   }
   
     .img{
       margin-left: -20px;
       width:400px ;
+      visibility: hidden;
     }
   
     .info-container{

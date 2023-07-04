@@ -33,50 +33,49 @@
 
 <body>
 
-    <aside>
+<aside>
         <div id="mySidebar" class="sidebar">
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-         
-           
             <div class="logotitle">
-            <img class="logo" src="../logos/graph.png" alt="" />
-            <a href="../admin-page/teacher-home.php">Home page</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="../Teachers/teacher-profile.php"> My Profile</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="../admin-page/agendas.php">Agenda</a>
-          </div>
-          <div class="logotitle">
-                <img class="logo" src="../logos/learning.png" alt="">
-                <a href="../admin-page/edit-agenda.php">delete agenda</a>
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../admin-page/admin-home.php"> Home page</a>
             </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="../Teachers/class-management.php">Students</a>
-          </div>
-          <div class="logotitle">
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
+            </div>
+            <div class="logotitle">
             <img class="logo" src="../logos/learning.png" alt="" />
             <a href="../admin-page/scheduale.php"> Schedule</a>
           </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="../admin-page/grades.php"> Grades</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/gear.png" alt="" />
-            <a href="../index.page/changepasswordteacher.php"> Change Password</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="../index.page/logout.php"> Log Out</a>
-          </div>
-            <p class="copyrights">© 2023 The President  of E School</p>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graduated-student.png" alt="">
+                <a href="../new/Studentregistration.php">Students</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/grammar.png" alt="">
+                <a href="../new/teacherregi.php">Teachers</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/gear.png" alt="">
+                <a href="../index.page/changepassword.php"> Change Passsword</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/profile.png" alt="">
+                <a href="../Admin/admin-profile.php"> My Profile</a>
+
+            </div>
+
+            <div class="logotitle">
+                <img class="logo" src="../logos/door-knob.png" alt="">
+                <a href="../index.page/logout.php"> Log Out</a>
+
+            </div>
+            <p class="copyrights">© 2023 The President of E School</p>
         </div>
+
         <div id="main">
             <button class="openbtn" onclick="openNav()">&#9776; </button>
 

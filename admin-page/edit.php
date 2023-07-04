@@ -7,13 +7,13 @@ try {
     if (isset($_SESSION['teachername'])) {
         $id = $_SESSION['teachername'];
         // echo $id;
-        $sql1 = "SELECT classid
+        $sql1 = "SELECT id
         FROM teacher
         WHERE username = '$id' ";
         $result1 = mysqli_query($conn, $sql1);
 
         while ($row = mysqli_fetch_assoc($result1)) {
-            $teacherid = $row['classid'];
+            $teacherid = $row['id'];
         }
     }
 
@@ -23,7 +23,8 @@ try {
    
     JOIN agenda ON agenda.teacherid = teacher.id
     JOIN course ON course.id = agenda.courseid
-    WHERE agenda.teacherid = '$teacherid' ";
+    WHERE agenda.teacherid = '$teacherid' 
+    ORDER BY agenda.deadline ASC";
 
     $result2 = mysqli_query($conn, $sql2);
 
@@ -62,17 +63,19 @@ try {
     }
 
     // Generate HTML output
+    $accordionIndex = 1;
     foreach ($dataMap as $deadline => $tasks) {
+        $accordionId = 'accordion' . $accordionIndex;
         echo '
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion accordion-flush" id="' . $accordionId . '">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <h2 class="accordion-header" id="' . $accordionId . '-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#' . $accordionId .'-collapseOne" aria-expanded="false" aria-controls="' . $accordionId . '-collapseOne">
                         ' . $deadline . '
                     </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
+                <div id="' . $accordionId . '-collapseOne" class="accordion-collapse collapse" aria-labelledby="' . $accordionId . '-headingOne" data-bs-parent="#' . $accordionId . '">
+                 <div class="accordion-body">
         ';
 
         foreach ($tasks as $task) {
@@ -115,6 +118,8 @@ try {
         </div>
         </div>
         </div>';
+        $accordionIndex++; // Increment the accordion index
+    
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();

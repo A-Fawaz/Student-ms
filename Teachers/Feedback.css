@@ -283,24 +283,35 @@ font-size: 20px;
   }
 
 
-@media only screen and (max-width:600px){
-  .infomargin{
-    margin-left: 0px;
+  @media only screen and (max-width:600px){
+    .infomargin{
+      margin-left: 0px;
+    }
+  
+    .openbtn{
+      margin-left: -80px;
+    }
+  
+    .mycol{
+      margin-left: 0px;
+      margin-top: 80px;
+      width: 250px;
+      padding-left: 10px;
+    }
+  
+    .closebtn{visibility: visible;}
+    .sidebar{width: 0px;}
+    .feedback{
+      margin-left: 0px;
+    }
+    .textbox{
+      width: 150px;
+    }
+  
+    .textarea{
+      width: 200px;
+    }
+    .print-btn{
+      margin-left: 50px;
+    }
   }
-
-  .closebtn{visibility: visible;}
-  .sidebar{width: 0px;}
-  .feedback{
-    margin-left: 0px;
-  }
-  .textbox{
-    width: 400px;
-  }
-
-  .textarea{
-    width: 400px;
-  }
-  .print-btn{
-    margin-left: 150px;
-  }
-}

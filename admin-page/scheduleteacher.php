@@ -150,7 +150,7 @@
                         <td class="align-middle">10:00am</td>
                         <td>
                             <span
-                                class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Math</span>
+                                class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Grade 4</span>
                             <div class="margin-10px-top font-size14">10:00-11:00</div>
                        
                         </td>
@@ -221,7 +221,7 @@
                         </td>
                         <td>
                             <span
-                                class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">3</span>
+                                class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13"> Grade 3</span>
                             <div class="margin-10px-top font-size14">12:00-1:00</div>
                            
                         </td>

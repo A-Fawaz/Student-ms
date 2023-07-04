@@ -251,28 +251,31 @@
     
     }
   
-  @media only screen and (max-width:600px){
+    @media only screen and (max-width:600px){
    
   
-    .closebtn{visibility: visible;}
-    .sidebar{width: 0px;}
-    .feedback{
-      margin-left: 0px;
+      .closebtn{visibility: visible;}
+      .sidebar{width: 0px;}
+      .feedback{
+        margin-left: 0px;
+      }
+      .openbtn{
+        margin-left: -80px;
+      }
+    
+      .container{
+        margin-left: -40px;
+        width:300px;
+        height: 200px;
+      }
+     .full-cont{
+      margin-left: 50px;
+     }
+     
+     .openbtn{
+      margin-left: -50px;
+     }
+     .eschool1{
+      margin-left: -170px;
+     }
     }
-  
-    .container{
-      margin-left: -40px;
-      width:300px;
-      height: 200px;
-    }
-   .full-cont{
-    margin-left: -100px;
-   }
-   
-   .openbtn{
-    margin-left: -50px;
-   }
-   .eschool1{
-    margin-left: -90px;
-   }
-  }

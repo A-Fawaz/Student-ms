@@ -278,15 +278,23 @@ font-weight: bold;
     margin-top: 30px;
   }
 
+  .eschool1{
+    margin-left: -200px;
+  }
+
+  .openbtn{
+    margin-left: -70px;
+  }
+
   .btn{
-    width: 100px;
+    width: 50px;
     font-size: 10px;
     height: 20px;
     padding: 0;
   }
 
   .searchbar{
-    margin-left: 50px;
+    margin-left: -30px;
     width: 200px;
   }
 
@@ -301,6 +309,13 @@ font-weight: bold;
   .table td{
     padding: 5px;
     margin: 0px;
+  }
+  .tab1{
+    margin-left: -130px;
+  }
+
+  .gradeid{
+    margin-left: -10px;
   }
 
   .table tr{

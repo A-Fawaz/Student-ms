@@ -283,31 +283,47 @@ thead{
   color: black;
   font-weight: 600;
 }
-
 @media only screen and (max-width:600px){
   body{
     overflow-x: hidden;
   }
   .container-report{
-    width: 90%;
-    margin-left: 1vh;
+    width: 83%;
+    margin-left: -120px;
     margin-top: 1vh;
   }
   .name-class{
     font-size: 10px;
+    margin-left: 10px;
+    width: 400px;
   }
 
+  .openbtn{
+    margin-left: -10px;
+  }
+
+  
+
   .l{
-    margin-left: 100px;
+    margin-left: 50px;
+  }
+  .tab{
+    margin-left: 25px;
+  }
+
+  .echo{
+    visibility: hidden;
   }
 
   .name{
-    margin-right: 20vh;
+    margin-left: 10px;
+    margin-right: 10vh;
     font-weight: 100;
   }
 .container-full{
-margin-left: 20px;
-margin-top: 30px;}
+    margin-left: 20px;
+    margin-top: 30px;
+  }
   .class{
     font-weight: 100;
   }
@@ -316,6 +332,10 @@ margin-top: 30px;}
     /* margin-left: 15px; */
     margin-left: 0px;
     overflow: hidden;
+  }
+
+  .value{
+    position: absolute;
   }
 
   .f{
@@ -327,6 +347,7 @@ margin-top: 30px;}
     font-size: 10px;
     width: 30vh;
     margin-top: 20px;
+    margin-left: 20px;
   }
 
 
@@ -337,13 +358,13 @@ margin-top: 30px;}
   .print{
     height: 4vh;
     width: 10vh;
+    margin-left: 100px;
   }
 
   thead{
     font-size: 10px;
   }
 
-  .openbtn{margin-left: 1vh;}
 
   .sidebar{
     font-size: 20px;
