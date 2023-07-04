@@ -111,7 +111,7 @@ if(isset($_POST['submit'])) {
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="../admin-page/scheduale.php"> Schedule</a>
+            <a href="../admin-page/scheduleteacher.php"> Schedule</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/profile.png" alt="" />

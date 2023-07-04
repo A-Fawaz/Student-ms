@@ -59,7 +59,7 @@ if(!isset($_SESSION['teachername'])){
                     </button>
                     <p>Change Password</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduale.php';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduleteacher.php';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
                     </button>
                     <p>Scheduale</p>
                 </div>

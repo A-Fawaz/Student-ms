@@ -141,7 +141,7 @@ if(!$conn) {
                 <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
-            <p class="copyrights">© 2023 The President and Fellows of E School</p>
+            <p class="copyrights">© 2023 The President of E School</p>
         </div>
 
         <div id="main">
