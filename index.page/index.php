@@ -231,12 +231,12 @@
         <p>Get in touch</p>
         <p>call : (617) 495-1000</p>
         <p>Email : eschool498@gmail.com</p>
-        <a class="link" href="../index.page/contact.php">Website Feedback Form</a>
+      
       </div>
     </div>
     <div class="text">
       <div class="copyrights">
-        © 2023 The President and Fellows of E School
+        © 2023 The President of E School
 
       </div>
       <div class="links">

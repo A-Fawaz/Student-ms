@@ -1,0 +1,196 @@
+:root{
+    --orange: #fb8b24;
+    --btnhovergray: #36454f;
+    --white: white;
+    --black: black;}
+    .sidebar {
+        height: 100%; /* 100% Full-height */
+        width: 250px; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: var(--orange); /* */
+         /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        overflow: hidden;
+        
+      }
+      
+      /* The sidebar links */
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 15px;
+        color: var(--black);
+        /* display: block; */
+        transition: 0.3s;
+      }
+      
+      /* When you mouse over the navigation links, change their color */
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+      
+      /* Position and style the close button (top right corner) */
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .closebtn{
+        visibility: hidden;
+      }
+      
+      /* The button used to open the sidebar */
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: var(--orange);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+      }
+      
+      .openbtn:hover {
+        background-color: #444;
+      }
+      
+      /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+      #main {
+        transition: margin-left .5s; 
+       }
+      .logotitle {
+        display: flex;
+        flex-direction: row;
+      padding-bottom: 10px;
+      padding-left: 10px;
+        
+    } 
+    
+    .logotitle a {
+        text-decoration: none;
+        color: var(--black);
+    }
+    .logo{
+        width: 30px;}
+        #img1,#img2{
+          background-color: var(--white);
+        }
+        .copyrights{
+            text-align: center;
+            padding-left: 10px;
+            padding-top: 140px;
+            font-size: smaller;
+        
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+            #agendaimg{
+              display: none !important;
+            }
+            .sidebar{
+              width: 0px;
+      
+            }
+            .closebtn{
+              visibility: visible;
+            }}
+
+
+            .my-orange-bg{
+                background-color: var(--white);
+                box-shadow: 0px 0px 15px 1px #36454f;
+              }
+              .rounded{
+                border-radius: 40px !important;
+              }
+              .custom-container {
+                width: 80% !important;
+              
+            
+            }
+          
+
+            h1{
+                background-color: var(--orange);
+                opacity: 0.8;
+                text-align: center;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                border-radius: 30px 0 15px 0;
+                margin-top: 10px !important;
+                font-weight: bold !important;
+            }
+label{
+    color: var(--orange);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    font-weight: bold !important;
+    padding: 5px;
+
+}
+
+
+
+
+            .table-white {
+                color: var(--btnhovergray); 
+              }
+              .table-bordered td, .table-bordered th {
+              }
+                .table td, .table th {
+                    padding: .75rem;
+                    vertical-align: top;
+                }
+                th{ 
+                    color: var(--orange);
+                    font-size: 17px;
+    font-weight: bold !important;
+                  }
+
+
+                  #show{
+                    background-color: #fb8b24 !important;
+                  }
+                  
+                      #show:hover{
+                      
+                        background-color: var(--btnhovergray) !important;
+                        color: white;
+                  
+                      }
+
+                      
+
+                  #submit{
+                    background-color: #fb8b24 !important;
+                  }
+                  
+                      #submit:hover{
+                      
+                        background-color: var(--btnhovergray) !important;
+                        color: white;
+                  
+                      }
+
+
+
+                      .alert1{
+                        color: red;
+                        margin: 0;
+                      }
+                      .alert2{
+                        color: red;
+                        margin: 0;
+                      
+                      }
+                      .hi{
+                        width: 20% !important;
+                      }
+                  
+                  

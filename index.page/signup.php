@@ -106,8 +106,8 @@ if (isset($_POST['submit'])) {
             
             <p id="p2alert" class="alert" style="display: none;"></p>
             <br>
-            <input type="checkbox" id="checkbox" name="checkbox" class="checkbox" />
-            <label class="checkbox1" for="checkbox">Keep me logged in</label>
+      
+          
             <input type="submit" name="submit" value="Sign in"  class="btn">
             <br />
             <br />

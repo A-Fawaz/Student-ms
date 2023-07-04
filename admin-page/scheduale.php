@@ -9,29 +9,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
-            //document.getElementById("main").style.marginLeft = "250px";
             document.getElementById("container").style.marginLeft = "40vh";
         }
 
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
-           // document.getElementById("main").style.marginLeft = "0";
             document.getElementById("container").style.marginLeft = "20vh";
         }
     </script>
 </head>
 
 <body>
-<div class="full-cont">
-<aside>
+
+    <aside>
         <div id="mySidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >&times;</a
-          >
-          <div class="logotitle">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         
+           
+            <div class="logotitle">
             <img class="logo" src="../logos/graph.png" alt="" />
             <a href="../admin-page/teacher-home.php">Home page</a>
           </div>
@@ -43,6 +51,10 @@
             <img class="logo" src="../logos/grammar.png" alt="" />
             <a href="../admin-page/agendas.php">Agenda</a>
           </div>
+          <div class="logotitle">
+                <img class="logo" src="../logos/learning.png" alt="">
+                <a href="../admin-page/edit-agenda.php">delete agenda</a>
+            </div>
           <div class="logotitle">
             <img class="logo" src="../logos/graduated-student.png" alt="" />
             <a href="../Teachers/class-management.php">Students</a>
@@ -63,22 +75,23 @@
             <img class="logo" src="../logos/door-knob.png" alt="" />
             <a href="../index.page/logout.php"> Log Out</a>
           </div>
-          <p class="copyrights">© 2023 The President of E School</p>
+            <p class="copyrights">© 2023 The President and Fellows of E School</p>
         </div>
-
         <div id="main">
-          <button class="openbtn" onclick="openNav()">&#9776;</button>
+            <button class="openbtn" onclick="openNav()">&#9776; </button>
+
         </div>
-       
-      </aside>
-      <nav class="nav2">
-        <h1 class="eschool1" id="eschool1">E-School</h1>
+    </aside>
+
+
+    <div class="container custom-container me-5" >
+        <div class="row">
+            
+            <h1> Weekly Scheduale </h1>
+        </div>
         
-    </nav>
-    <div class="container" id="container">
-        
-        <div class="table-responsive" id="table">
-            <table class="table table-bordered text-center">
+        <div class="table-responsive">
+            <table class="table table-bordered text-center ">
                 <thead>
                     <tr class="bg-light-gray">
                         <th class="text-uppercase">Time
@@ -274,7 +287,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
     </div>
 </body>
 
