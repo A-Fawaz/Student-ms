@@ -19,12 +19,6 @@ body{
   overflow-x: hidden;
 }
 
-  .containerF{
-  display: flex;
-  flex-direction: row;
- 
-} 
-  
 .nav2{
   top: 0;
   position: fixed;
@@ -45,7 +39,7 @@ body{
 .eschool1{
   font-size: 40px!important;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
- margin-left: 0px;
+ margin-left: 700px;
  transition: 0.5s;
   color:var(--orange);
 
@@ -55,34 +49,32 @@ body{
   display: flex;
   flex-direction: column;
   height: 250px;
-  width: 200px;
+  width: 400px;
   background-color: var(--white);
-  border: 2px solid black ;
-  margin-left: 250px;
+  border: 2px solid rgb(107, 104, 104) ;
+  margin-left: 350px;
   border-radius: 3px;
   margin-bottom: 20px;
   z-index: 0;
-  
+  margin-top: 50px;
+  align-items: center;
 }
-
-
-
-
-
 
 .card-img{
-  width:200px;
+  width:180px;
   height: 150px;
-
 }
 
-.card-img:hover{
-  scale: 1.1;
-}
+
 
 .info-container{
   height: 100px;
   background-color: var(--orange);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
 }
 
 .grade-name{
@@ -92,6 +84,7 @@ body{
   margin-left: 60px;
   margin-top: 3px;
   color: var(--white);
+  text-transform: capitalize;
 }
 
 .student-number{
@@ -135,6 +128,13 @@ body{
   
 
 }
+
+.full-cont{
+  display: flex;
+  flex-direction: row;
+  margin-left: 200px;
+}
+
 
 /* The sidebar links */
 .sidebar a {
@@ -284,6 +284,17 @@ body{
   .closebtn{
     visibility: visible;
   }
+  .openbtn{
+    margin-left: -90px !important;
+  }
+
+
+  .card{
+    margin-left: 20px;
+    margin-top: 100px;
+    width: 250px;
+  }
+
 
   .sidebar{
     width: 0px;
@@ -296,9 +307,17 @@ body{
     margin-left: -150px;
   }
   .eschool1{
-    visibility: hidden;
+    margin-top: -30px;
+    margin-left: 50px;
   }
   .nav2{
-    visibility: hidden;
+    margin-left: 100px;
+  }
+  .grade-name{
+    margin-left: -20px;
+  }
+
+  .card-btn{
+    margin-left: -25px;
   }
 }
