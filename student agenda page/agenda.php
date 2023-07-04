@@ -24,8 +24,11 @@
 
 <body>
   <?php
-  include '../connect.php';
+  include '../config.php';
   include 'data.php';
+  if(!isset($_SESSION['studentname'])){
+    header('location:../index.page/signup.php');
+  };
   ?>
   <div id="mySidebar" class="sidebar">
 
@@ -33,11 +36,11 @@
 
     <div class="logotitle">
       <img class="logo" src="../logos/graph.png" alt="">
-      <a href="../Admin/admin-profile.php"> My Profile</a>
+      <a href="../Student/student-profile.php"> My Profile</a>
     </div>
     <div class="logotitle">
       <img class="logo" src="../logos/graduated-student.png" alt="">
-      <a href="../">Grades</a>
+      <a href="../Student/certificate.php">Grades</a>
 
     </div>
     <div class="logotitle">
@@ -51,10 +54,10 @@
     </div>
     <div class="logotitle">
       <img class="logo" src="../logos/door-knob.png" alt="">
-      <a href="../index.page/signup.php"> Log Out</a>
+      <a href="../index.page/logout.php"> Log Out</a>
 
     </div>
-    <p class="copyrights">© 2023 The President and Fellows of E School</p>
+    <p class="copyrights">© 2023 The President of E School</p>
   </div>
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; </button>

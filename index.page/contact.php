@@ -48,7 +48,7 @@
         <p class="alert" id="alert2"></p>
       </div>
       <div>
-        <label for="Email">Email</label>
+        <label for="Email">Email</label>  
         <input type="Email" name="Email" id="Email">
         <p class="alert" id="alert3"></p>
       </div>

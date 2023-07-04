@@ -1,27 +1,15 @@
 <?php
+
+@include '../config.php';
 session_start();
-$conn = new mysqli('localhost', 'root', '','school-management system');
-if(!$conn){
-    die(mysqli_error($conn));
-}
-    // $id = $_GET['updateid'];
-    // $sql = "SELECT * FROM `student` WHERE Sid='$id'";
-    // $result = mysqli_query($conn, $sql);
+$select = "SELECT s.*, c.name FROM student s JOIN class c ON s.classid = c.id WHERE s.username = '" . $_SESSION['studentname'] . "'";
 
-    // while ($row = mysqli_fetch_assoc($result)) {
-
-    //     $username=$row['Fname'];
-    //     $fullname = $row['Lname'];
-    //     $email = $row['email'];
-    //     $mobile=$row['mobile'];
-    //     $address=$row['address'];
-    //     $class=$row['class'];
-    //     $year=$row['year'];
-    // }
-
-
+$result = mysqli_query($conn, $select);
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,33 +57,29 @@ if(!$conn){
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >&times;</a
           >
-
-      
           <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Agenda</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="#">Grades</a>
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../Student/student-profile.php"> My Profile</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="../student agenda page/agenda.php"> Courses</a>
+            <a href="../student agenda page/agenda.php"> Agenda</a>
           </div>
           <div class="logotitle">
-            <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="#"> Profile</a>
+            <img class="logo" src="../logos/graduated-student.png" alt="" />
+            <a href="../Student/certificate.php">Grades</a>
           </div>
+          
+         
           <div class="logotitle">
             <img class="logo" src="../logos/gear.png" alt="" />
-            <a href="../index.page/changepassword.html">Change Password </a>
+            <a href="../index.page/changepassword.php">Change Password </a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="#"> Log Out</a>
+            <a href="../index.page/logout.php"> Log Out</a>
           </div>
-          <p class="copyrights">© 2023 The President and Fellows of E School</p>
+          <p class="copyrights">© 2023 The President  of E School</p>
         </div>
 
         <div id="main">
@@ -106,6 +90,7 @@ if(!$conn){
 
       <!-- /*sidebar end*/ -->
       <div class="row-info-cont">
+      <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <div information-cont>
         <div class="info-table">
 
@@ -116,28 +101,28 @@ if(!$conn){
               <img src="../logos/info2.png" class="info-img" />
               Identification
             </div>
-          <tr>
-            <td> </td>
-            <?php
-            // echo $id;
-            ?></tr>
-          <tr>
-            <td>Full-Name :</td>
-            <td>Student Full Name.</td>
-          </tr>
+           
+           <tr>
+            <td>ID :</td>
+            <td><?php echo $row['username']; ?></td>
+           </tr>
+           <tr>
+            <td >Full-Name :</td>
+            <td><?php echo $row['firstname']; ?>  <?php echo $row['lastname']; ?></td>
+           </tr>
 
-          <tr>
+           <tr>
             <td>E-Mail :</td>
-            <td>student123@gmail.com</td>
-          </tr>
+            <td><?php echo $row['email']; ?></td>
+           </tr>
 
-          <tr>
+           <tr>
             <td>Mobile :</td>
-            <td>+961 70-222222</td>
-          </tr>
+            <td><?php echo $row['mobile']; ?></td>
+           </tr>  
           </table>
         </div>
-      </div>
+       </div>
         <div class="info-container">
           <table class="table table-responsive">
             
@@ -145,9 +130,10 @@ if(!$conn){
                 <img src="../logos/info2.png" class="info-img" />
                 Address
               </div>
+             
             <tr>
               <td>Region :</td>
-              <td>Nabatieh.</td>
+              <td><?php echo $row['address']; ?></td>
             </tr>
             <tr>
               <td>Street :</td>
@@ -159,7 +145,7 @@ if(!$conn){
               <td>Building 5.</td>
             </tr>
   
-            </tr>
+            </tr> 
           </table>
           </div>
 
@@ -172,9 +158,12 @@ if(!$conn){
                     <img src="../logos/info2.png" class="info-img" />
                     Other
                   </div>
+                 
                 <tr>
-                  <td>Class :</td>
-                  <td>Grade-X.</td>
+                <td>Class :</td>
+  
+  <td><?php echo $row['name']; ?></td>
+  <?php } ?>
                 <tr>
                   <td>Academic Year :</td>
                   <td>2023-2024</td>
@@ -185,13 +174,13 @@ if(!$conn){
                   <td>O+</td>
                 </tr>
       
-                </tr>
+                </tr>  
               </table>
               </div>
             </div>
     
 
-      </div>
+       </div>
         
 
         <div class="img">

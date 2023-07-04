@@ -1,3 +1,15 @@
+<?php
+
+@include '../config.php';
+session_start();
+if(!isset($_SESSION['teachername'])){
+    header('location:../index.page/signup.php');
+  }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +25,8 @@
         <nav>
             <h1>E-School</h1>
             <ul class="nav-list">
-                <li><a href="../index.page/index.html">Home</a></li>
-                <li><a id="space" href="../index.page/index.html#about-section">About</a></li>
-                <li><a href="../admin-page/contact.html">Contact</a></li>
+               
+                <li><a href="../index.page/logout.php"><b>Log Out</b></a></li>
             </ul>
         </nav>
     </div>
@@ -24,31 +35,31 @@
         <div class="container">
             <div class="row1">
 <div>
-              <button type="button " class="btn1" onclick="window.location.href='../Teachers/teacher-profile.html';">
+              <button type="button " class="btn1" onclick="window.location.href='../Teachers/teacher-profile.php';">
                         <img class="images" src="../logos/user.png" alt="profile">
                     </button>
                     <p>Profile</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../Teachers/class-management.html';"> <img class="images" src="../logos/school.png" alt="classes">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../Teachers/class-management.php';"> <img class="images" src="../logos/school.png" alt="classes">
                     </button>
                     <p>Class Managment</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/agendas.html';"> <img class="images" src="../logos/notebook.png" alt="agenda">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/agendas.php';"> <img class="images" src="../logos/notebook.png" alt="agenda">
                     </button>
                     <p>Agenda</p>
                 </div>
             </div>
             <div class="row2">
 
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/grades.html';"> <img class="images" src="../logos/marking.png" alt="grades">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/grades.php';"> <img class="images" src="../logos/marking.png" alt="grades">
                     </button>
                     <p>Grades</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../index.page/forgetPassword.html';"> <img class="images" src="../logos/password.png" alt="change password">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../index.page/changepasswordteacher.php';"> <img class="images" src="../logos/password.png" alt="change password">
                     </button>
                     <p>Change Password</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduale.html';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../admin-page/scheduleteacher.php';"> <img class="images" src="../logos/calendar.png" alt="scheduale">
                     </button>
                     <p>Scheduale</p>
                 </div>

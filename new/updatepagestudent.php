@@ -1,3 +1,84 @@
+<?php 
+include "../config.php";
+
+if (isset($_POST['update'])) {
+    $firstname = $_POST['firstname'];
+    $user_id = $_POST['user_id'];
+    $lastname = $_POST['lastname'];
+    $dob = $_POST['dob'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    
+   
+    $gender = $_POST['gender'];
+   
+    $username = $_POST['username'];
+    $oldschool = $_POST['oldschool']; // Course name from input
+    $class_name = $_POST['class']; // Class name from input
+
+    
+
+    $class_id = null;
+
+    // Retrieve class ID based on the selected class name
+    $class_query = "SELECT id FROM class WHERE name = '$class_name'";
+    $class_result = $conn->query($class_query);
+    if ($class_result->num_rows > 0) {
+        $class_row = $class_result->fetch_assoc();
+        $class_id = $class_row['id'];
+    }
+
+    $sql = "UPDATE student SET firstname='$firstname', lastname='$lastname',
+            email='$email',  dob='$dob', mobile='$mobile',
+            gender='$gender',
+            oldschool='$oldschool', classid='$class_id',
+            username='$username' WHERE id='$user_id'";
+
+    $result = $conn->query($sql);
+
+    if ($result === TRUE) {
+        echo "Record updated successfully.";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+
+if (isset($_GET['id'])) {
+    $user_id = $_GET['id']; 
+
+    $sql = "SELECT student.*,  class.name AS class_name FROM student 
+    INNER JOIN  class ON student.classid = class.id 
+    WHERE student.id='$user_id'";
+
+    $result = $conn->query($sql); 
+
+    if ($result->num_rows > 0) {        
+        while ($row = $result->fetch_assoc()) {
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $oldschool = $row['oldschool'];
+            $dob = $row['dob'];
+            $email = $row['email'];
+            $mobile = $row['mobile'];
+            
+           
+            $gender = $row['gender'];
+          
+            $class = $row['class_name']; 
+            $username = $row['username'];
+            $id = $row['id'];
+        } 
+    }
+}
+?> 
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,33 +120,36 @@
         <div id="mySidebar" class="sidebar">
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../course dashboard/dashboard.html"> Dashboard</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/graduated-student.png" alt="">
-                <a href="../new/listteacher.html">All Teachers</a>
+                <a href="../new/liststudent.php">All Students</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
-                <a href="../new/Studentregistration.html">Students</a>
+                <a href="../new/teacherregi.php">Teachers</a>
 
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/gear.png" alt="">
-                <a href="../index.page/changepassword.html"> Change Passsword</a>
+                <a href="../index.page/changepassword.php"> Change Passsword</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/profile.png" alt="">
-                <a href="../Admin/admin-profile.html"> My Profile</a>
+                <a href="../Admin/admin-profile.php"> My Profile</a>
 
             </div>
 
             <div class="logotitle">
                 <img class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.html"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
             <p class="copyrights">© 2023 The President and Fellows of E School</p>
@@ -82,39 +166,41 @@
     </nav>
     <div class="container1">
         <header>Update Information </header>
-        <form action="#">
+        <form action="" method ="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
                     <div class="fields">
                         <div class="input-field">
                             <label>First Name</label>
-                            <input type="text" placeholder="Enter your first name" required>
+                            <input type="hidden" name="user_id" value="<?php echo $id; ?>">
+                            <input type="text" name="firstname"  value="<?php echo $firstname; ?>" required>
                         </div>
                         <div class="input-field">
                             <label>Date of Birth</label>
-                            <input type="date" placeholder="Enter birth date" required>
+                            <input type="date" name="dob"  value="<?php echo $dob; ?>"required>
                         </div>
                         <div class="input-field">
                             <label>Email Address</label>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" name="email"  value="<?php echo $email; ?>" required>
                         </div>
                         <div class="input-field">
                             <label>Last Name</label>
-                            <input type="text" placeholder="Enter your last name" required>
+                            <input type="text" name="lastname"  value="<?php echo $lastname; ?>" required>
                         </div>
                         <div class="input-field">
                             <label>Gender</label>
-                            <select required>
+                            <select name="gender" required>
                                 <option disabled selected>Select gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Others</option>
+                                <option value="male" <?php if($gender == 'male') echo 'selected'; ?>>Male</option>
+                                <option value="female" <?php if($gender == 'female') echo 'selected'; ?>>Female</option>
+                               
                             </select>
+
                         </div>
                         <div class="input-field">
                             <label>Phone Number </label>
-                            <input type="text" placeholder="Enter your phone number " required>
+                            <input type="text" name="mobile" value="<?php echo $mobile; ?>" required>
                         </div>
                     </div>
                 </div>
@@ -122,21 +208,21 @@
                     <span class="title">Education Details</span>
                     <div class="fields">
                         
-                        <div class="input-field">
-                            <label>Experience</label>
-                            <input type="text" placeholder="Enter years of experience" required>
-                        </div>
+                    <div class="input-field">
+    <label>Class</label>
+    <input type="text" class="form-control" id="textadd" name="class" value="<?php echo $class; ?>" required>
+</div>
                         <div class="input-field">
                             <label>Old School</label>
-                            <input type="text" placeholder="Enter the old school" required>
+                            <input type="text" name="oldschool" value="<?php echo $oldschool; ?>" required>
                         </div>
                         <div class="input-field">
                             <label>Username</label>
-                            <input type="text" placeholder="Enter new username " required>
+                            <input type="text" name="username" value="<?php echo $username; ?>" required>
                         </div>
                     </div>
-                    <button class="sumbit">
-                        <span class="btnText">Submit</span>
+                    <button class="sumbit" name="update"  onclick="check()">
+                        <span class="btnText" >Submit</span>
                    
                     </button>
 

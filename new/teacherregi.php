@@ -1,3 +1,75 @@
+<?php
+
+include '../config.php';
+
+require_once("../sendmail.php");
+$randomNumber = sprintf("%06d", rand(0, 999999));
+$letters = 'abcdefghijklmnopqrstuvwxyz';
+$digits = '0123456789';
+
+$randomLetters = substr(str_shuffle($letters), 0, 3);
+$randomDigits = substr(str_shuffle($digits), 0, 6);
+
+$randomname = $randomLetters . $randomDigits;
+if (isset($_POST['firstnext'])) {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    
+
+    // Validate the form data (you can add more validation if needed)
+    if (empty($firstname) || empty($lastname) ) {
+        $validation = "Please fill in all fields.";
+    }
+}
+
+if (isset($_POST['submit'])) {
+
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
+    $dob = mysqli_real_escape_string($conn, $_POST['dob']);
+    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+    $course = mysqli_real_escape_string($conn, $_POST['course']);
+    $class = mysqli_real_escape_string($conn, $_POST['class']);
+    $certificate = mysqli_real_escape_string($conn, $_POST['certificate']);
+    $university = mysqli_real_escape_string($conn, $_POST['university']);
+    $experienceyears = mysqli_real_escape_string($conn, $_POST['experienceyears']);
+    $oldschool = mysqli_real_escape_string($conn, $_POST['oldschool']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $role = $_POST['role'];
+
+    $select = "SELECT * FROM teacher WHERE username = '$username'";
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+        $usererror[] = 'Username already exists!';
+    } else {
+        $sql = "SELECT id FROM course WHERE name = '$course'";
+        $sql1 = "SELECT id FROM class WHERE name = '$class'";
+        $result = mysqli_query($conn, $sql);
+        $result1 = mysqli_query($conn, $sql1);
+
+        if (mysqli_num_rows($result) > 0 && mysqli_num_rows($result1) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $row1 = mysqli_fetch_assoc($result1);
+            $courseid = $row['id'];
+            $classid = $row1['id'];
+
+            $insert = "INSERT INTO teacher(firstname,lastname,email,mobile,dob,gender,courseid,classid,certificate,university,experienceyears,oldschool, username, password, role)
+                       VALUES('$firstname','$lastname','$email','$mobile','$dob','$gender','$courseid','$classid','$certificate','$university','$experienceyears','$oldschool','$username','$password','$role')";
+            mysqli_query($conn, $insert);
+
+            header('location:../new/teacherregi.php');
+            sendEmailWithCC("fatimatarhini7531@gmail.com", " Teacher Registration", "Welcome Our Teacher \n\n" . $firstname . "\n" . $lastname . " <br>Your username: " . $username . "</br><br>\nYour password: " . $password."</br>");
+        }
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -34,32 +106,35 @@
         <div id="mySidebar" class="sidebar">
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../course dashboard/dashboard.html"> Dashboard</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
-                <a href="../new/listteacher.html">All Teachers</a>
+                <a href="../new/listteacher.php">All Teachers</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/graduated-student.png" alt="">
-                <a href="../new/Studentregistration.html">Students</a>
+                <a href="../new/Studentregistration.php">Students</a>
 
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/gear.png" alt="">
-                <a href="../index.page/changepassword.html"> Change Password</a>
+                <a href="../index.page/changepassword.php"> Change Password</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/profile.png" alt="">
-                <a href="../Admin/admin-profile.html"> MY Profile</a>
+                <a href="../Admin/admin-profile.php"> MY Profile</a>
 
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.html"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
             <p class="copyrights">© 2023 The President and Fellows of E School</p>
@@ -145,7 +220,7 @@
             </div>
         </div>
         <div class="form-outer">
-            <form action="#">
+            <form  action="" method="post">
                 <div class="page slide-page">
                     <div class="title">
                         Basic Info:
@@ -154,16 +229,21 @@
                         <div class="label">
                             First Name
                         </div>
-                        <input type="text">
+                        <input type="text" name="firstname" required>
+                        <span class="validation-message"><?php if (isset($validation)) { echo $validation; } ?></span> 
+            
                     </div>
                     <div class="field">
                         <div class="label">
                             Last Name
                         </div>
-                        <input type="text">
+                        <input type="text" name="lastname" required>
+                        <span class="validation-message"><?php if (isset($validation)) { echo $validation; } ?></span> 
+            
                     </div>
                     <div class="field">
-                        <button class="firstNext next">Next</button>
+                    <button type="submit" class="firstNext next" name="firstnext">Next</button>
+                        
                     </div>
                 </div>
                 <div class="page">
@@ -174,13 +254,23 @@
                         <div class="label">
                             Email Address
                         </div>
-                        <input type="text">
+                        <input type="email" name="email" required>
+                        <?php
+            if (isset($emailerror)) {
+               echo '<span class="error-msg" style="color:red;font-size :15px;margin-bottom:20px;">'.$emailerror.'</span>';
+            }
+            ?>
                     </div>
                     <div class="field">
                         <div class="label">
                             Phone Number
                         </div>
-                        <input type="Number">
+                        <input type="text" name="mobile"  pattern="[0-9]{8}" required>
+                        <?php
+            if (isset($mobileerror)) {
+               echo '<span class="error-msg" style="color:red;font-size :15px;margin-bottom:20px;">'.$mobileerror.'</span>';
+            }
+            ?>
                     </div>
                     <div class="field btns">
                         <button class="prev-1 prev">Previous</button>
@@ -195,16 +285,21 @@
                         <div class="label">
                             Date
                         </div>
-                        <input type="datetime">
+                        <input type="date" name="dob" required>
+                        <?php
+            if (isset($doberror)) {
+               echo '<span class="error-msg" style="color:red;font-size :15px;margin-bottom:20px;">'.$doberror.'</span>';
+            }
+            ?>
                     </div>
                     <div class="field">
                         <div class="label">
                             Gender
                         </div>
-                        <select>
-                            <option disabled>please choose</option>
-                            <option>Male</option>
-                            <option>Female</option>
+                        <select name="gender">
+                            <option value="" disabled>please choose</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
 
                         </select>
                     </div>
@@ -219,21 +314,20 @@
                     </div>
                     <div class="field">
                         <div class="label">
-                            Language
+                            Course
                         </div>
-                        <input type="text">
+                        <input type="text" name="course" required>
+                        <?php
+            if (isset($courseerror)) {
+               echo '<span class="error-msg" style="color:red;font-size :15px;margin-bottom:20px;">'.$courseerror.'</span>';
+            }
+            ?>
                     </div>
                     <div class="field">
                         <div class="label">
-                            English language
+                           class
                         </div>
-                        <select>
-                            <option disabled>please choose</option>
-                            <option>Rare</option>
-                            <option>medium</option>
-                            <option>strong</option>
-
-                        </select>
+                        <input type="text" name="class" required>
                     </div>
                     <div class="field btns">
                         <button class="prev-3 prev">Previous</button>
@@ -248,13 +342,18 @@
                         <div class="label">
                             Certificate
                         </div>
-                        <input type="text">
+                        <input type="text" name="certificate" required>
+                        <?php
+            if (isset($certificateerror)) {
+               echo '<span class="error-msg" style="color:red;font-size :15px;margin-bottom:20px;">'.$certificateerror.'</span>';
+            }
+            ?>
                     </div>
                     <div class="field">
                         <div class="label">
                             University
                         </div>
-                        <input type="text">
+                        <input type="text"name="university" required>
                     </div>
                     <div class="field btns">
                         <button class="prev-4 prev">Previous</button>
@@ -269,13 +368,14 @@
                         <div class="label">
                             Years Of Experience:
                         </div>
-                        <input type="text">
+                        <input type="text" name="experienceyears" pattern="[0-9]+" required>
+                
                     </div>
                     <div class="field">
                         <div class="label">
                             Old School
                         </div>
-                        <input type="text">
+                        <input type="text" name="oldschool">
                     </div>
                     <div class="field btns">
                         <button class="prev-5 prev">Previous</button>
@@ -291,17 +391,26 @@
                         <div class="label">
                             Username
                         </div>
-                        <input type="text">
+                        <input type="text" name="username" value=<?php echo $randomname;?>>
+                         <?php if (isset($usererror)) : ?>
+                        <span class="validation-message"><?php echo $usererror; ?></span>
+                    <?php endif; ?>
                     </div>
                     <div class="field">
                         <div class="label">
                             Password
                         </div>
-                        <input type="password">
+                        <input type="text" name="password" value=<?php echo $randomNumber;?>>
+                        <?php
+            if (isset($passerror)) {
+               echo '<span class="error-msg" style="color:red;font-size :15px;margin-bottom:20px;">'.$passerror.'</span>';
+            }
+            ?>
+                        <input type="hidden" name="role" value="teacher">
                     </div>
                     <div class="field btns">
                         <button class="prev-6 prev">Previous</button>
-                        <button class="submit">Submit</button>
+                        <input type="submit" name="submit" value="Submit" class="submitall">
                     </div>
                 </div>
             </form>

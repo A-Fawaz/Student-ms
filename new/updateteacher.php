@@ -1,3 +1,91 @@
+<?php 
+include "../config.php";
+
+
+if (isset($_POST['update'])) {
+    $firstname = $_POST['firstname'];
+    $user_id = $_POST['user_id'];
+    $lastname = $_POST['lastname'];
+    $dob = $_POST['dob'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $certificate = $_POST['certificate'];
+    $university = $_POST['university'];
+    $gender = $_POST['gender'];
+    $experienceyears = $_POST['experienceyears'];
+    $username = $_POST['username'];
+    $course_name = $_POST['course']; // Course name from input
+    $class_name = $_POST['class']; // Class name from input
+
+    // Initialize the $course_id variable
+    $course_id = null;
+
+    // Retrieve course ID based on the selected course name
+    $course_query = "SELECT id FROM course WHERE name = '$course_name'";
+    $course_result = $conn->query($course_query);
+    if ($course_result->num_rows > 0) {
+        $course_row = $course_result->fetch_assoc();
+        $course_id = $course_row['id'];
+    }
+
+    $class_id = null;
+
+    // Retrieve class ID based on the selected class name
+    $class_query = "SELECT id FROM class WHERE name = '$class_name'";
+    $class_result = $conn->query($class_query);
+    if ($class_result->num_rows > 0) {
+        $class_row = $class_result->fetch_assoc();
+        $class_id = $class_row['id'];
+    }
+
+    $sql = "UPDATE teacher SET firstname='$firstname', lastname='$lastname',
+            email='$email', courseid='$course_id', dob='$dob', mobile='$mobile',
+            certificate='$certificate', university='$university', gender='$gender',
+            experienceyears='$experienceyears', classid='$class_id',
+            username='$username' WHERE id='$user_id'";
+
+    $result = $conn->query($sql);
+
+    if ($result === TRUE) {
+        echo "Record updated successfully.";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+
+if (isset($_GET['id'])) {
+    $user_id = $_GET['id']; 
+
+    $sql = "SELECT teacher.*, course.name AS course_name, class.name AS class_name FROM teacher 
+    INNER JOIN course ON teacher.courseid = course.id INNER JOIN class ON teacher.classid = class.id 
+    WHERE teacher.id='$user_id'";
+
+    $result = $conn->query($sql); 
+
+    if ($result->num_rows > 0) {        
+        while ($row = $result->fetch_assoc()) {
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $course = $row['course_name'];
+            $dob = $row['dob'];
+            $email = $row['email'];
+            $mobile = $row['mobile'];
+            $certificate = $row['certificate'];
+            $university = $row['university'];
+            $gender = $row['gender'];
+            $experienceyears = $row['experienceyears'];
+            $class = $row['class_name']; 
+            $username = $row['username'];
+            $id = $row['id'];
+        } 
+    }
+}
+?> 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,33 +129,36 @@
         <div id="mySidebar" class="sidebar">
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../course dashboard/dashboard.html"> Dashboard</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/graduated-student.png" alt="">
-                <a href="../new/listteacher.html">All Teachers</a>
+                <a href="../new/listteacher.php">All Teachers</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
-                <a href="../new/Studentregistration.html">Students</a>
+                <a href="../new/Studentregistration.php">Students</a>
 
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/gear.png" alt="">
-                <a href="../index.page/changepassword.html"> Change Passsword</a>
+                <a href="../index.page/changepassword.php"> Change Passsword</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/profile.png" alt="">
-                <a href="../Admin/admin-profile.html"> My Profile</a>
+                <a href="../Admin/admin-profile.php"> My Profile</a>
 
             </div>
 
             <div class="logotitle">
                 <img class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.html"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
             <p class="copyrights">© 2023 The President and Fellows of E School</p>
@@ -84,44 +175,45 @@
     </nav>
     <div class="container">
         <header>Update Information </header>
-        <form action="#">
+        <form action="" method="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
                     <div class="fields">
                         <div class="input-field" >
                             <label>First Name</label>
-                            <input type="text" placeholder="Enter your first name" id="textadd">
+                            <input type="text" name="firstname"  value="<?php echo $firstname; ?>" id="textadd" >
+                            <input type="hidden" name="user_id" value="<?php echo $id; ?>">
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
                             <label>Date of Birth</label>
-                            <input type="date" placeholder="Enter birth date" id="textadd" >
+                            <input type="date" name="dob"  value="<?php echo $dob; ?>" id="textadd" >
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
                             <label>Email Address</label>
-                            <input type="text" placeholder="Enter your email" id="textadd">
+                            <input type="text" name="email"  value="<?php echo $email; ?>" id="textadd">
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
                             <label>Last Name</label>
-                            <input type="text" placeholder="Enter your last name" id="textadd">
+                            <input type="text" name="lastname" value="<?php echo $lastname; ?>" id="textadd">
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
                             <label>Gender</label>
-                            <select required>
+                            <select name="gender" required>
                                 <option disabled selected>Select gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Others</option>
+                                <option value="male" <?php if($gender == 'male') echo 'selected'; ?>>Male</option>
+                                <option value="female" <?php if($gender == 'female') echo 'selected'; ?>>Female</option>
+                               
                             </select>
 
                         </div>
                         <div class="input-field">
                             <label>Phone Number </label>
-                            <input type="text" placeholder="Enter your phone number " id="textadd">
+                            <input type="text"  name="mobile" value="<?php echo $mobile; ?>" id="textadd">
                             <p class="textp" id="textp"></p>
                         </div>
                     </div>
@@ -129,39 +221,40 @@
                 <div class="details ID">
                     <span class="title">Education Details</span>
                     <div class="fields">
-                        <div class="input-field">
-                            <label>Language </label>
-                            <input type="text" placeholder="Enter language" id="textadd">
-                            <p class="textp" id="textp"></p>
-                        </div>
+                    <div class="input-field">
+                       <label>Course</label>
+               
+                        <input type="text" class="form-control" id="textadd" name="course" value="<?php echo $course; ?>" required>
+
+
+                                     </div>
                         <div class="input-field">
                             <label>Certificate</label>
-                            <input type="text" placeholder="Enter certificate"id="textadd">
+                            <input type="text"  name="certificate" value="<?php echo $certificate; ?>" id="textadd">
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
                             <label>University</label>
-                            <input type="text" placeholder="Enter university" id="textadd">
+                            <input type="text"  name="university" value="<?php echo $university; ?>"  id="textadd">
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
                             <label>Experience</label>
-                            <input type="text" placeholder="Enter years of experience" id="textadd" >
+                            <input type="text"  name="experienceyears" value="<?php echo $experienceyears; ?>"  id="textadd" >
                             <p class="textp" id="textp"></p>
                         </div>
                         <div class="input-field">
-                            <label>Old School</label>
-                            <input type="text" placeholder="Enter the old school" id="textadd">
-                            <p class="textp" id="textp"></p>
-                        </div>
+    <label>Class</label>
+    <input type="text" class="form-control" id="textadd" name="class" value="<?php echo $class; ?>" required>
+</div>
                         <div class="input-field">
                             <label>Username</label>
-                            <input type="text" placeholder="Enter new username "id="textadd">
+                            <input type="text"  name="username" value="<?php echo $username; ?>" id="textadd">
                             <p class="textp" id="textp"></p>
                         </div>
                     </div>
-                    <button class="sumbit" id="submit" onclick="check()">
-                        <span class="btnText" id="nextbtn">Submit</span>
+                    <button class="sumbit" name="update"  onclick="check()">
+                        <span class="btnText" >Submit</span>
 
                     </button>
 
@@ -172,5 +265,4 @@
     </div>
     <script src="update.js"></script>
 </body>
-
 </html>

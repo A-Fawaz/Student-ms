@@ -1,3 +1,16 @@
+<?php
+
+include '../config.php';
+
+session_start();
+if(!isset($_SESSION['adminname']))
+{
+    header('location:../index.page/signup.php');
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +26,8 @@
         <nav>
             <h1>E-School</h1>
             <ul class="nav-list">
-                <li><a href="../index.page/index.html">Home</a></li>
-                    <li><a id="space" href="../index.page/index.html#about-section">About</a></li>
-                    <li><a href="../admin-page/contact.html">Contact</a></li>
+              
+                    <li><a href="../index.page/logout.php"><b>Log Out</b></a></li>
             </ul>
         </nav>
     </div>
@@ -24,16 +36,17 @@
         <div class="container">
             <div class="row1">
 
-                <div> <button type="button " class="btn1" onclick="window.location.href='../course-dashboard/dashboard.html';">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../Admin/admin-profile.php';">
                         <img class="images" src="../logos/user.png" alt="profile">
                     </button>
                     <p>Profile</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../Teachers/class-management.php';"> <img class="images" src="../logos/presentation.png" alt="teacher">
+                 <div> <button type="button " class="btn1" onclick="window.location.href='../new/teacherregi.php';"> 
+                 <img class="images" src="../logos/presentation.png" alt="teacher">
                     </button>
                     <p>Teachers</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../Student/student-profile.php';"> <img class="images" src="../logos/students.png" alt="student">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../new/Studentregistration.php';"> <img class="images" src="../logos/students.png" alt="student">
                     </button>
                     <p>Students</p>
                 </div>
@@ -44,7 +57,7 @@
                     </button>
                     <p>Dashboard</p>
                 </div>
-                <div> <button type="button " class="btn1" onclick="window.location.href='../index.page/changeforget.php';"> <img class="images" src="../logos/password.png" alt="change password">
+                <div> <button type="button " class="btn1" onclick="window.location.href='../index.page/changepassword.php';"> <img class="images" src="../logos/password.png" alt="change password">
                     </button>
                     <p>Change Password</p>
                 </div>

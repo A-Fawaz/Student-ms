@@ -43,7 +43,7 @@
  $address="";
 $username1 = $_GET['username'];
 
-$conn = mysqli_connect("localhost", "root", "", "school-management system");
+$conn = mysqli_connect("localhost", "root", "", "school-management");
 
 if(!$conn) {
     die('unable to connect to database'.mysqli_error());
@@ -116,7 +116,7 @@ if(!$conn) {
 
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../index.page/index.php"> Home page</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
@@ -138,10 +138,10 @@ if(!$conn) {
             </div>
             <div class="logotitle">
                 <img style="margin-left:2px;" class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.php"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
-            <p class="copyrights">© 2023 The President and Fellows of E School</p>
+            <p class="copyrights">© 2023 The President of E School</p>
         </div>
 
         <div id="main">

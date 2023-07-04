@@ -1,3 +1,14 @@
+<?php
+
+@include '../config.php';
+session_start();
+$select = "SELECT * FROM admin WHERE username = '" .  $_SESSION['adminname'] . "'";
+
+$result = mysqli_query($conn, $select);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,13 +37,13 @@
     <script>
       function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+       // document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("container").style.marginLeft = "18vh";
       }
 
       function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
+        //document.getElementById("main").style.marginLeft = "0";
         document.getElementById("container").style.marginLeft = "0px";
       }
     </script>
@@ -40,51 +51,55 @@
   </head>
   <body>
     <div class="full-cont">
-      <aside>
+    <aside>
         <div id="mySidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >&times;</a
-          >
 
-          <div class="logotitle">
-            <img class="logo" src="../logos/graph.png" alt="" />
-            <a href="../course dashboard/dashboard.html"> Dashboard</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Teachers</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="#">Students</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="#"> Courses</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="#"> Profile</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/gear.png" alt="" />
-            <a href="../index.page/changepassword.html">Change Password</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="#"> Log Out</a>
-          </div>
-          <p class="copyrights">© 2023 The President and Fellows of E School</p>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../admin-page/admin-home.php"> Home page</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graduated-student.png" alt="">
+                <a href="../new/Studentregistration.php">Students</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/grammar.png" alt="">
+                <a href="../new/teacherregi.php">Teachers</a>
+
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/gear.png" alt="">
+                <a href="../index.page/changepassword.php"> Change Passsword</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/profile.png" alt="">
+                <a href="../Admin/admin-profile.php"> My Profile</a>
+
+            </div>
+
+            <div class="logotitle">
+                <img class="logo" src="../logos/door-knob.png" alt="">
+                <a href="../index.page/logout.php"> Log Out</a>
+
+            </div>
+            <p class="copyrights">© 2023 The President of E School</p>
         </div>
 
         <div id="main">
-          <button class="openbtn" onclick="openNav()">&#9776;</button>
+            <button class="openbtn" onclick="openNav()">&#9776; </button>
+
         </div>
-      </aside>
+    </aside>
       
 
       <!-- /*sidebar end*/ -->
       <div class="row-info-cont">
+      <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <div information-cont>
         <div class="info-table">
 
@@ -97,21 +112,21 @@
             </div>
           <tr>
             <td>ID :</td>
-            <td>A1234</td>
+            <td><?php echo $row['username']; ?></td>
           </tr>
           <tr>
             <td>Full-Name :</td>
-            <td>Admin Full Name.</td>
+            <td><?php echo $row['firstname']; ?>  <?php echo $row['lastname']; ?></td>
           </tr>
 
           <tr>
             <td>E-Mail :</td>
-            <td>admin123@gmail.com</td>
+            <td><?php echo $row['email']; ?>  </td>
           </tr>
 
           <tr>
             <td>Mobile :</td>
-            <td>+961 70-222222</td>
+            <td><?php echo $row['mobile']; ?></td>
           </tr>
           </table>
         </div>
@@ -125,7 +140,7 @@
               </div>
             <tr>
               <td>Region :</td>
-              <td>Nabatieh.</td>
+              <td><?php echo $row['address']; ?>  </td>
             </tr>
             <tr>
               <td>Street :</td>
@@ -163,7 +178,7 @@
                   <td>O+</td>
                 </tr>
       
-                </tr>
+                </tr> <?php } ?>
               </table>
               </div>
             </div>

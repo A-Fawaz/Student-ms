@@ -1,3 +1,71 @@
+<?php
+
+include '../config.php';
+
+require_once("../sendmail.php");
+$randomNumber = sprintf("%06d", rand(0, 999999));
+$letters = 'abcdefghijklmnopqrstuvwxyz';
+$digits = '0123456789';
+
+$randomLetters = substr(str_shuffle($letters), 0, 3);
+$randomDigits = substr(str_shuffle($digits), 0, 6);
+
+$randomname = $randomLetters . $randomDigits;
+if (isset($_POST['firstnext'])) {
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    if ($firstname == '') {
+        $ferror = 'Please fill in the first name!';
+    }
+    if ($lastname == '') {
+        $lerror = 'Please fill in the last name!';
+    }
+}
+
+if (isset($_POST['submit'])) {
+
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
+    $dob = mysqli_real_escape_string($conn, $_POST['dob']);
+    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+    $class = mysqli_real_escape_string($conn, $_POST['class']);
+    $address = mysqli_real_escape_string($conn, $_POST['address']);
+    $oldschool = mysqli_real_escape_string($conn, $_POST['oldschool']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $role = $_POST['role'];
+
+    $select = "SELECT * FROM student WHERE username = '$username' ";
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+        $error[] = 'Username already exists!';
+    } else {
+       
+        $sql = "SELECT id FROM class WHERE name = '$class'";
+        $result = mysqli_query($conn, $sql);
+    
+
+        if (mysqli_num_rows($result) > 0 ) {
+            $row = mysqli_fetch_assoc($result);
+            $classid = $row['id'];
+
+            $insert = "INSERT INTO student (firstname,lastname,email,address,mobile,dob,gender,classid,oldschool, username, password, role)
+                       VALUES('$firstname','$lastname','$email','$address','$mobile','$dob','$gender','$classid','$oldschool','$username','$password','$role')";
+            mysqli_query($conn, $insert);
+
+            header('location:../new/Studentregistration.php');
+            sendEmailWithCC("fatimatarhini7531@gmail.com", " Student Registration", "Welcome Our Student \n\n" . $firstname . "\n" . $lastname . " <br>Your username: " . $username . "</br><br>\nYour password: " . $password."</br>");
+        }
+    }
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -38,33 +106,36 @@
         <div id="mySidebar" class="sidebar">
 
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../course dashboard/dashboard.html"> Dashboard</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
+            </div>
+            <div class="logotitle">
+                <img class="logo" src="../logos/graph.png" alt="">
+                <a href="../course-dashboard/dashboard.php"> Dashboard</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/graduated-student.png" alt="">
-                <a href="../new/liststudent.html">All Students</a>
+                <a href="../new/liststudent.php">All Students</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
-                <a href="../new/teacherregi.html">Teachers</a>
+                <a href="../new/teacherregi.php">Teachers</a>
 
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/gear.png" alt="">
-                <a href="../index.page/changepassword.html"> Change Passsword</a>
+                <a href="../index.page/changepassword.php"> Change Passsword</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/profile.png" alt="">
-                <a href="../Admin/admin-profile.html"> My Profile</a>
+                <a href="../Admin/admin-profile.php"> My Profile</a>
 
             </div>
             
             <div class="logotitle">
                 <img class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.html"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
             <p class="copyrights">© 2023 The President and Fellows of E School</p>
@@ -77,10 +148,7 @@
     </aside>
     <nav class="nav2">
         <h1 class="eschool1" id="eschool1">E-School</h1>
-        <ul class="nav-list2">
-         
         
-        </ul>
     </nav>
     <div class="container">
         <header> Student Registration </header>
@@ -134,7 +202,7 @@
             </div>
         </div>
         <div class="form-outer">
-            <form action="#">
+            <form action="" method="post">
                 <div class="page slide-page">
                     <div class="title">
                         Basic Info:
@@ -143,13 +211,13 @@
                         <div class="label">
                             First Name
                         </div>
-                        <input type="text">
+                        <input type="text" name="firstname">
                     </div>
                     <div class="field">
                         <div class="label">
                             Last Name
                         </div>
-                        <input type="text">
+                        <input type="text" name="lastname">
                     </div>
                     <div class="field">
                         <button class="firstNext next">Next</button>
@@ -161,15 +229,20 @@
                     </div>
                     <div class="field">
                         <div class="label">
-                            Email Address
+                            Email 
                         </div>
-                        <input type="text">
+                        <input type="text" name="email">
+                        <div class="addr">
+                        Phone Number 
+                        </div>
+                        <input type="text" name="mobile">
                     </div>
+                   
                     <div class="field">
                         <div class="label">
-                            Phone Number
+                           Address
                         </div>
-                        <input type="Number">
+                        <input type="text" name="address">
                     </div>
                     <div class="field btns">
                         <button class="prev-1  prev">Previous</button>
@@ -184,16 +257,16 @@
                         <div class="label">
                             Date
                         </div>
-                        <input type="date">
+                        <input type="date" name="dob">
                     </div>
                     <div class="field">
                         <div class="label">
                             Gender
                         </div>
-                        <select>
-                            <option disabled>please choose</option>
-                            <option>Male</option>
-                            <option>Female</option>
+                        <select name="gender">
+                            <option value="" disabled>please choose</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
 
                         </select>
                     </div>
@@ -209,28 +282,15 @@
                     </div>
                     <div class="field">
                         <div class="label">
-                            Grade
+                           class
                         </div>
-                        <select>
-                            <option disabled>please choose</option>
-                            <option>Grade 1</option>
-                            <option>Grade 2</option>
-                            <option>Grade 3</option>
-                            <option>Grade 4</option>
-                            <option>Grade 5</option>
-                            <option>Grade 6</option>
-                            <option>Grade 7</option>
-                            <option>Grade 8</option>
-                            <option>Grade 9</option>
-                            
-
-                        </select>
+                        <input type="text" name="class">
                     </div>
                     <div class="field">
                         <div class="label">
                             Old School
                         </div>
-                        <input type="text">
+                        <input type="text" name="oldschool">
                     </div>
                     <div class="field btns">
                         <button class="prev-3 prev">Previous</button>
@@ -246,23 +306,25 @@
                         <div class="label">
                             Username
                         </div>
-                        <input type="text">
+                        <input type="text" name="username" value=<?php echo $randomname;?>>
                     </div>
                     <div class="field">
                         <div class="label">
                             Password
                         </div>
-                        <input type="password">
+                        <input type="text" name="password" value=<?php echo $randomNumber;?>>
+                        <input type="hidden" name="role" value="student">
                     </div>
                     <div class="field btns">
                         <button class="prev-4 prev">Previous</button>
-                        <button class="submit">Submit</button>
+                        <input type="submit" name="submit" value="Submit" class="submitall">
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <script src="scriptstudent.js"></script>
+
 </body>
 
 </html>

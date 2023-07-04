@@ -1,18 +1,18 @@
+$(document).ready(function() {
+    $('select.courses').on('change', function() {
+        var selectedGrade = $(this).val(); // Get the selected grade
 
-$(document).ready(function () {
-    $('select.courses').bind('change', function () {
-        $('select.courses').attr('disabled', 'disabled');
-        $('#myTable').find('.Row').hide();
-        var critriaAttribute = '';
+        $('#myTable tbody tr').each(function() {
+            var rowGrade = $(this).data('class_name'); // Get the grade of each row
 
-        $('select.courses').each(function () {
-            if ($(this).val() != '0') {
-                critriaAttribute += '[data-' + $(this).data('attribute') + '="' + $(this).val() + '"]';
+            if (selectedGrade === '0' || rowGrade === selectedGrade) {
+                $(this).show(); // Show the row if it matches the selected grade or if "All Students" is selected
+            } else {
+                $(this).hide(); // Hide the row if it doesn't match the selected grade
             }
         });
 
-        $('#myTable').find('.Row' + critriaAttribute).show();
-        $('#headerCount').html($('table#myTable tr.Row:visible').length + ' Registered students');
-        $('select.courses').removeAttr('disabled');
+        var visibleRowsCount = $('#myTable tbody tr:visible').length;
+        $('#headerCount').html(visibleRowsCount + ' Registered students');
     });
 });

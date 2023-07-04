@@ -226,7 +226,7 @@ html{
   position: relative;
   display: flex;
   flex-direction: row;
-
+  background:var(--orange) ;
 }
 .text-overlay1 {
   position: absolute;

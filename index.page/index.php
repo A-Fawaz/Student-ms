@@ -96,9 +96,9 @@
 
     <h1>E-School</h1>
     <ul class="nav-list">
-      <li><a href="index.html#header">Home</a></li>
-      <li><a id="space" href="index.html#about-section">About</a></li>
-      <li><a href="index.html#contactsection">Contact</a></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a id="space" href="index.php#about-section">About</a></li>
+      <li><a href="index.php#contactsection">Contact</a></li>
     </ul>
     <button class="btn"><a href="../index.page/signup.php"> Join Now! </a><span style="font-size:x-large;"> </span>
     </button>
@@ -229,14 +229,14 @@
         </div> 
       <div class="contactblock">
         <p>Get in touch</p>
-        <p>call (617) 495-1000</p>
-        <p>Email Esacodinglab@gmail.com</p>
-        <a class="link" href="./contact.html">Website Feedback Form</a>
+        <p>call : (617) 495-1000</p>
+        <p>Email : eschool498@gmail.com</p>
+      
       </div>
     </div>
     <div class="text">
       <div class="copyrights">
-        © 2023 The President and Fellows of E School
+        © 2023 The President of E School
 
       </div>
       <div class="links">

@@ -1,3 +1,14 @@
+<?php
+
+@include '../config.php';
+session_start();
+$select = "SELECT t.* FROM teacher t  WHERE t.username = '" . $_SESSION['teachername'] . "'";
+
+$result = mysqli_query($conn, $select);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,13 +37,13 @@
     <script>
       function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        //document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("container").style.marginLeft = "18vh";
       }
 
       function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
+       // document.getElementById("main").style.marginLeft = "0";
         document.getElementById("container").style.marginLeft = "0px";
       }
     </script>
@@ -45,32 +56,39 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >&times;</a
           >
-
           <div class="logotitle">
-            <img class="logo" src="../logos/grammar.png" alt="" />
-            <a href="#">Agenda</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/graduated-student.png" alt="" />
-            <a href="../Teachers/class-management.html">Students</a>
-          </div>
-          <div class="logotitle">
-            <img class="logo" src="../logos/learning.png" alt="" />
-            <a href="#"> Courses</a>
+            <img class="logo" src="../logos/graph.png" alt="" />
+            <a href="../admin-page/teacher-home.php">Home page</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/profile.png" alt="" />
-            <a href="../Teachers/teacher-profile.html"> Profile</a>
+            <a href="../Teachers/teacher-profile.php"> My Profile</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/grammar.png" alt="" />
+            <a href="../admin-page/agendas.php">Agenda</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/graduated-student.png" alt="" />
+            <a href="../Teachers/class-management.php">Students</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/learning.png" alt="" />
+            <a href="../admin-page/scheduale.php"> Schedule</a>
+          </div>
+          <div class="logotitle">
+            <img class="logo" src="../logos/profile.png" alt="" />
+            <a href="../admin-page/grades.php"> Grades</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/gear.png" alt="" />
-            <a href="../index.page/changepassword.html"> Change Password</a>
+            <a href="../index.page/changepasswordteacher.php"> Change Password</a>
           </div>
           <div class="logotitle">
             <img class="logo" src="../logos/door-knob.png" alt="" />
-            <a href="#"> Log Out</a>
+            <a href="../index.page/logout.php"> Log Out</a>
           </div>
-          <p class="copyrights">© 2023 The President and Fellows of E School</p>
+          <p class="copyrights">© 2023 The President of E School</p>
         </div>
 
         <div id="main">
@@ -81,6 +99,7 @@
 
       <!-- /*sidebar end*/ -->
       <div class="row-info-cont">
+      <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <div information-cont>
         <div class="info-table">
 
@@ -93,21 +112,21 @@
             </div>
           <tr>
             <td>ID :</td>
-            <td>A1234</td>
+            <td><?php echo $row['username']; ?></td>
           </tr>
           <tr>
             <td>Full-Name :</td>
-            <td>Admin Full Name.</td>
+            <td><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?></td>
           </tr>
 
           <tr>
             <td>E-Mail :</td>
-            <td>admin123@gmail.com</td>
+            <td><?php echo $row['email']; ?></td>
           </tr>
 
           <tr>
             <td>Mobile :</td>
-            <td>+961 70-222222</td>
+            <td><?php echo $row['mobile']; ?></td>
           </tr>
           </table>
         </div>
@@ -148,7 +167,7 @@
                   </div>
                 <tr>
                   <td>Degree :</td>
-                  <td>Bachelor degree in Computer Science.</td>
+                  <td><?php echo $row['certificate']; ?></td>
                 <tr>
                   <td>Academic Year :</td>
                   <td>2023-2024</td>
@@ -161,6 +180,7 @@
       
                 </tr>
               </table>
+  <?php } ?>
               </div>
             </div>
     

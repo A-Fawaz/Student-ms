@@ -1,6 +1,9 @@
 <?php
-include '../connect.php';
+include '../config.php';
 session_start();
+if(!isset($_SESSION['adminname'])){
+    header('location:../index.page/signup.php');
+  };
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,10 +39,10 @@ session_start();
         </div>
 
         
-        <a href="../new/teacherregi.html"><button class="btn"><strong>Add New </strong></button></a>
+        <a href="../new/Studentregistration.php"><button class="btn"><strong>Add New </strong></button></a>
         <div class="navicons">
-            <img style="width:40px; padding-right:10px;" src="../images/turn-notifications-on-button.png" alt="">
-            <img style="width: 40px;" src="../images/man.png" alt="">
+            <!-- <img style="width:40px; padding-right:10px;" src="../images/turn-notifications-on-button.png" alt=""> -->
+            <img class="adminoldguy" style="width: 40px;" src="../images/man.png" alt="">
         </div>
     </nav>
     <!-- <div class="sidebar">
@@ -83,7 +86,7 @@ session_start();
 
             <div class="logotitle">
                 <img class="logo" src="../logos/graph.png" alt="">
-                <a href="../index.page/index.php"> Home page</a>
+                <a href="../admin-page/admin-home.php"> Home page</a>
             </div>
             <div class="logotitle">
                 <img class="logo" src="../logos/grammar.png" alt="">
@@ -105,7 +108,7 @@ session_start();
             </div>
             <div class="logotitle">
                 <img style="margin-left:2px;" class="logo" src="../logos/door-knob.png" alt="">
-                <a href="../index.page/index.php"> Log Out</a>
+                <a href="../index.page/logout.php"> Log Out</a>
 
             </div>
             <p class="copyrights">© 2023 The President and Fellows of E School</p>

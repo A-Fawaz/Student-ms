@@ -1,3 +1,4 @@
+
 :root{
   --orange: #fb8b24;
   --btnhovergray: #36454f;
@@ -13,7 +14,8 @@ body{
   background-color: white;
   background-color: var(--white); 
   background-size: cover;
-  /* overflow-y:hidden; */
+  overflow-y:hidden; 
+  overflow-x: hidden;
 }
 .row-info-cont{
   display: flex;
@@ -37,17 +39,23 @@ body{
 .info-table{
   height: 35vh;
   width:fit-content;
+  /* margin-left: 90px; */
   
 }
 
 .info-table1{
   width:fit-content;
   height: 35hv;
+  /* margin-left: 90px; */
 }
+/* .table{
+  margin-left: 200px;
+} */
 
 .img{
-  margin-left: 100px;
+  /* margin-left: 150px; */
   margin-top: 100px;
+  /* width: 100px; */
 }
 
 
@@ -68,6 +76,7 @@ body{
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  margin-left: 300px;
 }
 
 .info-container1{
@@ -83,22 +92,22 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 .info-img{
   /* padding-top: 6px; */
-  margin-right: 10px;
+  /* margin-right: 10px; */
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
 
-  /*start of sidebar css */
+   /*start of sidebar css */
 /* The sidebar menu */
 .sidebar {
+  overflow: hidden;
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 250px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  overflow: hidden;
   background-color: var(--orange); /* */
    /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -108,13 +117,37 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 /* The sidebar links */
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  z-index: 999;
+ 
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: var(--black);
   /* display: block; */
   transition: 0.3s;
+  
 }
+.logotitle{
+  margin-bottom: 40px;
+}
+
+.copyrights{
+  z-index: 999;
+  text-align: center;
+  padding-left: 5px;
+  padding-top: 140px;
+
+ 
+}
+.logotitle a {
+  z-index: 999;
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  z-index: 999;
+  width: 30px;
+ margin-right: 20px;
+} 
 
 /* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
@@ -123,21 +156,30 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
+  z-index: 999;
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
 }
+.closebtn{
+  visibility: hidden;
+}
 
 /* The button used to open the sidebar */
 .openbtn {
+  position: absolute;
+  top: 1vh;
+  left: 10vh;
   font-size: 20px;
   cursor: pointer;
   background-color: var(--orange);
   color: white;
   padding: 10px 15px;
   border: none;
+    
+  
 }
 
 .openbtn:hover {
@@ -155,45 +197,80 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-
-.logotitle {
-  display: flex;
-  flex-direction: row;
-padding-bottom: 10%;
-padding-left: 10%;
-  
-}
-
-.logotitle a {
-  text-decoration: none;
-  color: var(--black);
-  font-size: 20px;
-}
-.logo{
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-}
-
-  .copyrights{
+.headaside{
+    color: white;
+    width: 200px;
+    margin-left: 20px;
+    height: 60px;
+    font-size: 40px;
     text-align: center;
-    padding-left: 10px;
-    padding-top: 110px;
-    font-size: smaller;
-
 }
-
-@media only screen and (max-width:800px){
-  .row-info-cont{
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fb8b24;
+    height: 100%;
+    width: 280px;
+    box-shadow: 0px 0px 5px #36454f;
+    z-index: 1;
+  }
+  
+  .sidetext {
     display: flex;
-    flex-direction: column;  }
-
-  .copyrights{
-    padding-top: 10px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+   
+  
+  
+  
+  }
+  
+  .logotitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    height: 20px;
+   
+  }
+  
+  .logotitle a {
+    text-decoration: none;
+    color: var(--black);
+  }
+  
+  li:hover {
+   
+  
+    color: #faf7f5;
+    letter-spacing: 2px;
+  
+  
+  
   }
 
+@media only screen and (max-width:600px){
+  .row-info-cont{
+    display: flex;
+    flex-direction: column; 
+    overflow-x: hidden;
+}
+.info-container{
+  margin-left: 250px;
+}
   .sidebar{
-    height: 90%;
+    width: 0px;
+  }
+  .closebtn{
+    visibility: visible;
+  }
+  .sidebar{
+    /* height: 90%; */
   }
 
   .img{

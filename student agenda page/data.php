@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../connect.php';
+include '../config.php';
 try {
    
 
@@ -26,9 +26,10 @@ try {
     course.name , agenda.task, agenda.date, agenda.id, agenda.deadline 
     FROM teacher 
     JOIN agenda ON agenda.teacherid = teacher.id
-    JOIN student  ON student.classid = agenda.classid
+    -- JOIN student  ON student.classid = agenda.classid
     JOIN course ON course.id = agenda.courseid
-    WHERE agenda.classid = '$classid' ";
+    WHERE agenda.classid = '$classid' 
+    ORDER BY agenda.deadline ASC";
 // echo $sql2;
 $result2 = mysqli_query($conn, $sql2);
 
@@ -42,6 +43,8 @@ while ($row = mysqli_fetch_assoc($result2)) {
     $teacherfirstname = $row['firstname'];
     $teacherlastname = $row['lastname'];
     $date = $row['date'];
+    // $filelink = $row['filelink'];
+    // $fileID = $_GET['fileID'];
     
     // Format the deadline
     $formattedDeadline = date('l, F jS', strtotime($deadline));
@@ -59,26 +62,29 @@ while ($row = mysqli_fetch_assoc($result2)) {
         'firstname' => $teacherfirstname,
         'lastname' => $teacherlastname,
         'date' => $date,
+    //    'filelink' => $filelink
         // 's.firstname' => $studentfirstname,
         // 's.lastname' => $studentlastname
     );
 }
     
 // Generate HTML output
+$accordionIndex = 1; // Initialize the accordion index
+
 foreach ($dataMap as $deadline => $tasks) {
+    $accordionId = 'accordion' . $accordionIndex; // Generate a unique ID for each accordion
+
     echo '
-    <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion accordion-flush " id="' . $accordionId . '">
         <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <h2 class="accordion-header" id="' . $accordionId . '-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#' . $accordionId . '-collapseOne" aria-expanded="false" aria-controls="' . $accordionId . '-collapseOne">
                     ' . $deadline . '
                 </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div id="' . $accordionId . '-collapseOne" class="accordion-collapse collapse" aria-labelledby="' . $accordionId . '-headingOne" data-bs-parent="#' . $accordionId . '">
                 <div class="accordion-body">
-                    
-                        
-    ';
+                    ';
 
     foreach ($tasks as $task) {
         echo '
@@ -90,30 +96,34 @@ foreach ($dataMap as $deadline => $tasks) {
             </svg>'. $task['name'] .'</h5>
             <p class="card-text">'. $task['task'] .'</p>
             <div class="card-footer">'. $task['firstname'] . ' ' . $task['lastname'] .' <br> Posted on '. $task['date'] .' <br> <br>
+            
+
             <div class="btn-group me-2" role="group" aria-label="First group">
 
 
             </div>
-            <div>
-                <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-                </label>
-                <p class="done">Done</p>
-            </div>
+           <div class="switch-container">
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p class="done">Done</p>
+</div>
+
             </div>
         </div>
-';
+        ';
     }
 
     echo '
-                        
-                    
                 </div>
             </div>
         </div>
     </div>';
+
+    $accordionIndex++; // Increment the accordion index
 }
+
 }
 
     //  echo json_encode($data); 

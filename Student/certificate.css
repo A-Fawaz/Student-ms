@@ -7,27 +7,137 @@
 *{margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
+body{
+  overflow: hidden;
+}
+
+/*start of sidebar css */
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 250px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: var(--orange); /* */
+   /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  overflow: hidden;
+  
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: var(--black);
+  /* display: block; */
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.closebtn{
+  visibility: hidden;
+}
+
+
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--orange);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.logotitle {
+  display: flex;
+  flex-direction: row;
+padding-bottom: 10%;
+padding-left: 10%;
+  
+}
+
+.logotitle a {
+  text-decoration: none;
+  color: var(--black);
+}
+.logo{
+  width: 40px;
+}
+
+  .copyrights{
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 140px;
+    font-size: smaller;
+
+}
+
 .container-full{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: -50px;
 }
 
 .container-report{
-  width: 70%;
-  height: 900px;
+  width: 50%;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  box-shadow: 0px 0px 15px 1px #9fa6aa;
+  /* margin-top: 5vh; */
+  border-radius: 5px;
 }
 
 .report-head{
 background-color: var(--orange);
+opacity: 0.9;
 width: 100%;
-height: 15vh;
+height: 10vh;
 /* margin-top: 2vh; */
 align-items: center;
 justify-content:left;
@@ -38,32 +148,50 @@ flex-direction: column;
 font-weight: 600;
 }
 
+.tab{
+  margin-left: 70px;
+}
+
+.t{
+  width: 5%;
+}
+
+.head{
+  font-size: 10px;
+}
+
+.t-body{
+  font-size: 10px;
+}
 .E-School{
   font-size: 20px;
 }
 
 .name-class{
-  margin-left: 10vh;
-  margin-top: 5vh;
+  margin-left: 5vh;
+  margin-top: 1vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 5vh;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 2vh;
   display: flex;
   flex-direction: row;
+  font-weight: 600;
+  font-weight: 200;
+  text-transform: capitalize;
   
 }
 
+
+
 .name{
-  /* margin-bottom: 30px; */
   margin-right: 50vh;
-  margin-left: 10vh;
   
 }
 
 .table{
-  margin-left: 15vh;
-  margin-bottom: 10vh;
+  margin-bottom: -30px;
+  margin-left: 50px;
 }
 
 thead{
@@ -71,22 +199,26 @@ thead{
 }
 
 .foot{
-  width: 90%;
-  /* background-color:var(--orange); */
-  height:40vh;
+  width: 40%;
+  height:15vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   margin-top: 5vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: 1px solid black;
+  box-shadow: 2px 2px 3px #36454f;
   margin-left:8vh;
 }
 
 .scale{
   margin-bottom: 10vh;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 60%;
+  height: 20vh;
+  box-shadow: 2px 2px 3px #36454f;
+  font-size: 13px;
+  margin-left: 20vh;
+  margin-top: 10vh;
 }
 
 .white-foot{
@@ -103,6 +235,152 @@ thead{
   border: none;
   background-color: var(--orange);
   border-radius: 5px;
-  margin-left: 7vh;
-  margin-top: 2vh;
+  margin-left: 40%;
+  margin-top: 5vh;
+  color: white;
+}
+
+.r{
+  display: flex;
+  flex-direction: column;
+}
+
+.f{
+  width: 80%;
+  height: 10vh;
+  box-shadow: 2px 2px 3px #36454f;
+  margin-left: 5vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.f1{
+
+  width: 80%;
+  height: 10vh;
+  box-shadow: 2px 2px 3px #36454f;
+  margin-left: 5vh;
+  align-items: center;
+  margin-top: 1vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+.value{
+  color: red;
+}
+
+.value1{
+  color: green;
+}
+
+.l{
+  font-size: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  font-weight: 600;
+}
+@media only screen and (max-width:600px){
+  body{
+    overflow-x: hidden;
+  }
+  .container-report{
+    width: 83%;
+    margin-left: -120px;
+    margin-top: 1vh;
+  }
+  .name-class{
+    font-size: 10px;
+    margin-left: 10px;
+    width: 400px;
+  }
+
+  .openbtn{
+    margin-left: -10px;
+  }
+
+  
+
+  .l{
+    margin-left: 50px;
+  }
+  .tab{
+    margin-left: 25px;
+  }
+
+  .echo{
+    visibility: hidden;
+  }
+
+  .name{
+    margin-left: 10px;
+    margin-right: 10vh;
+    font-weight: 100;
+  }
+.container-full{
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  .class{
+    font-weight: 100;
+  }
+  .table{
+    width:fit-content !important;
+    /* margin-left: 15px; */
+    margin-left: 0px;
+    overflow: hidden;
+  }
+
+  .value{
+    position: absolute;
+  }
+
+  .f{
+    font-size: 10px;
+    width: 30vh;
+  }
+
+  .f1{
+    font-size: 10px;
+    width: 30vh;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+
+  .echo{
+    margin-right: 100px;
+  }
+
+  .print{
+    height: 4vh;
+    width: 10vh;
+    margin-left: 100px;
+  }
+
+  thead{
+    font-size: 10px;
+  }
+
+
+  .sidebar{
+    font-size: 20px;
+  width:0;
+}
+
+
+.sidebar a{
+  font-size: 20px;
+}
+.logo{
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+}
+.closebtn{
+  visibility: visible;
+}
 }
